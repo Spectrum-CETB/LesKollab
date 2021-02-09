@@ -14,14 +14,14 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-light navbar-expand-md fixed-top" style="height: 10vh;background: rgba(255,255,255,0.18);">
         <div class="container-fluid"><a class="navbar-brand" href="#" style="font-size: 30px;font-family: Aclonica, sans-serif;">LesKollab</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div
                 class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link active" href="#" style="padding: 8px;padding-right: 3vw;font-size: 20px;">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#" style="padding-right: 3vw;font-size: 20px;">Login</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#" style="padding-right: 3vw;font-size: 20px;">Register</a></li>
+                    <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target=".bd-example-modal-lg" href="#" style="padding-right: 3vw;font-size: 20px;">Login / Register</a></li>
                 </ul>
         </div>
         </div>
@@ -41,9 +41,77 @@
         </div>
         
     </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <button data-target="#carouselExampleIndicators" data-slide-to="0" type="button" class="btn btn-outline-info btn-lg active">Login</button>
+                    <button data-target="#carouselExampleIndicators" data-slide-to="1" type="button" class="btn btn-outline-warning btn-lg">Register</button>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <form>
+                                <div class="form-group">
+                                <br>
+                                  <label for="exampleInputEmail1">Email address</label>
+                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </div>
+                                <div class="form-group">
+                                  <label for="exampleInputPassword1">Password</label>
+                                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                              </form>
+                        </div>
+                        <div class="carousel-item">
+                            <form>
+                                <div class="form-group">
+                                    <br>
+                                  <label for="exampleInputEmail1">Email address</label>
+                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </div>
+                                <div class="form-group">
+                                  <label for="exampleInputPassword1">Password</label>
+                                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <br>
+                                  <label for="exampleInputEmail1">GitHub</label>
+                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <br>
+                                  <label for="exampleInputEmail1">LinkedIn</label>
+                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                              </form>
+                        </div>
+                    </div>
+                    </div>
+
+              </div>
+        </div>
+    </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/Button-Ripple-Effect-Animation-Wave-Pulse.js"></script>
+    <script>
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+            })
+    </script>
 </body>
 
 </html>
