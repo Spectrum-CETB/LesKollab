@@ -43,8 +43,8 @@
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link active text-danger" href="#" style="margin-right: 1vw;"><?=$name?>&nbsp;<i class="fa fa-user-circle-o"></i></a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,251);margin-right: 1vw;">Explore&nbsp;<i class="fa fa-files-o"></i></a></li>
                         <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(197,189,0);margin-right: 1vw;">Post an Idea&nbsp;<i class="fa fa-lightbulb-o"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" href="../logout.php" style="color: rgb(255,255,251);margin-right: 1vw;">Logout&nbsp;<i class="fa fa-sign-out-alt"></i></a></li>
                     </ul>
                     <ul class="nav navbar-nav"></ul><button class="btn openBtn" onclick="openSearch()" style="color: rgb(255,255,255);"><i class="fa fa-search" style="color: rgb(255,255,255);"></i></button></div>
             </div>
@@ -57,121 +57,72 @@
           ?>
             <div class="row" style="width: 100vw;margin-top: 0px;">
                 <div class="col-4" style="padding: 2vw;height: auto;">
-                    <div class="profile-card" style="border-width: 0px;"><img class="rounded-circle profile-pic" src="assets/img/2.jpg">
-                        <h3 class="profile-name" style="background: rgb(255,255,255);color: rgb(0,0,0);">Lorena Norambuena Rojas</h3>
+                    <div class="profile-card" style="border-width: 0px;"><img class="rounded-circle profile-pic" src="../uploads/<?=$name?>/<?=$getUserDetailsRow['profile']?>">
+                        <h3 class="profile-name" style="background: rgb(255,255,255);color: rgb(0,0,0);"><?=$name?></h3>
                         <ul class="social-list">
-                            <li> <i class="fa fa-facebook-official" style="color: rgb(0,0,0);background: rgb(255,255,255);"></i></li>
-                            <li> <i class="fa fa-twitter-square" style="color: rgb(0,0,0);background: rgb(255,255,255);"></i></li>
-                            <li> <i class="fa fa-linkedin-square" style="color: rgb(0,0,0);background: rgb(255,255,255);"></i></li>
+                            <li><a href="<?=$getUserDetailsRow['github']?>"><i class="fa fa-github" style="color: rgb(0,0,0);background: rgb(255,255,255);"></i></a></li>
+                            <li><a href="<?=$getUserDetailsRow['linkedin']?>"><i class="fa fa-linkedin-square" style="color: rgb(0,0,0);background: rgb(255,255,255);"></i></a></li>
                         </ul>
+                        <?php
+                          if($getUserDetailsRow['bio'] != "") {
+                        ?>
                         <div class="card" style="margin-bottom: 20px;">
                             <div class="card-body" style="padding-bottom: 20px;margin-bottom: 20px;">
-                                <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                <p class="card-text"><?=$getUserDetailsRow['bio']?></p>
                             </div>
                         </div>
-                        <div role="tablist" id="accordion-1">
-                            <div class="card">
-                                <div class="card-header" role="tab">
-                                    <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="true" aria-controls="accordion-1 .item-1" href="#accordion-1 .item-1">Completed Projects</a></h5>
+                        <?php
+                          } else {
+                        ?>
+                        <div class="card" style="margin-bottom: 20px;">
+                            <div class="card-body" style="padding-bottom: 20px;margin-bottom: 20px;">
+                              <form action="../scripts/add-bio.php" method="post">
+                                <div class="form-group">
+                                  <textarea name="bio" rows="6" cols="40" class = "form-control" placeholder="Add a bio :)"></textarea>
+                                  <input type="hidden" name="email" value = "<?=$email?>"/>
                                 </div>
-                                <div class="collapse show item-1" role="tabpanel" data-parent="#accordion-1">
-                                    <div class="card-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item"><span>List Group Item 1</span></li>
-                                            <li class="list-group-item"><span>List Group Item 2</span></li>
-                                            <li class="list-group-item"><span>List Group Item 3</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" role="tab">
-                                    <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-2" href="#accordion-1 .item-2">Ongoing Projects</a></h5>
-                                </div>
-                                <div class="collapse item-2" role="tabpanel" data-parent="#accordion-1">
-                                    <div class="card-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item"><span>List Group Item 1</span></li>
-                                            <li class="list-group-item"><span>List Group Item 2</span></li>
-                                            <li class="list-group-item"><span>List Group Item 3</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <button type="submit" class = "btn btn-secondary">Add</button>
+                              </form>
                             </div>
                         </div>
+                        <?php
+                          }
+                        ?>
                     </div>
-                    <h1 style="text-align: center;color: rgb(255,255,255);">Trending Projects</h1>
+                    <?php
+                      $getProjects = "SELECT * FROM `projects` WHERE `email` = '$email'";
+                      $getProjectsStatus = mysqli_query($conn,$getProjects) or die(mysqli_error($conn));
+                      if(mysqli_num_rows($getProjectsStatus) > 0) {
+                      while($getProjectsRow = mysqli_fetch_assoc($getProjectsStatus)) {
+                    ?>
+                    <h1 style="text-align: center;color: rgb(255,255,255);">Latest Projects</h1>
                     <div class="list-group" style="margin-top: 20px;">
                         <a class="list-group-item list-group-item-action flex-column align-items-start" href="#">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Heading</h5><small>3 days ago</small></div>
-                            <p class="mb-1">Paragraph</p><small class="text-muted">Text</small></a>
-                        <a class="list-group-item list-group-item-action flex-column align-items-start" href="#">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Heading</h5><small>3 days ago</small></div>
-                            <p class="mb-1">Paragraph</p><small class="text-muted">Text</small></a>
-                        <a class="list-group-item list-group-item-action flex-column align-items-start" href="#">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Heading</h5><small>3 days ago</small></div>
-                            <p class="mb-1">Paragraph</p><small class="text-muted">Text</small></a>
-                        <a class="list-group-item list-group-item-action flex-column align-items-start" href="#">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Heading</h5><small>3 days ago</small></div>
-                            <p class="mb-1">Paragraph</p><small class="text-muted">Text</small></a>
-                        <a class="list-group-item list-group-item-action flex-column align-items-start" href="#">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Heading</h5><small>3 days ago</small></div>
-                            <p class="mb-1">Paragraph</p><small class="text-muted">Text</small></a>
-                        <a class="list-group-item list-group-item-action flex-column align-items-start" href="#">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Heading</h5><small>3 days ago</small></div>
-                            <p class="mb-1">Paragraph</p><small class="text-muted">Text</small></a>
+                                <h5 class="mb-1"><?=$getProjectsRow['pname']?></h5><small><?=$getProjectsRow['createdAt']?></small></div>
+                            <p class="mb-1"><?=$getProjectsRow['tags']?></p><small class="text-muted">Text</small></a>
                     </div>
+                    <?php
+                      }
+                    }
+                    ?>
                 </div>
+                <?php
+                  $getAllProjects = "SELECT * FROM `projects`";
+                  $getAllProjectsStatus = mysqli_query($conn,$getAllProjects) or die(mysqli_error($conn));
+                  while($getAllProjectsRow = mysqli_fetch_assoc($getProjectsStatus)) {
+                ?>
                 <div class="col" style="padding: 0px;height: auto;">
                     <div class="card" style="margin: 1em;background: rgba(255,255,255,0.92);">
                         <div class="card-body"><img class="rounded-circle" src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" style="width: 30px;">
-                            <h4 class="card-title">Project name</h4>
-                            <h6 class="text-muted card-subtitle mb-2">#tag1&nbsp; &nbsp;#tag2&nbsp; &nbsp;#tag3&nbsp; #tag4</h6>
-                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.&nbsp;Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.&nbsp;<br><a href="#">More...</a></p><a class="card-link" href="#" style="font-size: 20px;">Project Link</a></div>
-                    </div>
-                    <div class="card" style="margin: 1em;background: rgba(255,255,255,0.92);">
-                        <div class="card-body"><img class="rounded-circle" src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" style="width: 30px;">
-                            <h4 class="card-title">Project name</h4>
-                            <h6 class="text-muted card-subtitle mb-2">#tag1&nbsp; &nbsp;#tag2&nbsp; &nbsp;#tag3&nbsp; #tag4</h6>
-                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.&nbsp;Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.&nbsp;<br><a href="#">More...</a></p><a class="card-link" href="#" style="font-size: 20px;">Project Link</a></div>
-                    </div>
-                    <div class="card" style="margin: 1em;background: rgba(255,255,255,0.92);">
-                        <div class="card-body"><img class="rounded-circle" src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" style="width: 30px;">
-                            <h4 class="card-title">Project name</h4>
-                            <h6 class="text-muted card-subtitle mb-2">#tag1&nbsp; &nbsp;#tag2&nbsp; &nbsp;#tag3&nbsp; #tag4</h6>
-                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.&nbsp;Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.&nbsp;<br><a href="#">More...</a></p><a class="card-link" href="#" style="font-size: 20px;">Project Link</a></div>
-                    </div>
-                    <div class="card" style="margin: 1em;background: rgba(255,255,255,0.92);">
-                        <div class="card-body"><img class="rounded-circle" src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" style="width: 30px;">
-                            <h4 class="card-title">Project name</h4>
-                            <h6 class="text-muted card-subtitle mb-2">#tag1&nbsp; &nbsp;#tag2&nbsp; &nbsp;#tag3&nbsp; #tag4</h6>
-                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.&nbsp;Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.&nbsp;<br><a href="#">More...</a></p><a class="card-link" href="#" style="font-size: 20px;">Project Link</a></div>
-                    </div>
-                    <div class="card" style="margin: 1em;background: rgba(255,255,255,0.92);">
-                        <div class="card-body"><img class="rounded-circle" src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" style="width: 30px;">
-                            <h4 class="card-title">Project name</h4>
-                            <h6 class="text-muted card-subtitle mb-2">#tag1&nbsp; &nbsp;#tag2&nbsp; &nbsp;#tag3&nbsp; #tag4</h6>
-                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.&nbsp;Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.&nbsp;<br><a href="#">More...</a></p><a class="card-link" href="#" style="font-size: 20px;">Project Link</a></div>
-                    </div>
-                    <div class="card" style="margin: 1em;background: rgba(255,255,255,0.92);">
-                        <div class="card-body"><img class="rounded-circle" src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" style="width: 30px;">
-                            <h4 class="card-title">Project name</h4>
-                            <h6 class="text-muted card-subtitle mb-2">#tag1&nbsp; &nbsp;#tag2&nbsp; &nbsp;#tag3&nbsp; #tag4</h6>
-                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.&nbsp;Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.&nbsp;<br><a href="#">More...</a></p><a class="card-link" href="#" style="font-size: 20px;">Project Link</a></div>
+                            <h4 class="card-title"><?=$getAllProjectsRow['pname']?></h4>
+                            <h6 class="text-muted card-subtitle mb-2"><?=$getAllProjectsRow['tags']?></h6>
+                            <p class="card-text"><?=$getAllProjectsRow['pdes']?>&nbsp;<br><a href="./check-project.php?id=<?=$getAllProjectsRow['id']?>">More...</a></p><a class="card-link" href="<?=$getAllProjectsRow['plink']?>" style="font-size: 20px;">Project Link</a></div>
                     </div>
                 </div>
+                <?php
+                  }
+                ?>
             </div>
         </div>
     </div>

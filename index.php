@@ -86,7 +86,7 @@
                               </form>
                         </div>
                         <div class="carousel-item">
-                            <form action = "./scripts/Register.php" method = "post">
+                            <form action = "./scripts/Register.php" method = "post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <br>
                                   <label for="exampleInputEmail1">Email address</label>
@@ -110,6 +110,10 @@
                                     <br>
                                   <label for="exampleInputEmail1">LinkedIn</label>
                                   <input type="text" class="form-control" name = "linkedin" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter linkedin profile link">
+                                </div>
+                                <div class="input-group mb-3">
+                                  <input type="file" class="form-control" name="profile" id="inputGroupFile02" required>
+                                  <label class="input-group-text" for="inputGroupFile02">Upload</label>
                                 </div>
                                 <br>
                                 <button type="submit" class="btn btn-primary">Submit</button>

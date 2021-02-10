@@ -12,6 +12,7 @@
   $password = "";
   $github = "";
   $linkedin = "";
+  $profile = "";
   $salt = uniqid();
   $createdAt = date('m-d-Y H:i');
 
@@ -36,6 +37,7 @@
     $linkedin = $_POST['linkedin'];
   }
 
+
   if($email != "" && $password != "" && $github != "" && $linkedin != "") { // if the fields are not empty!
 
     // check for user
@@ -48,22 +50,79 @@
 
     } else {
 
-      $newPassword = md5(md5($password.$salt));
+        //Folders for uploading files
+        $uploadDirectory = "../uploads/$name/";
 
-      // insert user
-      $insertUser = "INSERT INTO `users`(`email`,`name`,`password`,`github`,`linkedin`,`salt`,`createdAt`) VALUES('$email','$name','$newPassword','$github','$linkedin','$salt','$createdAt')";
-      $insertUserStatus = mysqli_query($conn,$insertUser) or die(mysqli_error($conn));
+        if (!file_exists("$uploadDirectory")) { //if not then create the folder
 
-      if($insertUserStatus) { // if user is entered successfully!
+            mkdir("$uploadDirectory", 0777, true);
 
-        header('Location: ../index.php?message=You have registered successfully!');
+        }
 
-      } else {
+        $photo_image = $uploadDirectory.basename($_FILES["profile"]["name"]);
 
-        header('Location: ../index.php?message=Unable to register! Try again some time later!');
+        $uploadOk = 1;
+
+        $imageFileType = strtolower(pathinfo($photo_image, PATHINFO_EXTENSION));
+
+        if (isset($_POST["submit"])) {
+            $checkPhoto = getimagesize($_FILES["profile"]["tmp_name"]);
+
+            if ($checkPhoto !== false) {
+                echo "File is an image - " . $checkPhoto["mime"] . ".";
+                $uploadOk = 1;
+            } else {
+                echo "File is not an image.";
+                $uploadOk = 0;
+            }
 
       }
 
+      // Check if file already exists
+      if (file_exists($photo_image)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+      }
+
+      // Check file size
+      if ($_FILES["profile"]["size"] > 500000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+      }
+
+      // Allow certain file formats
+      if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+      && $imageFileType != "gif" ) {
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+      }
+
+      // Check if $uploadOk is set to 0 by an error
+      if ($uploadOk == 0) {
+        header('Location: ../index.php?message=Some error occured while uploading your pic!');
+      // if everything is ok, try to upload file
+      } else {
+        $profile = basename($_FILES["profile"]["name"]);
+        if (move_uploaded_file($_FILES["profile"]["tmp_name"], $photo_image)) {
+          $newPassword = md5(md5($password.$salt));
+
+          // insert user
+          $insertUser = "INSERT INTO `users`(`email`,`name`,`password`,`github`,`linkedin`,`profile`,`salt`,`createdAt`) VALUES('$email','$name','$newPassword','$github','$linkedin','$profile','$salt','$createdAt')";
+          $insertUserStatus = mysqli_query($conn,$insertUser) or die(mysqli_error($conn));
+
+          if($insertUserStatus) { // if user is entered successfully!
+
+            header('Location: ../index.php?message=You have registered successfully!');
+
+          } else {
+
+            header('Location: ../index.php?message=Unable to register! Try again some time later!');
+
+          }
+        } else {
+          header('Location: ../index.php?message=Unable to upload your profile pic!');
+        }
+      }
     }
 
   } else { // if the fields are empty!
