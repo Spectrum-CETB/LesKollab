@@ -22,7 +22,7 @@
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link active text-danger" href="#" style="margin-right: 1vw;">Trideep Barik&nbsp;<i class="fa fa-user-circle-o"></i></a></li>
                         <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,251);margin-right: 1vw;">Explore&nbsp;<i class="fa fa-files-o"></i></a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(197,189,0);margin-right: 1vw;">Post an Idea&nbsp;<i class="fa fa-lightbulb-o"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg" href="#" style="color: rgb(197,189,0);margin-right: 1vw;">Post an Idea&nbsp;<i class="fa fa-lightbulb-o"></i></a></li>
                     </ul>
                     <ul class="nav navbar-nav"></ul><button class="btn openBtn" onclick="openSearch()" style="color: rgb(255,255,255);"><i class="fa fa-search" style="color: rgb(255,255,255);"></i></button></div>
             </div>
@@ -150,9 +150,68 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h1 style="font-family: sans-serif;padding: 1vw;">Post A Project</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                                <form>
+                                    <label>
+                                        <p class="label-txt">Project Name</p>
+                                        <input type="text" class="input">
+                                        <div class="line-box">
+                                          <div class="line"></div>
+                                        </div>
+                                      </label>
+                                      <label>
+                                        <p class="label-txt">Project Description</p>
+                                        <input type="text" class="input">
+                                        <div class="line-box">
+                                          <div class="line"></div>
+                                        </div>
+                                      </label>
+                                      <label>
+                                        <p class="label-txt">Project Link</p>
+                                        <input type="text" class="input">
+                                        <div class="line-box">
+                                          <div class="line"></div>
+                                        </div>
+                                      </label>
+                                      <label>
+                                        <p class="label-txt">Stack Used <small>(separated by spaces)</small></p>
+                                        <input type="text" id="stack" class="input">
+                                        <div class="line-box">
+                                          <div class="line"></div>
+                                        </div>
+                                        <span id="dstack" style="padding: 0;margin: 0;"></span>
+                                      </label>
+                                      
+                                      <br>
+                                      <button type="submit">Post</button>
+                                </form>
+                        </div>
+                        </div>
+    
+                  </div>
+        </div>
+        </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.min.js"></script>
+    <script>
+        var inputBox = document.getElementById('stack');
+        inputBox.onkeyup = function(){
+            stacks = inputBox.value.split(" ")
+            document.getElementById('dstack').innerHTML = stacks;
+            
+        }
+    </script>
 </body>
 
 </html>
