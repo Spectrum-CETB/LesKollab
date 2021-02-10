@@ -1,3 +1,25 @@
+<?php
+  // session_start
+  session_start();
+
+  // include db connection
+  include('../config/db.php');
+
+  if(isset($_SESSION['email'])) {
+
+    $email = $_SESSION['email'];
+    $getUserDetails = "SELECT * FROM `users` WHERE `email` = '$email'";
+    $getUserDetailsStatus = mysqli_query($conn,$getUserDetails);
+    $getUserDetailsRow = mysqli_fetch_assoc($getUserDetailsStatus);
+
+    $name = $getUserDetailsRow['name'];
+
+  } else {
+
+    header('Location: ../index.php?message=Please login first!');
+
+  }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -13,14 +35,14 @@
     <link rel="stylesheet" href="assets/css/styles.min.css">
 </head>
 
-<body>
+<body onload="myFunction()">
     <section>
         <nav class="navbar navbar-light navbar-expand-md fixed-top" style="font-size: 20px;background: rgba(0,0,0,0.4);">
             <div class="container-fluid"><a class="navbar-brand" href="#" style="font-family: 'Titillium Web', sans-serif;font-size: 30px;color: rgb(254,254,254);">LesKollab</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link active text-danger" href="#" style="margin-right: 1vw;">Trideep Barik&nbsp;<i class="fa fa-user-circle-o"></i></a></li>
+                        <li class="nav-item"><a class="nav-link active text-danger" href="#" style="margin-right: 1vw;"><?=$name?>&nbsp;<i class="fa fa-user-circle-o"></i></a></li>
                         <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,251);margin-right: 1vw;">Explore&nbsp;<i class="fa fa-files-o"></i></a></li>
                         <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(197,189,0);margin-right: 1vw;">Post an Idea&nbsp;<i class="fa fa-lightbulb-o"></i></a></li>
                     </ul>
@@ -30,6 +52,9 @@
     </section>
     <div style="width: 100vw;height: auto;background: url(&quot;https://wallpaperaccess.com/full/983279.jpg&quot;) bottom / cover no-repeat;padding-top: 10vh;">
         <div class="container" style="width: 100vw;height: auto;margin: 0px;padding: 0px;">
+          <?php
+            include("../components/common/messages.php");
+          ?>
             <div class="row" style="width: 100vw;margin-top: 0px;">
                 <div class="col-4" style="padding: 2vw;height: auto;">
                     <div class="profile-card" style="border-width: 0px;"><img class="rounded-circle profile-pic" src="assets/img/2.jpg">
@@ -153,6 +178,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.min.js"></script>
+    <script src="assets/js/Snackbar.js"></script>
 </body>
 
 </html>
