@@ -1,3 +1,14 @@
+<?php
+  // session_start
+  session_start();
+
+  // include db connection
+  include('./config/db.php');
+
+  if(isset($_SESSION['email'])) {
+    header('Location: ./Explore/index.php?message=You have logged in successfully!');
+  }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -13,10 +24,13 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body>
+<body onLoad = "myFunction()">
 
     <nav class="navbar navbar-light navbar-expand-md fixed-top" style="height: 10vh;background: rgba(255,255,255,0.18);">
         <div class="container-fluid"><a class="navbar-brand" href="#" style="font-size: 30px;font-family: Aclonica, sans-serif;">LesKollab</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <?php
+              include("components/common/messages.php");
+            ?>
             <div
                 class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
@@ -31,15 +45,15 @@
             <h2>Have Some Pending Projects?</h2>
             <i><h5>Need Someone's help to complete it?</h5> <br>
             <p>Ideas reshape the world, but there's always a staring and learning point.<br> It's time to redefine the way we learn.</p>
-            Learnt a new skill, but have no one to work on a starting project with?<br> 
+            Learnt a new skill, but have no one to work on a starting project with?<br>
             Thought of an idea but don't have the necessar tech stacks?<br>
-            Search for people to collaborate with, or propose a project and let collaborators find you.<br/> 
+            Search for people to collaborate with, or propose a project and let collaborators find you.<br/>
             With LesKollab, it's time to implement and learn things on the get go, but not alone anymore!</p></i>
             <br><br><br><br>
             <button type="button" class="btn btn-outline-warning" style="height: 10vh;width:27vw;font-size:1.5em;">Find a Project Partner</button>
 
         </div>
-        
+
     </div>
 
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -56,42 +70,46 @@
                     <button data-target="#carouselExampleIndicators" data-slide-to="1" type="button" class="btn btn-outline-warning btn-lg">Register</button>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <form>
+                            <form action = "./scripts/Login.php" method="post">
                                 <div class="form-group">
                                 <br>
                                   <label for="exampleInputEmail1">Email address</label>
-                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                  <input type="email" class="form-control" name = "email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                                   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                 </div>
                                 <div class="form-group">
                                   <label for="exampleInputPassword1">Password</label>
-                                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                  <input type="password" class="form-control" name = "password" id="exampleInputPassword1" placeholder="Password">
                                 </div>
                                 <br>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                               </form>
                         </div>
                         <div class="carousel-item">
-                            <form>
+                            <form action = "./scripts/Register.php" method = "post">
                                 <div class="form-group">
                                     <br>
                                   <label for="exampleInputEmail1">Email address</label>
-                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                  <input type="email" class="form-control" name = "email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                                   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                 </div>
                                 <div class="form-group">
+                                  <label for="exampleInputPassword1">Name</label>
+                                  <input type="text" class="form-control" name = "name" id="exampleInputPassword1" placeholder="Your name">
+                                </div>
+                                <div class="form-group">
                                   <label for="exampleInputPassword1">Password</label>
-                                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                  <input type="password" class="form-control" name = "password" id="exampleInputPassword1" placeholder="Password">
                                 </div>
                                 <div class="form-group">
                                     <br>
                                   <label for="exampleInputEmail1">GitHub</label>
-                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                  <input type="text" class="form-control" name = "github" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter github profile link">
                                 </div>
                                 <div class="form-group">
                                     <br>
                                   <label for="exampleInputEmail1">LinkedIn</label>
-                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                  <input type="text" class="form-control" name = "linkedin" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter linkedin profile link">
                                 </div>
                                 <br>
                                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -107,6 +125,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/Button-Ripple-Effect-Animation-Wave-Pulse.js"></script>
+    <script src="assets/js/Snackbar.js"></script>
     <script>
         $('#myModal').on('shown.bs.modal', function () {
             $('#myInput').trigger('focus')
