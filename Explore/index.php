@@ -43,10 +43,10 @@
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link active text-danger" href="#" style="margin-right: 1vw;"><?=$name?>&nbsp;<i class="fa fa-user-circle-o"></i></a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(197,189,0);margin-right: 1vw;">Post an Idea&nbsp;<i class="fa fa-lightbulb-o"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg" href="#" style="color: rgb(197,189,0);margin-right: 1vw;">Post an Idea&nbsp;<i class="fa fa-lightbulb-o"></i></a></li>
                         <li class="nav-item"><a class="nav-link" href="../logout.php" style="color: rgb(255,255,251);margin-right: 1vw;">Logout&nbsp;<i class="fa fa-sign-out-alt"></i></a></li>
                     </ul>
-                    <ul class="nav navbar-nav"></ul><button class="btn openBtn" onclick="openSearch()" style="color: rgb(255,255,255);"><i class="fa fa-search" style="color: rgb(255,255,255);"></i></button></div>
+                    <!-- <ul class="nav navbar-nav"></ul><button class="btn openBtn" onclick="openSearch()" style="color: rgb(255,255,255);"><i class="fa fa-search" style="color: rgb(255,255,255);"></i></button>--></div>
             </div>
         </nav>
     </section>
@@ -110,11 +110,15 @@
                 <?php
                   $getAllProjects = "SELECT * FROM `projects`";
                   $getAllProjectsStatus = mysqli_query($conn,$getAllProjects) or die(mysqli_error($conn));
-                  while($getAllProjectsRow = mysqli_fetch_assoc($getProjectsStatus)) {
+                  while($getAllProjectsRow = mysqli_fetch_assoc($getAllProjectsStatus)) {
+                    $userEmail = $getAllProjectsRow['email'];
+                    $getProfile = "SELECT `name`,`profile` FROM `users` WHERE `email` = '$userEmail'";
+                    $getProfileStatus = mysqli_query($conn,$getProfile) or die(mysqli_error($conn));
+                    $getProfileRow = mysqli_fetch_assoc($getProfileStatus);
                 ?>
                 <div class="col" style="padding: 0px;height: auto;">
                     <div class="card" style="margin: 1em;background: rgba(255,255,255,0.92);">
-                        <div class="card-body"><img class="rounded-circle" src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" style="width: 30px;">
+                        <div class="card-body"><img class="rounded-circle" src="../uploads/<?=$getProfileRow['name']?>/<?=$getProfileRow['profile']?>" style="width: 30px;">
                             <h4 class="card-title"><?=$getAllProjectsRow['pname']?></h4>
                             <h6 class="text-muted card-subtitle mb-2"><?=$getAllProjectsRow['tags']?></h6>
                             <p class="card-text"><?=$getAllProjectsRow['pdes']?>&nbsp;<br><a href="./check-project.php?id=<?=$getAllProjectsRow['id']?>">More...</a></p><a class="card-link" href="<?=$getAllProjectsRow['plink']?>" style="font-size: 20px;">Project Link</a></div>
@@ -126,9 +130,83 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h1 style="font-family: sans-serif;padding: 1vw;">Post A Project</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                                <form action = "../scripts/post-project.php" method = "post" enctype="multipart/form-data">
+                                    <label>
+                                        <p class="label-txt">Project Name</p>
+                                        <input type="text" class="input" name = "pname"/>
+                                        <input type="hidden" class="input" name = "email" value = "<?=$email?>"/>
+                                        <div class="line-box">
+                                          <div class="line"></div>
+                                        </div>
+                                      </label>
+                                      <label>
+                                        <p class="label-txt">Project Description</p>
+                                        <input type="text" class="input" name = "pdes"/>
+                                        <div class="line-box">
+                                          <div class="line"></div>
+                                        </div>
+                                      </label>
+                                      <label>
+                                        <p class="label-txt">Project Link</p>
+                                        <input type="text" class="input" name = "plink"/>
+                                        <div class="line-box">
+                                          <div class="line"></div>
+                                        </div>
+                                      </label>
+                                      <label>
+                                        <p class="label-txt">Stack Used <small>(separated by spaces)</small></p>
+                                        <input type="text" id="stack" class="input" name = "tags"/>
+                                        <div class="line-box">
+                                          <div class="line"></div>
+                                        </div>
+                                        <span id="dstack" style="padding: 0;margin: 0;"></span>
+                                      </label>
+                                      <label>
+                                        <p class="label-txt">Field</p>
+                                        <input type="text" class="input" name = "field"/>
+                                        <div class="line-box">
+                                          <div class="line"></div>
+                                        </div>
+                                        <span id="dstack" style="padding: 0;margin: 0;"></span>
+                                      </label>
+                                      <label>
+                                        <p class="label-txt">Screenshots(if any)</p>
+                                        <input type="file" class="form-control" name="screenshot" id="inputGroupFile02" required>
+                                        <div class="line-box">
+                                          <div class="line"></div>
+                                        </div>
+                                        <span id="dstack" style="padding: 0;margin: 0;"></span>
+                                      </label>
+                                      <br>
+                                      <button type="submit">Post</button>
+                                </form>
+                        </div>
+                        </div>
+                </div>
+        </div>
+        </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.min.js"></script>
+    <script>
+        var inputBox = document.getElementById('stack');
+        inputBox.onkeyup = function(){
+            stacks = inputBox.value.split(" ")
+            document.getElementById('dstack').innerHTML = stacks;
+
+        }
+    </script>
     <script src="assets/js/Snackbar.js"></script>
 </body>
 
