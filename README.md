@@ -43,6 +43,8 @@
 
 Our tech stack includes:
 
+HTML, CSS, Javascript, PHP
+
 
 ## Branches
 
