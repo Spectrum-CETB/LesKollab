@@ -93,20 +93,26 @@
                       $getProjects = "SELECT * FROM `projects` WHERE `email` = '$email'";
                       $getProjectsStatus = mysqli_query($conn,$getProjects) or die(mysqli_error($conn));
                       if(mysqli_num_rows($getProjectsStatus) > 0) {
-                      while($getProjectsRow = mysqli_fetch_assoc($getProjectsStatus)) {
                     ?>
                     <h1 style="text-align: center;color: rgb(255,255,255);">Latest Projects</h1>
+                    <?php
+                      while($getProjectsRow = mysqli_fetch_assoc($getProjectsStatus)) {
+                    ?>
+        
                     <div class="list-group" style="margin-top: 20px;">
                         <a class="list-group-item list-group-item-action flex-column align-items-start" href="#">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1"><?=$getProjectsRow['pname']?></h5><small><?=$getProjectsRow['createdAt']?></small></div>
-                            <p class="mb-1"><?=$getProjectsRow['tags']?></p><small class="text-muted">Text</small></a>
+                            <p class="mb-1"><?=$getProjectsRow['tags']?></p><small class="text-muted"></small>
+                            <a class = "btn btn-primary" href="../scripts/delete-post.php?id=<?=$getProjectsRow['id']?>">Delete</a>
+                            </a>
                     </div>
                     <?php
                       }
                     }
                     ?>
                 </div>
+                <!-- get projects of users! -->
                 <?php
                   $getAllProjects = "SELECT * FROM `projects`";
                   $getAllProjectsStatus = mysqli_query($conn,$getAllProjects) or die(mysqli_error($conn));
@@ -116,14 +122,14 @@
                     $getProfileStatus = mysqli_query($conn,$getProfile) or die(mysqli_error($conn));
                     $getProfileRow = mysqli_fetch_assoc($getProfileStatus);
                 ?>
-                <div class="col" style="padding: 0px;height: auto;">
-                    <div class="card" style="margin: 1em;background: rgba(255,255,255,0.92);">
-                        <div class="card-body"><img class="rounded-circle" src="../uploads/<?=$getProfileRow['name']?>/<?=$getProfileRow['profile']?>" style="width: 30px;">
-                            <h4 class="card-title"><?=$getAllProjectsRow['pname']?></h4>
-                            <h6 class="text-muted card-subtitle mb-2"><?=$getAllProjectsRow['tags']?></h6>
-                            <p class="card-text"><?=$getAllProjectsRow['pdes']?>&nbsp;<br><a href="./check-project.php?id=<?=$getAllProjectsRow['id']?>">More...</a></p><a class="card-link" href="<?=$getAllProjectsRow['plink']?>" style="font-size: 20px;">Project Link</a></div>
-                    </div>
-                </div>
+                  <div class="col" style="padding: 0px;height: auto;">
+                      <div class="card" style="margin: 1em;background: rgba(255,255,255,0.92);">
+                          <div class="card-body"><img class="rounded-circle" src="../uploads/<?=$getProfileRow['name']?>/<?=$getProfileRow['profile']?>" style="width: 30px;">
+                              <h4 class="card-title"><?=$getAllProjectsRow['pname']?></h4>
+                              <h6 class="text-muted card-subtitle mb-2"><?=$getAllProjectsRow['tags']?></h6>
+                              <p class="card-text"><?=$getAllProjectsRow['pdes']?>&nbsp;<br><a href="./check-project.php?id=<?=$getAllProjectsRow['id']?>">More...</a></p><a class="card-link" href="<?=$getAllProjectsRow['plink']?>" style="font-size: 20px;">Project Link</a></div>
+                      </div>
+                  </div>
                 <?php
                   }
                 ?>
@@ -182,7 +188,7 @@
                                       </label>
                                       <label>
                                         <p class="label-txt">Screenshots(if any)</p>
-                                        <input type="file" class="form-control" name="screenshot" id="inputGroupFile02"/>
+                                        <input type="file" class="form-control" name="screenshot" id="inputGroupFile02" required/>
                                         <div class="line-box">
                                           <div class="line"></div>
                                         </div>
