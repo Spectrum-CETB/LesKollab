@@ -1,2 +1,69 @@
-# LesKollab
-This is a project sharing and collaborations application
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub forks](https://img.shields.io/github/forks/Spectrum-CETB/LesKollab?style=social)](https://github.com/Spectrum-CETB/LesKollab/network/members)
+[![GitHub stars](https://img.shields.io/github/stars/Spectrum-CETB/LesKollab?style=social)](https://github.com/Spectrum-CETB/LesKollab/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/Spectrum-CETB/LesKollab.svg)](https://gitHub.com/Naereen/Spectrum-CETB/LesKollab/issues/)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/Spectrum-CETB/LesKollab.svg)](https://GitHub.com/Spectrum-CETB/LesKollab/pull/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
+
+# LesKollab (Web)
+
+[LesKollab](https://github.com/Spectrum-CETB/LesKollab/) is a project sharing and collaborations application to help both beginners and veterans work together.
+
+## Features
+
+* **COLLAB:** Be it a beginner or a professional, learning never stops, and neither does working together.
+* **MULTIPLE PROJECTS:** Users can take part in multiple projects as per their convenience, and similarly create multiple project proposals to invite collborators to work with.
+* **AS PER ONE'S INTERESTS:** Users can select the type of project they want to work on, or specify the tech stack for the same. Based on their selection, the platform will search and recommend projects.
+
+<br/>
+<h4>The functionalities of the platform shall include: </h4>
+<ul>
+<li>Searching for particular domains/projects</li>
+<li>Requesting to work on a project similar to your skill set</li>
+<li>List of projects you are currently working on</li>
+<li>A leaderboard to show the maximum contribution among members</li>
+</ul>
+  
+## Setting up the project
+
+
+
+## Running the UI tests
+
+
+
+## TECH STACK
+
+Our tech stack includes:
+
+
+## Branches
+
+The repository has the following permanent branches:
+
+ * **main** This contains the code which has been released.
+
+## WorkFlow
+
+
+
+
+## Screenshots
+
+
+
+
+## DISCUSSION
+
+We use DISCORD to discuss this project and interact with the community. If you're interested in contributing to this project, join us there!
+<br/>
+[![project chat](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/CjXEenvU)
+
+## Contact
+
+You can reach our organization at [SPECTRUM](https://spectrumcet.com/).
+
+## License
+
+LesKollab is licensed under the MIT License. 
