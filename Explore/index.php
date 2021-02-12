@@ -182,7 +182,7 @@
                                       </label>
                                       <label>
                                         <p class="label-txt">Screenshots(if any)</p>
-                                        <input type="file" class="form-control" name="screenshot" id="inputGroupFile02" required>
+                                        <input type="file" class="form-control" name="screenshot" id="inputGroupFile02"/>
                                         <div class="line-box">
                                           <div class="line"></div>
                                         </div>
