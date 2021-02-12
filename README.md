@@ -59,7 +59,8 @@ The repository has the following permanent branches:
 
 ## Screenshots
 
-
+![Main page](https://github.com/Spectrum-CETB/LesKollab/blob/main/assets/img/main_page.jpeg?raw=true)
+![Dashboard page](https://github.com/Spectrum-CETB/LesKollab/blob/main/assets/img/dashboard.jpeg?raw=true)
 
 
 ## DISCUSSION
