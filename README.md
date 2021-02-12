@@ -27,7 +27,7 @@
   
 ## Setting up the project
 
-## For this project you have to install XAMPP Control Panel, the procedures for installation and setup are as follows:
+### For this project you have to install XAMPP Control Panel, the procedures for installation and setup are as follows:
 
 * Install XAMPP Control Panel from here: https://www.apachefriends.org/download.html
 * After installation, move to the drive where you installed the panel and look for xampp folder, click on that and navigate to a folder named htdocs. 
