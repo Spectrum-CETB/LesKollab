@@ -35,9 +35,6 @@
 * After that, open up any browser and type 'localhost/phpmyadmin' in the address bar, this will open up a panel where you can upload the dummy database provided in this repository.
 * After successful upload, open another tab and type 'localhost/LesKollab' and then your site is up and running in your local server.
 
-## Running the UI tests
-
-
 
 ## TECH STACK
 
