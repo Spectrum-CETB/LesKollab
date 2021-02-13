@@ -50,7 +50,7 @@
             </div>
         </nav>
     </section>
-    <div style="width: 100vw;height: auto;background: url(&quot;https://wallpaperaccess.com/full/983279.jpg&quot;) bottom / cover no-repeat;padding-top: 10vh;">
+    <div style="width: 100vw;min-height: 100vh;background: url(&quot;https://wallpaperaccess.com/full/983279.jpg&quot;) bottom / cover no-repeat;padding-top: 10vh;">
         <div class="container" style="width: 100vw;height: auto;margin: 0px;padding: 0px;">
           <?php
             include("../components/common/messages.php");
