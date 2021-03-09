@@ -82,41 +82,41 @@
                                   <input type="password" class="form-control" name = "password" id="exampleInputPassword1" placeholder="Password">
                                 </div>
                                 <br>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Login</button>
                               </form>
                         </div>
                         <div class="carousel-item">
                             <form action = "./scripts/Register.php" method = "post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <br>
-                                  <label for="exampleInputEmail1">Email address</label>
-                                  <input type="email" class="form-control" name = "email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                  <label for="exampleInputEmail1">Email address <span style="color:red;">*</span></label>
+                                  <input type="email" class="form-control" name = "email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
                                   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                 </div>
                                 <div class="form-group">
-                                  <label for="exampleInputPassword1">Name</label>
-                                  <input type="text" class="form-control" name = "name" id="exampleInputPassword1" placeholder="Your name">
+                                  <label for="exampleInputPassword1">Name <span style="color:red;">*</span></label>
+                                  <input type="text" class="form-control" name = "name" id="exampleInputPassword1" placeholder="Full name" required>
                                 </div>
                                 <div class="form-group">
-                                  <label for="exampleInputPassword1">Password</label>
-                                  <input type="password" class="form-control" name = "password" id="exampleInputPassword1" placeholder="Password">
+                                  <label for="exampleInputPassword1">Password <span style="color:red;">*</span> <span>(should have minimum 6 characters)</span></label>
+                                  <input type="password" class="form-control" name = "password" min = "6" id="exampleInputPassword1" placeholder="Password" required>
                                 </div>
                                 <div class="form-group">
-                                    <br>
-                                  <label for="exampleInputEmail1">GitHub</label>
-                                  <input type="text" class="form-control" name = "github" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter github profile link">
+                                  <label for="exampleInputEmail1">GitHub <span style="color:red;">*</span></label>
+                                  <input type="text" class="form-control" name = "github" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter github profile link" required>
                                 </div>
                                 <div class="form-group">
-                                    <br>
-                                  <label for="exampleInputEmail1">LinkedIn</label>
-                                  <input type="text" class="form-control" name = "linkedin" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter linkedin profile link">
+                                  <label for="exampleInputEmail1">LinkedIn <span style="color:red;">*</span></label>
+                                  <input type="text" class="form-control" name = "linkedin" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter linkedin profile link" required>
                                 </div>
+                                <label for="inputGroupFile02">Profile Photo <span style="color:red;">*</span></label>
+                                  <br>
                                 <div class="input-group mb-3">
                                   <input type="file" class="form-control" name="profile" id="inputGroupFile02" required>
                                   <label class="input-group-text" for="inputGroupFile02">Upload</label>
                                 </div>
                                 <br>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Register</button>
                               </form>
                         </div>
                     </div>
