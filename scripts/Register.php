@@ -13,6 +13,7 @@
   $github = "";
   $linkedin = "";
   $profile = "";
+  $bio = "";
   $salt = uniqid();
   $createdAt = date('m-d-Y H:i');
 
@@ -37,8 +38,12 @@
     $linkedin = $_POST['linkedin'];
   }
 
+  if(isset($_POST['user_bio'])) {
+    $bio = $_POST['user_bio'];
+  }
 
-  if($email != "" && $password != "" && $github != "" && $linkedin != "") { // if the fields are not empty!
+
+  if($email != "" && $password != "" && $github != "" && $linkedin != "" && $bio != "") { // if the fields are not empty!
 
     // check for user
     $checkUser = "SELECT * FROM `users` WHERE `email` = '$email'";
@@ -107,7 +112,7 @@
           $newPassword = md5(md5($password.$salt));
 
           // insert user
-          $insertUser = "INSERT INTO `users`(`email`,`name`,`password`,`github`,`linkedin`,`profile`,`salt`,`createdAt`) VALUES('$email','$name','$newPassword','$github','$linkedin','$profile','$salt','$createdAt')";
+          $insertUser = "INSERT INTO `users`(`email`,`name`,`password`,`github`,`linkedin`,`profile`,`salt`,`bio` ,`createdAt`) VALUES('$email','$name','$newPassword','$github','$linkedin','$profile','$salt', '$bio','$createdAt')";
           $insertUserStatus = mysqli_query($conn,$insertUser) or die(mysqli_error($conn));
 
           if($insertUserStatus) { // if user is entered successfully!
