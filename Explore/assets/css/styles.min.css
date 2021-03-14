@@ -13,7 +13,7 @@ form {
     margin: 2vw 0px;
   }
   label span{
-      font-size: 0.9em;
+    font-size: 0.9em;
     margin: 10px;
     padding: 5px;
   }
@@ -65,6 +65,7 @@ form {
     display: inline-block;
     padding: 12px 24px;
     background: rgb(220,220,220);
+    background-color: white !important;
     font-weight: bold;
     color: rgb(120,120,120);
     border: none;
