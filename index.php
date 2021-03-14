@@ -33,14 +33,14 @@ if (isset($_SESSION['email'])) {
       ?>
       <div class="collapse navbar-collapse" id="navcol-1">
         <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link active" href="#" style="padding: 8px;padding-right: 3vw;font-size: 20px;">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#about_us" style="padding: 8px;padding-right: 3vw;font-size: 20px;">About Us</a></li>
           <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target=".bd-example-modal-lg" href="#" style="padding-right: 3vw;font-size: 20px;">Login / Register</a></li>
         </ul>
       </div>
     </div>
   </nav>
   <div class="jumbotron" style="height: 100vh;background: url(&quot;assets/img/bg.png&quot;) right / cover no-repeat;">
-    <div style="position:fixed;bottom:12vh;">
+    <div style="margin-top:10%;">
       <h2>Have Some Pending Projects?</h2>
       <i>
         <h5>Need Someone's help to complete it?</h5> <br>
@@ -52,6 +52,22 @@ if (isset($_SESSION['email'])) {
       </i>
       <br><br><br><br>
       <button type="button" class="btn btn-outline-warning" style="height: 10vh;width:27vw;font-size:1.5em;">Find a Project Partner</button>
+
+    </div>
+
+  </div>
+  <div class="jumbotron" style="height: 100vh;background: url(&quot;assets/img/bg.png&quot;) right / cover no-repeat;" id="about_us">
+    <div style="margin-top:10%;">
+      <h2>About Us</h2>
+      <i>
+       <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore<br>
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip<br>
+        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br>
+         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat<br>
+          non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!</p>
+      </i>
+      
 
     </div>
 
