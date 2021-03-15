@@ -39,7 +39,7 @@ if (isset($_SESSION['email'])) {
       </div>
     </div>
   </nav>
-  <div class="jumbotron" style="height: 100vh;background: url(&quot;assets/img/bg.png&quot;) right / cover no-repeat;">
+  <div class="jumbotron" style="height: 100vh;background: url(&quot;assets/img/bg.png&quot;) right / cover no-repeat;margin:0px;">
     <div style="margin-top:10%;">
       <h2>Have Some Pending Projects?</h2>
       <i>
@@ -56,8 +56,8 @@ if (isset($_SESSION['email'])) {
     </div>
 
   </div>
-  <div class="jumbotron" style="height: 100vh;background: url(&quot;assets/img/bg.png&quot;) right / cover no-repeat;" id="about_us">
-    <div style="margin-top:10%;">
+  <div class="jumbotron" style="height: 70vh;background-color:#f6fafd;margin:0px;" id="about_us">
+    <center><div style="margin-top:5%;">
       <h2>About Us</h2>
       <i>
        <br>
@@ -69,7 +69,7 @@ if (isset($_SESSION['email'])) {
       </i>
       
 
-    </div>
+    </div></center>
 
   </div>
 
