@@ -75,8 +75,8 @@ You can reach our organization at [SPECTRUM](https://spectrumcet.com/).
 
 LesKollab is licensed under the MIT License. 
 
-## Contributor 
-### Credit goes to these people: ✨
+## Contributors:✨
+
 
 <table>
 	<tr>
