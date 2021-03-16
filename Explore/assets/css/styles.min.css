@@ -26,6 +26,7 @@ form {
     letter-spacing: 1px;
     color: rgb(120,120,120);
     transition: ease .3s;
+    margin-top: -0.3rem;
   }
   .input {
     width: 100%;
@@ -58,7 +59,7 @@ form {
   }
   
   .label-active {
-    top: -3em;
+    top: -2em;
   }
   
   button {
