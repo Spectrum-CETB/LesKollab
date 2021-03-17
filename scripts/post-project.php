@@ -40,6 +40,31 @@
     $field = $_POST['field'];
   }
 
+  function addStackToProject($stackname,$Projectid,$conn) {
+   
+    $getStackid = "SELECT * from `stack` where StackName='$stackname'";
+    $stackId_ifExist = mysqli_query($conn,$getStackid) or die(mysqli_error($conn));
+    if ($stackId_ifExist->num_rows != 0){   //if there is already stack with this name
+      $data=mysqli_fetch_assoc($stackId_ifExist);
+      $stackid=$data['Sid'];
+      $insertProject_stack = "INSERT INTO `project_stack` Values($Projectid,$stackid)";
+      echo $insertProject_stack;
+      $insertProjectStatus = mysqli_query($conn,$insertProject_stack) or die(mysqli_error($conn));
+      return $insertProjectStatus;
+    }
+    else{                                                               // if there is no stack with this name
+      $stack = "INSERT INTO `stack` (`StackName`) Values('$stackname')";  //insert the stack name 
+      $insertstack = mysqli_query($conn,$stack) or die(mysqli_error($conn));
+      $getStackid = "SELECT * from `stack` where StackName='$stackname'";
+      $stackId_ifExist = mysqli_query($conn,$getStackid) or die(mysqli_error($conn));
+      $data=mysqli_fetch_assoc($stackId_ifExist);
+      $stackid=$data['Sid'];
+      $insertProject_stack = "INSERT INTO `project_stack` Values($Projectid,$stackid)";
+      $insertProjectStatus = mysqli_query($conn,$insertProject_stack) or die(mysqli_error($conn));
+      return $insertProjectStatus;
+    }
+  }
+
   if($email != "" && $pname != "" && $pdes != "" && $plink != "" && $tags != "" && $field != "") { // if the fields are not empty!
     //Folders for uploading files
     $uploadDirectory = "../Explore/projects/$pname/";
@@ -63,7 +88,7 @@
             echo "File is an image - " . $checkPhoto["mime"] . ".";
             $uploadOk = 1;
         } else {
-            echo "File is not an image.";
+          $message= "File is not an image.";
             $uploadOk = 0;
         }
 
@@ -71,36 +96,45 @@
 
     // Check if file already exists
     if (file_exists($photo_image)) {
-      echo "Sorry, file already exists.";
+      $message= "Sorry, file already exists.";
       $uploadOk = 0;
     }
 
     // Check file size
     if ($_FILES["screenshot"]["size"] > 500000) {
-      echo "Sorry, your file is too large.";
+      $message= "Sorry, your file is too large.";
       $uploadOk = 0;
     }
 
     // Allow certain file formats
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
     && $imageFileType != "gif" ) {
-      echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+      $message= "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
       $uploadOk = 0;
     }
 
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
-      header('Location: ../Explore/index.php?message=Some error occured while uploading your pic!');
+      header("Location: ../Explore/index.php?message=$message");
     // if everything is ok, try to upload file
     } else {
       $screenshot = basename($_FILES["screenshot"]["name"]);
       if (move_uploaded_file($_FILES["screenshot"]["tmp_name"], $photo_image)) {
 
         // insert into the database!
-        $insertProject = "INSERT INTO `projects`(`email`,`pname`,`pdes`,`plink`,`screenshot`,`tags`,`field`,`createdAt`) VALUES('$email','$pname','$pdes','$plink','$screenshot','$tags','$field','$createdAt')";
+        $insertProject = "INSERT INTO `projects`(`email`,`pname`,`pdes`,`plink`,`screenshot`,`field`,`createdAt`) VALUES('$email','$pname','$pdes','$plink','$screenshot','$field','$createdAt')";
         $insertProjectStatus = mysqli_query($conn,$insertProject) or die(mysqli_error($conn));
 
-        if($insertProjectStatus) { // insert into the database!
+        $getProjectid = "SELECT id from `projects` where pname='$pname' and email='$email'";
+        $Pid=mysqli_query($conn,$getProjectid) or die(mysqli_error($conn));
+        $data=mysqli_fetch_assoc($Pid);
+        $P_id=$data['id'];                //get the id of the project
+        $stacks = explode(" ", $tags);    //get array of stacks 
+        for( $i=0; $i<count($stacks); $i++){
+         $insrtStacks= addStackToProject($stacks[$i],$P_id ,$conn); //try t insert stack with prject id in Project Stack table
+        }
+
+        if($insertProjectStatus &&   $insrtStacks) { // insert into the database!
 
           header('Location: ../Explore/index.php?message=Project added!');
 
