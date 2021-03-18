@@ -22,6 +22,8 @@ if (isset($_SESSION['email'])) {
   <link rel="stylesheet" href="assets/css/Button-Change-Text-on-Hover.css">
   <link rel="stylesheet" href="assets/css/Button-Ripple-Effect-Animation-Wave-Pulse.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <!--Font Awesome CSS-->
+  <link rel="stylesheet" href="assets/css/all.min.css">
 </head>
 
 <body onLoad="myFunction()">
@@ -72,6 +74,23 @@ if (isset($_SESSION['email'])) {
     </div></center>
 
   </div>
+
+  <!-- Start Footer Section-->
+    <footer class="container-fluid bg-dark mt-5">
+        <div class="container">
+            <div class="row py-3">
+                <div class="col-md-6 mt-2">
+                    <span class="pr-2 text-white ">Follow us on:</span>
+                    <a href="https://github.com/Spectrum-CETB/LesKollab" target="_blank" class="pr-2 fi-color"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p class="text-white mt-2">Copyright &copy <?php echo date('Y'). " "; ?>LesKollab</p> 
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- End Footer Section-->
 
   <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -152,6 +171,7 @@ if (isset($_SESSION['email'])) {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/Button-Ripple-Effect-Animation-Wave-Pulse.js"></script>
   <script src="assets/js/Snackbar.js"></script>
+  <script src="assets/js/all.min.js"></script>
   <script>
     $('#myModal').on('shown.bs.modal', function() {
       $('#myInput').trigger('focus')
