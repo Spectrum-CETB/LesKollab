@@ -23,10 +23,13 @@ if (isset($_SESSION['email'])) {
   <link rel="stylesheet" href="assets/css/Button-Ripple-Effect-Animation-Wave-Pulse.css">
   <link rel="stylesheet" href="assets/css/styles.css">
   
+  <!--Font Awesome CSS-->
+  <link rel="stylesheet" href="assets/css/all.min.css">
+  
   <!-- For adding Font style -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">  
+  
 </head>
 
 <body onLoad="myFunction()">
@@ -79,8 +82,10 @@ if (isset($_SESSION['email'])) {
     </div></center>
 
   </div>
+
 <!-- The previous Modal has been separated and thus the courosel has been removed -->
   <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modallogin">
+
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header text-center">
@@ -165,10 +170,28 @@ if (isset($_SESSION['email'])) {
       </div>
     </div>
   </div>
+  
+    <!-- Start Footer Section-->
+    <footer class="container-fluid bg-dark mt-5">
+        <div class="container">
+            <div class="row py-3">
+                <div class="col-md-6 mt-2">
+                    <span class="pr-2 text-white ">Follow us on:</span>
+                    <a href="https://github.com/Spectrum-CETB/LesKollab" target="_blank" class="pr-2 fi-color"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p class="text-white mt-2">Copyright &copy <?php echo date('Y'). " "; ?>LesKollab</p> 
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- End Footer Section-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/Button-Ripple-Effect-Animation-Wave-Pulse.js"></script>
   <script src="assets/js/Snackbar.js"></script>
+  <script src="assets/js/all.min.js"></script>
   <script>
     $('#myModal').on('shown.bs.modal', function() {
       $('#myInput').trigger('focus')
