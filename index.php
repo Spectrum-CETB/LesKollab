@@ -26,73 +26,92 @@ if (isset($_SESSION['email'])) {
   <link rel="stylesheet" href="assets/css/styles.css">
   <!--Font Awesome CSS-->
   <link rel="stylesheet" href="assets/css/all.min.css">
+  <style>
+    .ajheader {
+      
+      background: url("assets/img/bg.png");
+      background-size: cover;
+      background-repeat: no-repeat
+    }
+  </style>
 </head>
 
 <body onLoad="myFunction()">
-
-  <nav class="navbar navbar-light navbar-expand-md fixed-top" style="height: 10vh;background: rgba(255,255,255,0.18);">
-    <div class="container-fluid"><a class="navbar-brand" href="#" style="font-size: 30px;font-family: Aclonica, sans-serif;">LesKollab</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-      <?php
+  <div class="ajheader container-fluid">
+    <nav class="navbar navbar-light navbar-expand-md" style="background: rgba(255,255,255,0.18);">
+      <div class="container-fluid"><a class="navbar-brand" href="#"
+          style="font-size: 30px;font-family: Aclonica, sans-serif;">LesKollab</a><button data-toggle="collapse"
+          class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+            class="navbar-toggler-icon"></span></button>
+        <?php
       include("components/common/messages.php");
       ?>
-      <div class="collapse navbar-collapse" id="navcol-1">
-        <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link active" href="#about_us" style="padding: 8px;padding-right: 3vw;font-size: 20px;">About Us</a></li>
-          <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target=".bd-example-modal-lg" href="#" style="padding-right: 3vw;font-size: 20px;">Login / Register</a></li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link active" href="#about_us" style="padding: 8px;padding-right: 3vw;font-size: 20px;">About Us</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target=".bd-example-modal-lg"
+                href="#" style="padding-right: 3vw;font-size: 20px;">Login / Register</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid mt-4">
+      <div class="jumbotron" style="background:none;z-index:-2">
+        <div>
+          <h2>Have Some Pending Projects?</h2>
+          <i>
+            <h5>Need Someone's help to complete it?</h5> <br>
+            <p>Ideas reshape the world, but there's always a staring and learning point.<br> It's time to redefine the way we learn.</p>
+            Learnt a new skill, but have no one to work on a starting project with?<br>
+            Thought of an idea but don't have the necessar tech stacks?<br>
+            Search for people to collaborate with, or propose a project and let collaborators find you.<br />
+            With LesKollab, it's time to implement and learn things on the get go, but not alone anymore!</p>
+          </i>
+          <br><br><br><br>
+          <button type="button" class="btn btn-outline-warning" style="font-size:1.5em;font-weight:bold">Find a Project Partner</button>
+
+        </div>
+
       </div>
     </div>
-  </nav>
-  <div class="jumbotron" style="height: 100vh;background: url(&quot;assets/img/bg.png&quot;) right / cover no-repeat;margin:0px;">
-    <div style="margin-top:10%;">
-      <h2>Have Some Pending Projects?</h2>
-      <i>
-        <h5>Need Someone's help to complete it?</h5> <br>
-        <p>Ideas reshape the world, but there's always a staring and learning point.<br> It's time to redefine the way we learn.</p>
-        Learnt a new skill, but have no one to work on a starting project with?<br>
-        Thought of an idea but don't have the necessar tech stacks?<br>
-        Search for people to collaborate with, or propose a project and let collaborators find you.<br />
-        With LesKollab, it's time to implement and learn things on the get go, but not alone anymore!</p>
-      </i>
-      <br><br><br><br>
-      <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target=".bd-example-modal-lg.project" style="height: 10vh;width:27vw;font-size:1.5em;">Find a Project Partner</button>
+  </div>
 
+  <!-- 1st jumbotron end -->
+
+  <div class="container ">
+    <div class="jumbotron" style="background-color:#f6fafd;" id="about_us">
+        <div>
+          <h2 class="text-center">About Us</h2>
+          <i>
+            <br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore<br>
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip<br>
+              ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br>
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat<br>
+              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!</p>
+          </i>
+        </div>
     </div>
-
   </div>
-  <div class="jumbotron" style="height: 70vh;background-color:#f6fafd;margin:0px;" id="about_us">
-    <center><div style="margin-top:5%;">
-      <h2>About Us</h2>
-      <i>
-       <br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore<br>
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip<br>
-        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br>
-         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat<br>
-          non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!</p>
-      </i>
-      
-
-    </div></center>
-
-  </div>
+  <!-- end of 2nd jumbotron -->
 
   <!-- Start Footer Section-->
-    <footer class="container-fluid bg-dark mt-5">
-        <div class="container">
-            <div class="row py-3">
-                <div class="col-md-6 mt-2">
-                    <span class="pr-2 text-white ">Follow us on:</span>
-                    <a href="https://github.com/Spectrum-CETB/LesKollab" target="_blank" class="pr-2 fi-color"><i class="fab fa-github"></i></a>
-                </div>
-                <div class="col-md-6 text-right">
-                    <p class="text-white mt-2">Copyright &copy <?php echo date('Y'). " "; ?>LesKollab</p> 
-                </div>
-            </div>
+  <footer class="container-fluid bg-dark text-center">
+    <div class="container">
+      <div class="row py-3">
+        <div class="col-md-6 mt-2">
+          <!-- for github logo previously it was blue now it is black -->
+          <span class="pr-2 text-white ">Follow us on:</span>
+          <a href="https://github.com/Spectrum-CETB/LesKollab" target="_blank" class="pr-2 fi-color"><i class="fab fa-github" style="color:#fff;background-color:black;"></i></a>
         </div>
-    </footer>
+        <div class="col-md-6">
+          <p class="text-white mt-2">Copyright &copy <?php echo date('Y'). " "; ?>LesKollab</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <!-- End Footer Section-->
+  <!-- End Footer Section-->
 
   <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -153,7 +172,7 @@ if (isset($_SESSION['email'])) {
                     <input type="file" class="form-control" name="profile" id="inputGroupFile02" required>
                     <label class="input-group-text" for="inputGroupFile02">Upload</label>
                   </div>
-                  
+
                   <div class="form-group">
                     <label for="user_bio">Bio <span style="color:red;">*</span></label>
                     <textarea class="form-control" id="user_bio" name="user_bio" rows="3" placeholder="Add a Bio :)" required></textarea>
@@ -234,7 +253,7 @@ if (isset($_SESSION['email'])) {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
   <script src="assets/js/Button-Ripple-Effect-Animation-Wave-Pulse.js"></script>
-  <script src="assets/js/Snackbar.js"></script> 
+  <script src="assets/js/Snackbar.js"></script>
   <script src="assets/js/all.min.js"></script>
   <script>
     $('#myModal').on('shown.bs.modal', function() {
