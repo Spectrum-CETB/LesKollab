@@ -17,6 +17,8 @@ if (isset($_SESSION['email'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>LesKollab</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700">
   <link rel="stylesheet" href="assets/css/Button-Change-Text-on-Hover.css">
@@ -53,7 +55,7 @@ if (isset($_SESSION['email'])) {
         With LesKollab, it's time to implement and learn things on the get go, but not alone anymore!</p>
       </i>
       <br><br><br><br>
-      <button type="button" class="btn btn-outline-warning" style="height: 10vh;width:27vw;font-size:1.5em;">Find a Project Partner</button>
+      <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target=".bd-example-modal-lg.project" style="height: 10vh;width:27vw;font-size:1.5em;">Find a Project Partner</button>
 
     </div>
 
@@ -167,14 +169,84 @@ if (isset($_SESSION['email'])) {
       </div>
     </div>
   </div>
+
+
+  <div class="modal fade bd-example-modal-lg project" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <h2>Register your interests to find a project partner</h2>
+                <form action="#" method="post">
+
+                  <div class="multi_select_box interested_areas form-group">
+                  <label for="interested_areas">Areas Interested</label>
+                  <br>
+                         <select class="multi_select interested_areas" multiple data-selected-text-format="count > 3">
+                            <option value="Webd">Webd</option>
+                            <option value="Appd">Appd</option>
+                            <option value="ML">ML</option>
+                            <option value="Frontend">Frontend</option>
+                            <option value="Backend">Backend</option>
+                            <option value="Data Science">Data Science</option>
+                         </select>
+                  </div> 
+
+                  <div class="multi_select_box technologies form-group">
+                  <label for="technologies">Technologies Interested</label>
+                  <br>
+                         <select class="multi_select technologies" multiple data-selected-text-format="count > 3">
+                            <option value="HTML">HTML</option>
+                            <option value="CSS">CSS</option>
+                            <option value="Django">Django</option>
+                            <option value="Node.js">Node.js</option>
+                            <option value="PHP">PHP</option>
+                            <option value="REST">REST</option>
+                         </select>
+                  </div> 
+
+                  <div class="form-group">
+                    <label for="experiencelevel">Expereince</label>
+                    <input type="number" class="form-control" name="experiencelevel" id="experience" placeholder="Enter in years Ex: 3">
+                  </div>
+
+                  <div class="form-group ">
+                  <label for="project-level">  Project Level Looking for</label>
+                  <br>
+                    <select id="project-level" name="project-level">
+                      <option value="beginner">Beginner Level</option>
+                      <option value="intermediate">Intermediate Level</option>
+                      <option value="advanced">Advanced Level</option>
+                    </select>
+                  </div>
+      
+                  <button type="submit" class="btn btn-primary">Find a Partner</button>
+                </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
   <script src="assets/js/Button-Ripple-Effect-Animation-Wave-Pulse.js"></script>
-  <script src="assets/js/Snackbar.js"></script>
+  <script src="assets/js/Snackbar.js"></script> 
   <script src="assets/js/all.min.js"></script>
   <script>
     $('#myModal').on('shown.bs.modal', function() {
       $('#myInput').trigger('focus')
+    })
+  </script>
+  <script>
+    $(document).ready(function() {
+      $('.multi_select.interested_areas').selectpicker();
+    })
+    $(document).ready(function() {
+      $('.multi_select.technologies').selectpicker();
     })
   </script>
 </body>
