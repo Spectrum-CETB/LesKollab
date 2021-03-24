@@ -24,8 +24,14 @@ if (isset($_SESSION['email'])) {
   <link rel="stylesheet" href="assets/css/Button-Change-Text-on-Hover.css">
   <link rel="stylesheet" href="assets/css/Button-Ripple-Effect-Animation-Wave-Pulse.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+  
   <!--Font Awesome CSS-->
   <link rel="stylesheet" href="assets/css/all.min.css">
+  
+  <!-- For adding Font style -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">  
+  
   <style>
     .ajheader {
       
@@ -34,6 +40,7 @@ if (isset($_SESSION['email'])) {
       background-repeat: no-repeat
     }
   </style>
+
 </head>
 
 <body onLoad="myFunction()">
@@ -46,13 +53,13 @@ if (isset($_SESSION['email'])) {
         <?php
       include("components/common/messages.php");
       ?>
-        <div class="collapse navbar-collapse" id="navcol-1">
-          <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link active" href="#about_us" style="padding: 8px;padding-right: 3vw;font-size: 20px;">About Us</a></li>
-            <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target=".bd-example-modal-lg"
-                href="#" style="padding-right: 3vw;font-size: 20px;">Login / Register</a></li>
-          </ul>
-        </div>
+      <div class="collapse navbar-collapse" id="navcol-1">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link active" href="#about_us" style="padding: 8px;padding-right: 3vw;font-size: 20px;">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target="#modallogin" href="#" style="padding-right: 3vw;font-size: 20px;">Login</a></li>
+          <!-- Different nav bar link for new LOGIN and REGISTER modals -->
+          <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target="#modalregister" href="#" style="padding-right: 3vw;font-size: 20px;">Register</a></li>
+        </ul>
       </div>
     </nav>
     <div class="container-fluid mt-4">
@@ -95,41 +102,22 @@ if (isset($_SESSION['email'])) {
   </div>
   <!-- end of 2nd jumbotron -->
 
-  <!-- Start Footer Section-->
-  <footer class="container-fluid bg-dark text-center">
-    <div class="container">
-      <div class="row py-3">
-        <div class="col-md-6 mt-2">
-          <!-- for github logo previously it was blue now it is black -->
-          <span class="pr-2 text-white ">Follow us on:</span>
-          <a href="https://github.com/Spectrum-CETB/LesKollab" target="_blank" class="pr-2 fi-color"><i class="fab fa-github" style="color:#fff;background-color:black;"></i></a>
-        </div>
-        <div class="col-md-6">
-          <p class="text-white mt-2">Copyright &copy <?php echo date('Y'). " "; ?>LesKollab</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+<!-- The previous Modal has been separated and thus the courosel has been removed -->
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modallogin">
 
-  <!-- End Footer Section-->
 
-  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header text-center">
+        <h4 class="modal-title" style="font-family: 'Permanent Marker', cursive;">LOGIN</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <button data-target="#carouselExampleIndicators" data-slide-to="0" type="button" class="btn btn-outline-info btn-lg active">Login</button>
-            <button data-target="#carouselExampleIndicators" data-slide-to="1" type="button" class="btn btn-outline-warning btn-lg">Register</button>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
+
                 <form action="./scripts/Login.php" method="post">
                   <div class="form-group">
-                    <br>
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -141,11 +129,28 @@ if (isset($_SESSION['email'])) {
                   <br>
                   <button type="submit" class="btn btn-primary">Login</button>
                 </form>
-              </div>
-              <div class="carousel-item">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Similar New Modal for REGISTER -->
+
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modalregister">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title" style="font-family: 'Permanent Marker', cursive;">REGISTER</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
                 <form action="./scripts/Register.php" method="post" enctype="multipart/form-data">
                   <div class="form-group">
-                    <br>
+                    
                     <label for="exampleInputEmail1">Email address <span style="color:red;">*</span></label>
                     <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -180,14 +185,28 @@ if (isset($_SESSION['email'])) {
                   <br>
                   <button type="submit" class="btn btn-primary">Register</button>
                 </form>
-              </div>
-            </div>
-          </div>
 
         </div>
       </div>
     </div>
   </div>
+  
+    <!-- Start Footer Section-->
+    <footer class="container-fluid bg-dark mt-5">
+        <div class="container">
+            <div class="row py-3">
+                <div class="col-md-6 mt-2">
+                    <span class="pr-2 text-white ">Follow us on:</span>
+                    <a href="https://github.com/Spectrum-CETB/LesKollab" target="_blank" class="pr-2 fi-color"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p class="text-white mt-2">Copyright &copy <?php echo date('Y'). " "; ?>LesKollab</p> 
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- End Footer Section-->
 
 
   <div class="modal fade bd-example-modal-lg project" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -249,6 +268,7 @@ if (isset($_SESSION['email'])) {
       </div>
     </div>
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
