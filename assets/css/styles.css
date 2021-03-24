@@ -1,0 +1,12 @@
+.multi_select_box{
+    width: 18000px;
+    margin: 80 px auto;
+}
+.multi_select_box select{
+    width: 18000px;
+}
+.multi_select_box button{
+    background-color: blue !important;
+    color: #fff !important;
+    padding: 15px 25 px;
+}
