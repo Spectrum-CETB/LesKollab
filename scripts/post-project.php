@@ -50,7 +50,7 @@
 
     }
 
-    $photo_image = $uploadDirectory.basename($_FILES["screenshot"]["name"]);
+    $photo_image = $uploadDirectory.basename(time() .$_FILES["screenshot"]["name"]);
 
     $uploadOk = 1;
 
@@ -93,7 +93,7 @@
       header('Location: ../Explore/index.php?message=Some error occured while uploading your pic!');
     // if everything is ok, try to upload file
     } else {
-      $screenshot = basename($_FILES["screenshot"]["name"]);
+      $screenshot = basename(time() .$_FILES["screenshot"]["name"]);
       if (move_uploaded_file($_FILES["screenshot"]["tmp_name"], $photo_image)) {
 
         // insert into the database!
