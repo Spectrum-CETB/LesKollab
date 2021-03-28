@@ -45,11 +45,10 @@ if (isset($_SESSION['email'])) {
 
 <body onLoad="myFunction()">
   <div class="ajheader container-fluid">
-    <nav class="navbar navbar-light navbar-expand-md" style="background: rgba(255,255,255,0.18);">
-      <div class="container-fluid"><a class="navbar-brand" href="#"
-          style="font-size: 30px;font-family: Aclonica, sans-serif;">LesKollab</a><button data-toggle="collapse"
-          class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
-            class="navbar-toggler-icon"></span></button>
+    <nav class="navbar navbar-light navbar-expand-md py-0" style="background: rgba(255,255,255,0.18);">
+      <!-- <img src="assets/images/logo1.png" alt="" height="70px" width="100px"> -->
+      <div class="container-fluid"><a class="navbar-brand py-0" href="index.php" style="font-size: 30px;font-family: Aclonica, sans-serif;"><img src="assets/images/logo1.png" alt="" height="80px" width="100px">LesKollab</a>
+          <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <?php
       include("components/common/messages.php");
       ?>
@@ -185,28 +184,33 @@ if (isset($_SESSION['email'])) {
                   <br>
                   <button type="submit" class="btn btn-primary">Register</button>
                 </form>
-
         </div>
       </div>
     </div>
   </div>
   
     <!-- Start Footer Section-->
-    <footer class="container-fluid bg-dark mt-5">
-        <div class="container">
-            <div class="row py-3">
-                <div class="col-md-6 mt-2">
-                    <span class="pr-2 text-white ">Follow us on:</span>
-                    <a href="https://github.com/Spectrum-CETB/LesKollab" target="_blank" class="pr-2 fi-color"><i class="fab fa-github"></i></a>
-                </div>
-                <div class="col-md-6 text-right">
-                    <p class="text-white mt-2">Copyright &copy <?php echo date('Y'). " "; ?>LesKollab</p> 
-                </div>
-            </div>
+    <div class="container-fluid bg-dark footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-5 col-sm-4" style="padding-top:35px;">
+            <span class="pr-2 text-white text-center">Follow us on:</span>
+            <a href="https://github.com/Spectrum-CETB/LesKollab" target="_blank" class="pr-2 fi-color"><i class="fab fa-github"></i></a>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-3">
+            <a href="index.php"><img src="assets/images/logo_footer.png" class="img-fluid" alt="" height="100px" width="100px"></a>
+          </div>
+          <div class="col-lg-5 col-md-5 col-sm-5 text-right" style="padding-top:30px;">
+            <p class="text-white mt-2">Copyright &copy <?php echo date('Y'). " "; ?>LesKollab</p>
+          </div>
         </div>
-    </footer>
-
+      </div>
+    </div>
     <!-- End Footer Section-->
+    
+
+
+
 
 
   <div class="modal fade bd-example-modal-lg project" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
