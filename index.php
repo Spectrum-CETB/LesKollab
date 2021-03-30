@@ -208,7 +208,7 @@ if (isset($_SESSION['email'])) {
             <form action="./scripts/contact.php" method="POST">
               <div class="form-group">
                 <label for="exampleInputEmail1">Name</label>
-                <input type="text"  class="form-control" name="name" id=""  placeholder="Enter Your Name" required>
+                <input type="text"  class="form-control" name="cname" id=""  placeholder="Enter Your Name" required>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
@@ -220,7 +220,7 @@ if (isset($_SESSION['email'])) {
               </div>
               <div class="form-group">
               <label for="message">Message</label>
-              <textarea class="form-control" id="msg" name="msg" rows="3" placeholder="Enter your message"></textarea>  
+              <textarea class="form-control" id="msg" name="msg" rows="3" placeholder="Enter your message" required></textarea>  
               </div>
               <br>
               <button type="submit" class="btn btn-primary">Submit</button>
