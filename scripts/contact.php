@@ -21,6 +21,19 @@ if(isset($_POST['email'])) {
     $name = $_POST['name'];
   }
 
-  header('Location: ../index.php?message=Thank You for Contacting us');
+    // insert user
+    $insertUser = "INSERT INTO `contact`(`name`,`email`,`number`,`msg`) VALUES(`$name`,`$email`,`$number`,`$msg`)";
+    $insertUserStatus = mysqli_query($conn,$insertUser);
+
+    if($insertUserStatus) { 
+
+        header('Location: ../index.php?message=Unable to Contact! Try again some time later!');
+        
+    } else {
+        
+        header('Location: ../index.php?message=Thank You for Contacting us');
+
+    }
+  
 
 ?>

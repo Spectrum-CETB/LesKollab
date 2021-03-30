@@ -205,7 +205,7 @@ if (isset($_SESSION['email'])) {
     </div>
     <div class="modal-body">
 
-            <form action="./scripts/contact.php" method="post">
+            <form action="./scripts/contact.php" method="POST">
               <div class="form-group">
                 <label for="exampleInputEmail1">Name</label>
                 <input type="text"  class="form-control" name="name" id=""  placeholder="Enter Your Name" required>
