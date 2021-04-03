@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 12, 2021 at 05:35 PM
+-- Generation Time: Mar 31, 2021 at 01:34 PM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.3.18
+-- PHP Version: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,35 @@ SET time_zone = "+00:00";
 --
 -- Database: `leskollab`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `name` text NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `number` int(200) NOT NULL,
+  `msg` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`name`, `email`, `number`, `msg`) VALUES
+('a', '111', 90, 'a'),
+('COLE', '', 0, ''),
+('COLE', '111ar', 0, ''),
+('Arpit Jain', '111arpit1@gmail.com', 0, 'aaaaaaaaaaaaa'),
+('Arpit Jain', '111arpit1@gmail.com', 0, 'aaaaaaaaaaaaa'),
+('Arpit Jain', 'arpit456jain@gmail.com', 0, 'helo'),
+('Arpit Jain', 'arpit4567jain@gmail.com', 0, 'a'),
+('', '', 998, ''),
+('Arpit Jain', '111arpit1@gmail.com', 2147483647, 'This is testing msg by arpit jain '),
+('AMan', 'excelresearchpapers@gmail.com', 2147483647, 'testing 2 by aman');
 
 -- --------------------------------------------------------
 
@@ -59,6 +88,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `name`, `password`, `github`, `linkedin`, `profile`, `salt`, `bio`, `createdAt`) VALUES
+(9, '111arpit1@gmail.com', 'AJ', '123456789', '', '', '', '', '', '');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -88,7 +124,7 @@ ALTER TABLE `projects`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
