@@ -64,7 +64,7 @@
 
         }
 
-        $photo_image = $uploadDirectory.basename($_FILES["profile"]["name"]);
+        $photo_image = $uploadDirectory.basename(time() .$_FILES["profile"]["name"]);
 
         $uploadOk = 1;
 
@@ -107,7 +107,7 @@
         header('Location: ../index.php?message=Some error occured while uploading your pic!');
       // if everything is ok, try to upload file
       } else {
-        $profile = basename($_FILES["profile"]["name"]);
+        $profile = basename(time() .$_FILES["profile"]["name"]);
         if (move_uploaded_file($_FILES["profile"]["tmp_name"], $photo_image)) {
           $newPassword = md5(md5($password.$salt));
 
