@@ -58,9 +58,11 @@ if (isset($_SESSION['email'])) {
           <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target="#modallogin" href="#" style="padding-right: 3vw;font-size: 20px;">Login</a></li>
           <!-- Different nav bar link for new LOGIN and REGISTER modals -->
           <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target="#modalregister" href="#" style="padding-right: 3vw;font-size: 20px;">Register</a></li>
+          <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target="#modalcontact" href="#" style="padding-right: 3vw;font-size: 20px;">Contact Us</a></li>
         </ul>
       </div>
     </nav>
+    
     <div class="container-fluid mt-4">
       <div class="jumbotron" style="background:none;z-index:-2">
         <div>
@@ -189,6 +191,46 @@ if (isset($_SESSION['email'])) {
     </div>
   </div>
   
+  <!-- similar modal for contact  -->
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modalcontact">
+
+
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+    <h4 class="modal-title" style="font-family: 'Permanent Marker', cursive;">Contact Us</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+            <form action="./scripts/contact.php" method="POST">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Name</label>
+                <input type="text"  class="form-control" name="cname" id=""  placeholder="Enter Your Name" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" name="email" id=""  placeholder="Enter email" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Phone Number</label>
+                <input type="phone" class="form-control" name="number" id="" placeholder="Eneter you phone number" required>
+              </div>
+              <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="msg" name="msg" rows="3" placeholder="Enter your message" required></textarea>  
+              </div>
+              <br>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+    </div>
+  </div>
+</div>
+</div>
+
     <!-- Start Footer Section-->
     <div class="container-fluid bg-dark footer">
       <div class="container">
