@@ -6,7 +6,7 @@ document.getElementById('registerBtn').disabled = true;
   var number = document.getElementById("number");
   var length = document.getElementById("length");
   var passwordmatch = document.getElementById("passwordmatch");
-  console.log(passwordmatch)
+  
   // When the user clicks on the password field, show the message box
   myInput.onfocus = function() {
     document.getElementById("message").style.display = "block";
@@ -76,18 +76,20 @@ myinput2.onblur = function() {
   }
 
   myinput2.onkeyup = function() {
-    console.log(myInput.value,myinput2.value);
+    
     // validating confirm password
     if (myInput.value == myinput2.value)
     {
         passwordmatch.classList.remove("invalid");
         passwordmatch.classList.add("valid");
+        document.getElementById("passwordmatch").innerHTML = "Password Matched";
         document.getElementById('registerBtn').disabled = false;
     }
     else
     {
         passwordmatch.classList.remove("valid");
         passwordmatch.classList.add("invalid");
+        document.getElementById("passwordmatch").innerHTML = "Passwords didn't match";
     }
   
   }

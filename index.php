@@ -199,7 +199,7 @@ if (isset($_SESSION['email'])) {
                 title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                 required>
               <div id="message2" class="mt-2">
-                <p id="passwordmatch" class="invalid"> <b>Password</b>Matched</p>
+                <b><p id="passwordmatch" class="invalid"> Passwords didn't match</p></b>
               </div>
             </div>
             <div class="form-group">
