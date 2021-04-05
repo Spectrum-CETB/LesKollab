@@ -243,7 +243,7 @@ if (isset($_SESSION['email'])) {
             <a href="index.php"><img src="assets/images/logo_footer.png" class="img-fluid" alt="" height="100px" width="100px"></a>
           </div>
           <div class="col-lg-5 col-md-5 col-sm-5 text-right" style="padding-top:30px;">
-            <p class="text-white mt-2">Copyright &copy <?php echo date('Y'). " "; ?>LesKollab</p>
+            <p class="text-white mt-2">Copyright &copy <?php echo date('Y'). " "; ?>LesKollab<span><a href="admin/admin_login.php" class="btn btn-secondary" style="margin-left:10px;">Admin Login</a></span></p>
           </div>
         </div>
       </div>
