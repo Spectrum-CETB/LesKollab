@@ -90,6 +90,7 @@ myinput2.onblur = function() {
         passwordmatch.classList.remove("valid");
         passwordmatch.classList.add("invalid");
         document.getElementById("passwordmatch").innerHTML = "Passwords didn't match";
+        document.getElementById('registerBtn').disabled = true;
     }
   
   }
