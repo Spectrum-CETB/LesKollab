@@ -24,6 +24,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `name` text NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `number` int(200) NOT NULL,
+  `msg` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`name`, `email`, `number`, `msg`) VALUES
+('a', '111', 90, 'a'),
+('COLE', '', 0, ''),
+('COLE', '111ar', 0, ''),
+('Arpit Jain', '111arpit1@gmail.com', 0, 'aaaaaaaaaaaaa'),
+('Arpit Jain', '111arpit1@gmail.com', 0, 'aaaaaaaaaaaaa'),
+('Arpit Jain', 'arpit456jain@gmail.com', 0, 'helo'),
+('Arpit Jain', 'arpit4567jain@gmail.com', 0, 'a'),
+('', '', 998, ''),
+('Arpit Jain', '111arpit1@gmail.com', 2147483647, 'This is testing msg by arpit jain '),
+('AMan', 'excelresearchpapers@gmail.com', 2147483647, 'testing 2 by aman');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `projects`
 --
 
@@ -84,7 +113,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `name`, `password`, `github`, `linkedin`, `profile`, `salt`, `bio`, `createdAt`) VALUES
-(10, 'raghad.khadra00@eng-st.cu.edu.eg', 'Raghad Khaled Abd Alhai Abo khadraa', '94ecac01a4779f8b6ac5f11d4ae0f48f', 'Link', 'Link', 'stp_logo.png', '605244fd53308', 'Hi :)', '03-17-2021 19:05');
+(9, '111arpit1@gmail.com', 'AJ', '123456789', '', '', '', '', '', '');
 
 --
 -- Indexes for dumped tables
