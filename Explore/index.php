@@ -97,13 +97,20 @@
                     <h1 style="text-align: center;color: rgb(255,255,255);">Latest Projects</h1>
                     <?php
                       while($getProjectsRow = mysqli_fetch_assoc($getProjectsStatus)) {
+                        $Pid=$getProjectsRow['id'];
+                        $getstacks= "SELECT `StackName` from `project_stack`,`stack` where S_id=Sid and P_id=$Pid";
+                        $getAllstacks = mysqli_query($conn,$getstacks) or die(mysqli_error($conn));
                     ?>
         
                     <div class="list-group" style="margin-top: 20px;">
                         <a class="list-group-item list-group-item-action flex-column align-items-start" href="#">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1"><?=$getProjectsRow['pname']?></h5><small><?=$getProjectsRow['createdAt']?></small></div>
-                            <p class="mb-1"><?=$getProjectsRow['tags']?></p><small class="text-muted"></small>
+                            <p class="mb-1">
+                            <?php while($getAllstacksRow = mysqli_fetch_assoc($getAllstacks)) { ?>
+                              <?=$getAllstacksRow['StackName']?>
+                              <?php } ?>
+                            </p><small class="text-muted"></small>
                             <a class = "btn btn-primary" href="../scripts/delete-post.php?id=<?=$getProjectsRow['id']?>">Delete</a>
                             </a>
                     </div>
@@ -121,12 +128,19 @@
                     $getProfile = "SELECT `name`,`profile` FROM `users` WHERE `email` = '$userEmail'";
                     $getProfileStatus = mysqli_query($conn,$getProfile) or die(mysqli_error($conn));
                     $getProfileRow = mysqli_fetch_assoc($getProfileStatus);
+                    $Pid=$getAllProjectsRow['id'];
+                    $getstacks= "SELECT `StackName` from `project_stack`,`stack` where S_id=Sid and P_id=$Pid";
+                    $getAllstacks = mysqli_query($conn,$getstacks) or die(mysqli_error($conn));
                 ?>
                   <div class="col" style="padding: 0px;height: auto;">
                       <div class="card" style="margin: 1em;background: rgba(255,255,255,0.92);">
                           <div class="card-body"><img class="rounded-circle" src="../uploads/<?=$getProfileRow['name']?>/<?=$getProfileRow['profile']?>" style="width: 30px;">
                               <h4 class="card-title"><?=$getAllProjectsRow['pname']?></h4>
-                              <h6 class="text-muted card-subtitle mb-2"><?=$getAllProjectsRow['tags']?></h6>
+                              <h6 class="text-muted card-subtitle mb-2">
+                              <?php while($getAllstacksRow = mysqli_fetch_assoc($getAllstacks)) { ?>
+                              <?=$getAllstacksRow['StackName']?>
+                              <?php } ?>
+                              </h6>
                               <p class="card-text"><?=$getAllProjectsRow['pdes']?>&nbsp;<br><a href="./check-project.php?id=<?=$getAllProjectsRow['id']?>">More...</a></p><a class="card-link" href="<?=$getAllProjectsRow['plink']?>" style="font-size: 20px;">Project Link</a></div>
                       </div>
                   </div>

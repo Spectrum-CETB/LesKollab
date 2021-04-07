@@ -3,9 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2021 at 07:25 AM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.6
+-- Generation Time: Mar 17, 2021 at 07:18 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
+=======
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -84,9 +86,30 @@ CREATE TABLE `projects` (
   `pdes` varchar(255) NOT NULL,
   `plink` varchar(255) NOT NULL,
   `screenshot` varchar(255) NOT NULL,
-  `tags` varchar(255) NOT NULL,
   `field` varchar(255) NOT NULL,
   `createdAt` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `project_stack`
+--
+
+CREATE TABLE `project_stack` (
+  `P_id` int(11) NOT NULL,
+  `S_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stack`
+--
+
+CREATE TABLE `stack` (
+  `Sid` int(11) NOT NULL,
+  `StackName` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -125,6 +148,19 @@ ALTER TABLE `projects`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `project_stack`
+--
+ALTER TABLE `project_stack`
+  ADD PRIMARY KEY (`P_id`,`S_id`),
+  ADD KEY `S_id` (`S_id`);
+
+--
+-- Indexes for table `stack`
+--
+ALTER TABLE `stack`
+  ADD PRIMARY KEY (`Sid`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -144,12 +180,31 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+
+--
+-- AUTO_INCREMENT for table `stack`
+--
+ALTER TABLE `stack`
+  MODIFY `Sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `project_stack`
+--
+ALTER TABLE `project_stack`
+  ADD CONSTRAINT `project_stack_ibfk_1` FOREIGN KEY (`P_id`) REFERENCES `projects` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `project_stack_ibfk_2` FOREIGN KEY (`S_id`) REFERENCES `stack` (`Sid`);
+=======
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
