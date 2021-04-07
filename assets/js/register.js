@@ -13,9 +13,9 @@ document.getElementById('registerBtn').disabled = true;
   }
   
   // When the user clicks outside of the password field, hide the message box
-  myInput.onblur = function() {
-    document.getElementById("message").style.display = "none";
-  }
+  // myInput.onblur = function() {
+  //   document.getElementById("message").style.display = "none";
+  // }
 
   
 
@@ -27,9 +27,9 @@ document.getElementById('registerBtn').disabled = true;
 }
 
 // When the user clicks outside of the password field, hide the message box
-myinput2.onblur = function() {
-  document.getElementById("message2").style.display = "none";
-}
+// myinput2.onblur = function() {
+//   document.getElementById("message2").style.display = "none";
+// }
 
   
   // When the user starts to type something inside the password field
@@ -97,20 +97,34 @@ myinput2.onblur = function() {
 
   function box1()
 {
-  var notice=document.getElementById("notice");
+  
   var password=document.getElementById("psw");
   var password2=document.getElementById("psw2");
-  var x=document.getElementById("box").checked;
+  var x=document.getElementById("boxsignup").checked;
   if(x==true)
   {
     password.type="text";
     password2.type="text";
-    notice.innerHTML="hide password";
   }
   else
   {
     password.type="password";
     password2.type="password";
-    notice.innerHTML="show password";
+  }
+}
+  function box2()
+{
+
+  var password=document.getElementById("pswlogin");
+  var x=document.getElementById("boxlogin").checked;
+  if(x==true)
+  {
+    password.type="text";
+   
+  }
+  else
+  {
+    password.type="password";
+    
   }
 }

@@ -37,8 +37,8 @@
 
 <body onload="myFunction()">
     <section>
-        <nav class="navbar navbar-light navbar-expand-md fixed-top" style="font-size: 20px;background: rgba(0,0,0,0.4);">
-            <div class="container-fluid"><a class="navbar-brand" href="#" style="font-family: 'Titillium Web', sans-serif;font-size: 30px;color: rgb(254,254,254);">LesKollab</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <nav class="navbar navbar-light navbar-expand-md fixed-top " style="font-size: 20px;background: rgba(0,0,0,0.4);">
+            <div class="container-fluid"><a class="navbar-brand " href="#" style="font-family: 'Titillium Web', sans-serif;font-size: 30px;color: rgb(254,254,254);"><!--<img src="../assets/images/logo_footer.png" alt="" height="80px" width="100px">-->LesKollab</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav ml-auto">
