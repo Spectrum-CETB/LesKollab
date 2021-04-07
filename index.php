@@ -282,31 +282,27 @@ if (isset($_SESSION['email'])) {
       </div>
     </div>
   </div>
+</div>
+</div>
 
-  <!-- Start Footer Section-->
-  <div class="container-fluid bg-dark footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 col-md-5 col-sm-4" style="padding-top:35px;">
-          <span class="pr-2 text-white text-center">Follow us on:</span>
-          <a href="https://github.com/Spectrum-CETB/LesKollab" target="_blank" class="pr-2 fi-color"><i
-              class="fab fa-github"></i></a>
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-3">
-          <a href="index.php"><img src="assets/images/logo_footer.png" class="img-fluid" alt="" height="100px"
-              width="100px"></a>
-        </div>
-        <div class="col-lg-5 col-md-5 col-sm-5 text-right" style="padding-top:30px;">
-          <p class="text-white mt-2">Copyright &copy
-            <?php echo date('Y'). " "; ?>LesKollab
-          </p>
+    <!-- Start Footer Section-->
+    <div class="container-fluid bg-dark footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-5 col-sm-4" style="padding-top:35px;">
+            <span class="pr-2 text-white text-center">Follow us on:</span>
+            <a href="https://github.com/Spectrum-CETB/LesKollab" target="_blank" class="pr-2 fi-color"><i class="fab fa-github"></i></a>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-3">
+            <a href="index.php"><img src="assets/images/logo_footer.png" class="img-fluid" alt="" height="100px" width="100px"></a>
+          </div>
+          <div class="col-lg-5 col-md-5 col-sm-5 text-right" style="padding-top:30px;">
+            <p class="text-white mt-2">Copyright &copy <?php echo date('Y'). " "; ?>LesKollab<span><a href="admin/admin_login.php" class="btn btn-secondary" style="margin-left:10px;">Admin Login</a></span></p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- End Footer Section-->
-
-
+      <!--End Footer Section-->
 
 
 
