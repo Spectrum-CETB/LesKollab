@@ -138,9 +138,13 @@ if (isset($_SESSION['email'])) {
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" name="password" id="exampleInputPassword1"
+              <input type="password" class="form-control" name="password" id="pswlogin"
                 placeholder="Password">
             </div>
+            <div>
+              <input type="checkbox" id="boxlogin" onclick="box2()">
+              <span id="notice2">show password</span>
+          </div>
             <br>
             <button type="submit" class="btn btn-primary">Login</button>
           </form>
@@ -198,8 +202,12 @@ if (isset($_SESSION['email'])) {
                 placeholder="Repeat Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                 title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                 required>
+                <div class="mt-2">
+                  <input type="checkbox" id="boxsignup" onclick="box1()">
+                  <span id="notice1">show password</span>
+              </div>
               <div id="message2" class="mt-2">
-                <b><p id="passwordmatch" class="invalid"> Passwords didn't match</p></b>
+                <b><p id="passwordmatch" class="invalid">Passwords didn't match</p></b>
               </div>
             </div>
             <div class="form-group">
