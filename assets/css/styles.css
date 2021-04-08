@@ -55,4 +55,47 @@
     position: relative;
     left: -3px;
     content: "✖";
-  
+  }
+
+
+  /* css for dark mode */
+  html
+  {
+    scroll-behavior: smooth;
+  }
+#modalregister , #modallogin , #modalcontact
+{
+  z-index: 10000;
+}
+  #navcol-1
+  {
+    margin-right: 3vw;
+  }
+  .dark-mode
+  {
+    background-color: black !important;
+  }
+  .dark-mode .bgblack
+  {
+    position: absolute;
+    height: 188vh;
+    width: 100vw;
+    opacity: .5;
+    background-color: black;
+  }
+  .dark-mode .modal-content , .dark-mode .modal-content span
+  {
+    background-color: black;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 992px) {
+    .dark-mode .bgblack
+  {
+    position: absolute;
+    height: 260vh;
+    width: 100vw;
+    opacity: .5;
+    background-color: black;
+  }
+  }
