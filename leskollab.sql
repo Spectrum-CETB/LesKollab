@@ -61,17 +61,17 @@ CREATE TABLE `contact` (
 -- Dumping data for table `contact`
 --
 
-INSERT INTO `contact` (`name`, `email`, `number`, `msg`) VALUES
-('a', '111', 90, 'a'),
-('COLE', '', 0, ''),
-('COLE', '111ar', 0, ''),
-('Arpit Jain', '111arpit1@gmail.com', 0, 'aaaaaaaaaaaaa'),
-('Arpit Jain', '111arpit1@gmail.com', 0, 'aaaaaaaaaaaaa'),
-('Arpit Jain', 'arpit456jain@gmail.com', 0, 'helo'),
-('Arpit Jain', 'arpit4567jain@gmail.com', 0, 'a'),
-('', '', 998, ''),
-('Arpit Jain', '111arpit1@gmail.com', 2147483647, 'This is testing msg by arpit jain '),
-('AMan', 'excelresearchpapers@gmail.com', 2147483647, 'testing 2 by aman');
+INSERT INTO `contact` (`id`, `name`, `email`, `number`, `msg`) VALUES
+(1, 'a', '111', 90, 'a'),
+(2, 'COLE', '', 0, ''),
+(3, 'COLE', '111ar', 0, ''),
+(4, 'Arpit Jain', '111arpit1@gmail.com', 0, 'aaaaaaaaaaaaa'),
+(5, 'Arpit Jain', '111arpit1@gmail.com', 0, 'aaaaaaaaaaaaa'),
+(6, 'Arpit Jain', 'arpit456jain@gmail.com', 0, 'helo'),
+(7, 'Arpit Jain', 'arpit4567jain@gmail.com', 0, 'a'),
+(8, '', '', 998, ''),
+(9, 'Arpit Jain', '111arpit1@gmail.com', 2147483647, 'This is testing msg by arpit jain '),
+(10, 'AMan', 'excelresearchpapers@gmail.com', 2147483647, 'testing 2 by aman');
 
 -- --------------------------------------------------------
 
@@ -142,6 +142,12 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `projects`
 --
 ALTER TABLE `projects`
@@ -175,6 +181,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `projects`
