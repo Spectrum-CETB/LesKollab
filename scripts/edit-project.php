@@ -135,7 +135,7 @@
         $stacks = explode(" ", $tags);    //get array of stacks 
         for( $i=0; $i<count($stacks); $i++){
         if($stacks[$i] !=' ' && $stacks[$i] != null ){
-            echo $stacks[$i];
+           // echo $stacks[$i];
          $insrtStacks= addStackToProject($stacks[$i],$id ,$conn); //try t insert stack with prject id in Project Stack table
         } 
         }
@@ -165,7 +165,7 @@
     $stacks = explode(" ", $tags);    //get array of stacks 
     for( $i=0; $i<count($stacks); $i++){
     if($stacks[$i] !=' ' && $stacks[$i] != null ){
-        echo $stacks[$i];
+      //  echo $stacks[$i];
      $insrtStacks= addStackToProject($stacks[$i],$id ,$conn); //try t insert stack with prject id in Project Stack table
     } 
     }

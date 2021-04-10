@@ -6,7 +6,7 @@
 -- Generation Time: Mar 17, 2021 at 07:18 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
-=======
+
 
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -204,9 +204,7 @@ ALTER TABLE `users`
 ALTER TABLE `project_stack`
   ADD CONSTRAINT `project_stack_ibfk_1` FOREIGN KEY (`P_id`) REFERENCES `projects` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `project_stack_ibfk_2` FOREIGN KEY (`S_id`) REFERENCES `stack` (`Sid`);
-=======
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

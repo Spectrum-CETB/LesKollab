@@ -250,7 +250,7 @@
                                     <label>
                                         <p class="label-txt">Project Name</p>
                                         <input type="text" class="input" value="<?=$getProjectsRow['pname']?>" name = "pname"/>
-                                        <input type="hidden" class="input" name = "email" value = "<?=$email?>"/>
+                                        <input type="hidden" class="input" name = "id" value = "<?=$getProjectsRow['id']?>"/>
                                         <div class="line-box">
                                           <div class="line"></div>
                                         </div>
@@ -288,14 +288,14 @@
                                       </label>
                                       <label>
                                         <p class="label-txt">Screenshots(if you want to change the Screenshot)</p>
-                                        <input type="file" class="form-control" name="screenshot" id="inputGroupFile02" required/>
+                                        <input type="file" class="form-control" name="screenshot" id="inputGroupFile02"/>
                                         <div class="line-box">
                                           <div class="line"></div>
                                         </div>
                                         <span id="dstack" style="padding: 0;margin: 0;"></span>
                                       </label>
                                       <br>
-                                      <button type="submit"></button>
+                                      <button type="submit">Save Changes</button>
                                 </form>
                         </div>
                         </div>
