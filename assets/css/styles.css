@@ -57,7 +57,14 @@
     content: "✖";
   }
 
-
+#projectbutton
+{
+  font-size:1.5em;
+  font-weight:bold;
+  z-index:1000;
+  position:absolute;
+  bottom:15vh;
+}
   /* css for dark mode */
   html
   {
@@ -81,6 +88,7 @@
     height: 188vh;
     width: 100vw;
     opacity: .5;
+    z-index: 10;
     background-color: black;
   }
   .dark-mode .modal-content , .dark-mode .modal-content span
@@ -89,6 +97,14 @@
     color: #fff;
   }
 
+  .dark-mode #projectbutton
+  {
+    font-size:1.5em;
+    font-weight:bold;
+    z-index:1000;
+    position:absolute;
+    bottom:13vh;
+  }
   @media screen and (max-width: 992px) {
     .dark-mode .bgblack
   {
@@ -97,5 +113,21 @@
     width: 100vw;
     opacity: .5;
     background-color: black;
+  }
+  #projectbutton
+  {
+  font-size:1.5em;
+  font-weight:bold;
+  z-index:1000;
+  position:absolute;
+  bottom:-20vh;
+  }
+  .dark-mode #projectbutton
+  {
+    font-size:1.5em;
+    font-weight:bold;
+    z-index:1000;
+    position:absolute;
+    bottom:-20vh;
   }
   }

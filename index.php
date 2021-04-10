@@ -88,7 +88,7 @@ if (isset($_SESSION['email'])) {
             With LesKollab, it's time to implement and learn things on the get go, but not alone anymore!</p>
           </i>
           <br><br><br><br>
-          <button type="button" class="btn btn-outline-warning" style="font-size:1.5em;font-weight:bold">Find a Project
+          <button type="button" id="projectbutton" class="btn btn-outline-warning">Find a Project
             Partner</button>
 
         </div>
