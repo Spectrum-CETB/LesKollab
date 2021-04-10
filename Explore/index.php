@@ -232,8 +232,7 @@
                       if(mysqli_num_rows($getProjectsStatus) > 0) {
                         while($getProjectsRow = mysqli_fetch_assoc($getProjectsStatus)) {
                          $Pid=$getProjectsRow['id'];
-                         $getstacks= "SELECT `StackName` from `project_stack`,`stack` where S_id=Sid and P_id=$Pid";                            
-                         $getAllstacks = mysqli_query($conn,$getstacks) or die(mysqli_error($conn));
+                         $getstacks= "SELECT `StackName` from `project_stack`,`stack` where S_id=Sid and P_id=$Pid";                            $getAllstacks = mysqli_query($conn,$getstacks) or die(mysqli_error($conn));
                       ?>
        
        
@@ -251,7 +250,7 @@
                                     <label>
                                         <p class="label-txt">Project Name</p>
                                         <input type="text" class="input" value="<?=$getProjectsRow['pname']?>" name = "pname"/>
-                                        <input type="hidden" class="input" name = "id" value = "<?=$getProjectsRow['id']?>"/>
+                                        <input type="hidden" class="input" name = "email" value = "<?=$email?>"/>
                                         <div class="line-box">
                                           <div class="line"></div>
                                         </div>
@@ -289,14 +288,14 @@
                                       </label>
                                       <label>
                                         <p class="label-txt">Screenshots(if you want to change the Screenshot)</p>
-                                        <input type="file" class="form-control" name="screenshot" id="inputGroupFile02"/>
+                                        <input type="file" class="form-control" name="screenshot" id="inputGroupFile02" required/>
                                         <div class="line-box">
                                           <div class="line"></div>
                                         </div>
                                         <span id="dstack" style="padding: 0;margin: 0;"></span>
                                       </label>
                                       <br>
-                                      <button type="submit">Save Changes</button>
+                                      <button type="submit"></button>
                                 </form>
                         </div>
                         </div>
