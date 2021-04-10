@@ -89,6 +89,7 @@
                           }
                         ?>
                     </div>
+                   
                     <?php
                       $getProjects = "SELECT * FROM `projects` WHERE `email` = '$email'";
                       $getProjectsStatus = mysqli_query($conn,$getProjects) or die(mysqli_error($conn));
@@ -111,8 +112,14 @@
                               <?=$getAllstacksRow['StackName']?>
                               <?php } ?>
                             </p><small class="text-muted"></small>
-                            <a class = "btn btn-primary" href="../scripts/delete-post.php?id=<?=$getProjectsRow['id']?>">Delete</a>
                             </a>
+                            <p class=" row w-100" style="margin-left:0px">
+                            <a class = "btn m-1 col btn-primary" href="../scripts/delete-post.php?id=<?=$getProjectsRow['id']?>">Delete</a>
+                           
+                            <a class="btn m-1 col btn-primary" data-toggle="modal" data-target="#P<?=$getProjectsRow['id']?>" href="#" >Edit</a>
+                            </p>
+                           
+                           
                     </div>
                     <?php
                       }
@@ -216,6 +223,92 @@
                 </div>
         </div>
         </div>
+
+        <!-- edit Projecs -->
+
+                   <?php
+                    $getProjects = "SELECT * FROM `projects` WHERE `email` = '$email'";
+                    $getProjectsStatus = mysqli_query($conn,$getProjects) or die(mysqli_error($conn));
+                      if(mysqli_num_rows($getProjectsStatus) > 0) {
+                        while($getProjectsRow = mysqli_fetch_assoc($getProjectsStatus)) {
+                         $Pid=$getProjectsRow['id'];
+                         $getstacks= "SELECT `StackName` from `project_stack`,`stack` where S_id=Sid and P_id=$Pid";                            
+                         $getAllstacks = mysqli_query($conn,$getstacks) or die(mysqli_error($conn));
+                      ?>
+       
+       
+        <div class="modal fade bd-example-modal-lg" id="P<?=$getProjectsRow['id']?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h1 style="font-family: sans-serif;padding: 1vw;">Edit <?=$getProjectsRow['pname']?></h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                                <form action = "../scripts/edit-project.php" method = "post" enctype="multipart/form-data">
+                                    <label>
+                                        <p class="label-txt">Project Name</p>
+                                        <input type="text" class="input" value="<?=$getProjectsRow['pname']?>" name = "pname"/>
+                                        <input type="hidden" class="input" name = "id" value = "<?=$getProjectsRow['id']?>"/>
+                                        <div class="line-box">
+                                          <div class="line"></div>
+                                        </div>
+                                      </label>
+                                      <label>
+                                        <p class="label-txt">Project Description</p>
+                                        <input type="text" class="input" value="<?=$getProjectsRow['pdes']?>" name = "pdes"/>
+                                        <div class="line-box">
+                                          <div class="line"></div>
+                                        </div>
+                                      </label>
+                                      <label>
+                                        <p class="label-txt">Project Link</p>
+                                        <input type="text" class="input"  value="<?=$getProjectsRow['plink']?>"  name = "plink"/>
+                                        <div class="line-box">
+                                          <div class="line"></div>
+                                        </div>
+                                      </label>
+                                      <label>
+                                        <p class="label-txt">Stack Used <small>(separated by spaces)</small></p>
+                                        <input type="text" id="stack" value=" <?php while($getAllstacksRow = mysqli_fetch_assoc($getAllstacks)) { echo$getAllstacksRow['StackName']; echo ' '; } ?>" 
+                              class="input" name = "tags"/>
+                                        <div class="line-box">
+                                          <div class="line"></div>
+                                        </div>
+                                        <span id="dstack" style="padding: 0;margin: 0;"></span>
+                                      </label>
+                                      <label>
+                                        <p class="label-txt">Field</p>
+                                        <input type="text"  value="<?=$getProjectsRow['field']?>" class="input" name = "field"/>
+                                        <div class="line-box">
+                                          <div class="line"></div>
+                                        </div>
+                                        <span id="dstack" style="padding: 0;margin: 0;"></span>
+                                      </label>
+                                      <label>
+                                        <p class="label-txt">Screenshots(if you want to change the Screenshot)</p>
+                                        <input type="file" class="form-control" name="screenshot" id="inputGroupFile02"/>
+                                        <div class="line-box">
+                                          <div class="line"></div>
+                                        </div>
+                                        <span id="dstack" style="padding: 0;margin: 0;"></span>
+                                      </label>
+                                      <br>
+                                      <button type="submit">Save Changes</button>
+                                </form>
+                        </div>
+                        </div>
+                </div>
+        </div>
+        </div>
+
+        <?php
+                      }
+                    }
+                    ?>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.min.js"></script>
