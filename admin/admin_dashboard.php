@@ -50,7 +50,7 @@ else
                 <h4 class="card-header  text-dark" style="font-weight:bold;"><i class="fas fa-comments"></i> Messages</h4>
                 <div class="card-body">
                 <?php 
-                    $sql3="select count(id) from contact";
+                    $sql3="select count(name) from contact";
                     $res3=$conn->query($sql3);
                     $row3=$res3->fetch_row();
                     $submitrequest3 = $row3[0];
