@@ -25,6 +25,7 @@ if (isset($_SESSION['email'])) {
   <link rel="stylesheet" href="assets/css/Button-Change-Text-on-Hover.css">
   <link rel="stylesheet" href="assets/css/Button-Ripple-Effect-Animation-Wave-Pulse.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/darkmode.css">
 
   <!--Font Awesome CSS-->
   <link rel="stylesheet" href="assets/css/all.min.css">
@@ -43,10 +44,10 @@ if (isset($_SESSION['email'])) {
   </style>
 
 </head>
-
+<div class="bgblack"></div>
 <body onLoad="myFunction()">
-  <div class="ajheader container-fluid">
-    <nav class="navbar navbar-light navbar-expand-md py-0" style="background: rgba(255,255,255,0.18);">
+  <div class="ajheader container-fluid px-0">
+    <nav class="navbar navbar-light navbar-expand-md py-0">
       <!-- <img src="assets/images/logo1.png" alt="" height="70px" width="100px"> -->
       <div class="container-fluid"><a class="navbar-brand py-0" href="index.php"
           style="font-size: 30px;font-family: Aclonica, sans-serif;"><img src="assets/images/logo1.png" alt=""
@@ -66,9 +67,11 @@ if (isset($_SESSION['email'])) {
             <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target="#modalregister" href="#"
                 style="padding-right: 3vw;font-size: 20px;">Register</a></li>
             <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target="#modalcontact" href="#"
-                style="padding-right: 3vw;font-size: 20px;">Contact Us</a></li>
+                style="padding-right: 3vw;font-size: 20px;">Contact Us</a></li>  
           </ul>
         </div>
+        
+        <input type="checkbox" id="toggle" name="checkbox" class="switch" onclick="myfun()">
     </nav>
 
     <div class="container-fluid mt-4">
@@ -85,7 +88,7 @@ if (isset($_SESSION['email'])) {
             With LesKollab, it's time to implement and learn things on the get go, but not alone anymore!</p>
           </i>
           <br><br><br><br>
-          <button type="button" class="btn btn-outline-warning" style="font-size:1.5em;font-weight:bold">Find a Project
+          <button type="button" id="projectbutton" class="btn btn-outline-warning">Find a Project
             Partner</button>
 
         </div>
@@ -134,7 +137,7 @@ if (isset($_SESSION['email'])) {
               <label for="exampleInputEmail1">Email address</label>
               <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
@@ -389,6 +392,7 @@ if (isset($_SESSION['email'])) {
     })
   </script>
   <script src="assets/js/register.js"></script>
+  <script src="assets/js/darkmode.js"></script>
 </body>
 
 </html>
