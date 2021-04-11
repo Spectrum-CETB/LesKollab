@@ -3,11 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2021 at 07:18 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
-=======
-
+-- Generation Time: Apr 11, 2021 at 12:12 PM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -51,27 +49,12 @@ INSERT INTO `admin` (`id`, `name`, `email`, `password`) VALUES
 --
 
 CREATE TABLE `contact` (
+  `id` int(6) NOT NULL,
   `name` text NOT NULL,
   `email` varchar(200) NOT NULL,
   `number` int(200) NOT NULL,
   `msg` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `contact`
---
-
-INSERT INTO `contact` (`name`, `email`, `number`, `msg`) VALUES
-('a', '111', 90, 'a'),
-('COLE', '', 0, ''),
-('COLE', '111ar', 0, ''),
-('Arpit Jain', '111arpit1@gmail.com', 0, 'aaaaaaaaaaaaa'),
-('Arpit Jain', '111arpit1@gmail.com', 0, 'aaaaaaaaaaaaa'),
-('Arpit Jain', 'arpit456jain@gmail.com', 0, 'helo'),
-('Arpit Jain', 'arpit4567jain@gmail.com', 0, 'a'),
-('', '', 998, ''),
-('Arpit Jain', '111arpit1@gmail.com', 2147483647, 'This is testing msg by arpit jain '),
-('AMan', 'excelresearchpapers@gmail.com', 2147483647, 'testing 2 by aman');
 
 -- --------------------------------------------------------
 
@@ -89,6 +72,13 @@ CREATE TABLE `projects` (
   `field` varchar(255) NOT NULL,
   `createdAt` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `projects`
+--
+
+INSERT INTO `projects` (`id`, `email`, `pname`, `pdes`, `plink`, `screenshot`, `field`, `createdAt`) VALUES
+(47, 'user@gmail.com', 'sdfs', 'sdfsd', 'dsfs', 'sdfs', 'sdfsd', '23/03/2120');
 
 -- --------------------------------------------------------
 
@@ -142,6 +132,12 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `projects`
 --
 ALTER TABLE `projects`
@@ -177,10 +173,16 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `stack`
@@ -192,7 +194,7 @@ ALTER TABLE `stack`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -204,8 +206,6 @@ ALTER TABLE `users`
 ALTER TABLE `project_stack`
   ADD CONSTRAINT `project_stack_ibfk_1` FOREIGN KEY (`P_id`) REFERENCES `projects` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `project_stack_ibfk_2` FOREIGN KEY (`S_id`) REFERENCES `stack` (`Sid`);
-=======
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
