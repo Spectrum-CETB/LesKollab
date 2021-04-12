@@ -1,3 +1,7 @@
+:root {
+  --black:#333333
+}
+
 .multi_select_box{
     width: 18000px;
     margin: 80 px auto;
@@ -61,9 +65,6 @@
 {
   font-size:1.5em;
   font-weight:bold;
-  z-index:1000;
-  position:absolute;
-  bottom:15vh;
 }
   /* css for dark mode */
   html
@@ -80,54 +81,18 @@
   }
   .dark-mode
   {
-    background-color: black !important;
+    background-color: var(--black) !important;
   }
-  .dark-mode .bgblack
-  {
-    position: absolute;
-    height: 188vh;
-    width: 100vw;
-    opacity: .5;
-    z-index: 10;
-    background-color: black;
-  }
+  
   .dark-mode .modal-content , .dark-mode .modal-content span
   {
-    background-color: black;
+    background-color: var(--black);
     color: #fff;
   }
 
-  .dark-mode #projectbutton
+  body
   {
-    font-size:1.5em;
-    font-weight:bold;
-    z-index:1000;
-    position:absolute;
-    bottom:13vh;
+    margin: 0;
+    padding: 0;
   }
-  @media screen and (max-width: 992px) {
-    .dark-mode .bgblack
-  {
-    position: absolute;
-    height: 260vh;
-    width: 100vw;
-    opacity: .5;
-    background-color: black;
-  }
-  #projectbutton
-  {
-  font-size:1.5em;
-  font-weight:bold;
-  z-index:1000;
-  position:absolute;
-  bottom:-20vh;
-  }
-  .dark-mode #projectbutton
-  {
-    font-size:1.5em;
-    font-weight:bold;
-    z-index:1000;
-    position:absolute;
-    bottom:-20vh;
-  }
-  }
+  
