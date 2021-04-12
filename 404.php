@@ -1,118 +1,367 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
-  </head>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> 404 </title>
   <style>
-	body
-	{
-		background-color:#fff;
-		font-family: 'Arvo', serif
-	}
-	#mygif img
-	{
-		margin-top: 5vh;
-		height: 80vh;
-		width: 80vh;
-	}
-	.page_404{ padding:10vh 0; font-family: 'Arvo', serif;
+  	@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+html, body {
+  background: #7bc0db;
+  font-family: "Ubuntu";
 }
-.four_zero_four_bg h1{
- font-size:18rem;
- margin-bottom: 8vh;
- }
- 
-  .four_zero_four_bg h3{
-			 font-size:80px;
-			 }
-			 
-			 .link_404{			 
-	color: #fff!important;
-    padding: 10px 20px;
-    background: #39ac31;
-    margin: 20px 0;
-    display: inline-block;}
-	.contant_box_404{ margin-top:-50px;}
-	a
-	{
-		text-decoration: none;
-	}
-    @media screen and (max-width: 992px) {
-        .four_zero_four_bg h1{
-            font-size:10rem;
-            margin-bottom: 1vh;
-            }
-           #mygif img
-			{
-			margin-top: 1vh;
-			height: 50vh;
-			width: 50vh;
-			margin-left: 5vw;
-		}
-		.page_404
-		{ 
-			width: 97vw;
-			padding:0vh 0; font-family: 'Arvo', serif;
-		}
-			.link_404{	
-				margin: 1px 0;
-				}
+
+* {
+  box-sizing: border-box;
 }
-</style>
 
-  <body>
-<div class="container-fluid">
-	
-<div class="row">
-	<div class="col col-lg-6 col-12 ">
-		<div id="mygif">
-			 <!-- <img src="https://media.giphy.com/media/s0cgIlfRm5dF6/source.gif"> -->
-			 <img src="https://media.giphy.com/media/1bHTqyppyN99JwV5FW/source.gif">
-		</div>
-	</div>
-	<div class="col col-lg-6 col-12">
-		<section class="page_404">
-	<div class="container">
-		<div class="row">	
-		<div class="col-sm-12 ">
-		<div class="col-sm-10 col-sm-offset-1  text-center">
-		<div class="four_zero_four_bg">
-			<h1 class="text-center ">404</h1>
-		
-		
-		</div>
-		
-		<div class="contant_box_404">
-		<h3 class="h2">
-		Look like you're lost
-		</h3>
-		
-		<p>the page you are looking for not avaible!</p>
-		
-		<a href="/" class="link_404">Go to Home</a>
-	</div>
-		</div>
-		</div>
-		</div>
-	</div>
-</section>
+.box {
+  width: 350px;
+  height: 100%;
+  max-height: 600px;
+  min-height: 450px;
+  background:#00719d;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 50px;
+}
+.box .box__ghost {
+  padding: 15px 25px 25px;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -30%);
+}
+.box .box__ghost .symbol:nth-child(1) {
+  opacity: 0.2;
+  animation: shine 4s ease-in-out 3s infinite;
+}
+.box .box__ghost .symbol:nth-child(1):before, .box .box__ghost .symbol:nth-child(1):after {
+  content: "";
+  width: 12px;
+  height: 4px;
+  background: #fff;
+  position: absolute;
+  border-radius: 5px;
+  bottom: 65px;
+  left: 0;
+}
+.box .box__ghost .symbol:nth-child(1):before {
+  transform: rotate(45deg);
+}
+.box .box__ghost .symbol:nth-child(1):after {
+  transform: rotate(-45deg);
+}
+.box .box__ghost .symbol:nth-child(2) {
+  position: absolute;
+  left: -5px;
+  top: 30px;
+  height: 18px;
+  width: 18px;
+  border: 4px solid;
+  border-radius: 50%;
+  border-color: #fff;
+  opacity: 0.2;
+  animation: shine 4s ease-in-out 1.3s infinite;
+}
+.box .box__ghost .symbol:nth-child(3) {
+  opacity: 0.2;
+  animation: shine 3s ease-in-out 0.5s infinite;
+}
+.box .box__ghost .symbol:nth-child(3):before, .box .box__ghost .symbol:nth-child(3):after {
+  content: "";
+  width: 12px;
+  height: 4px;
+  background: #fff;
+  position: absolute;
+  border-radius: 5px;
+  top: 5px;
+  left: 40px;
+}
+.box .box__ghost .symbol:nth-child(3):before {
+  transform: rotate(90deg);
+}
+.box .box__ghost .symbol:nth-child(3):after {
+  transform: rotate(180deg);
+}
+.box .box__ghost .symbol:nth-child(4) {
+  opacity: 0.2;
+  animation: shine 6s ease-in-out 1.6s infinite;
+}
+.box .box__ghost .symbol:nth-child(4):before, .box .box__ghost .symbol:nth-child(4):after {
+  content: "";
+  width: 15px;
+  height: 4px;
+  background: #fff;
+  position: absolute;
+  border-radius: 5px;
+  top: 10px;
+  right: 30px;
+}
+.box .box__ghost .symbol:nth-child(4):before {
+  transform: rotate(45deg);
+}
+.box .box__ghost .symbol:nth-child(4):after {
+  transform: rotate(-45deg);
+}
+.box .box__ghost .symbol:nth-child(5) {
+  position: absolute;
+  right: 5px;
+  top: 40px;
+  height: 12px;
+  width: 12px;
+  border: 3px solid;
+  border-radius: 50%;
+  border-color: #fff;
+  opacity: 0.2;
+  animation: shine 1.7s ease-in-out 7s infinite;
+}
+.box .box__ghost .symbol:nth-child(6) {
+  opacity: 0.2;
+  animation: shine 2s ease-in-out 6s infinite;
+}
+.box .box__ghost .symbol:nth-child(6):before, .box .box__ghost .symbol:nth-child(6):after {
+  content: "";
+  width: 15px;
+  height: 4px;
+  background: #fff;
+  position: absolute;
+  border-radius: 5px;
+  bottom: 65px;
+  right: -5px;
+}
+.box .box__ghost .symbol:nth-child(6):before {
+  transform: rotate(90deg);
+}
+.box .box__ghost .symbol:nth-child(6):after {
+  transform: rotate(180deg);
+}
+.box .box__ghost .box__ghost-container {
+  background: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px 100px 0 0;
+  position: relative;
+  margin: 0 auto;
+  animation: upndown 3s ease-in-out infinite;
+}
+.box .box__ghost .box__ghost-container .box__ghost-eyes {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  height: 12px;
+  width: 70px;
+}
+.box .box__ghost .box__ghost-container .box__ghost-eyes .box__eye-left {
+  width: 12px;
+  height: 12px;
+  background: #332F63;
+  border-radius: 50%;
+  margin: 0 10px;
+  position: absolute;
+  left: 0;
+}
+.box .box__ghost .box__ghost-container .box__ghost-eyes .box__eye-right {
+  width: 12px;
+  height: 12px;
+  background: #332F63;
+  border-radius: 50%;
+  margin: 0 10px;
+  position: absolute;
+  right: 0;
+}
+.box .box__ghost .box__ghost-container .box__ghost-bottom {
+  display: flex;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.box .box__ghost .box__ghost-container .box__ghost-bottom div {
+  flex-grow: 1;
+  position: relative;
+  top: -10px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: #fff;
+}
+.box .box__ghost .box__ghost-container .box__ghost-bottom div:nth-child(2n) {
+  top: -12px;
+  margin: 0 0px;
+  border-top: 15px solid #332F63;
+  background: transparent;
+}
+.box .box__ghost .box__ghost-shadow {
+  height: 20px;
+  box-shadow: 0 50px 15px 5px #3B3769;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: smallnbig 3s ease-in-out infinite;
+}
+.box .box__description {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.box .box__description .box__description-container {
+  color: #fff;
+  text-align: center;
+  width: 200px;
+  font-size: 16px;
+  margin: 0 auto;
+}
+.box .box__description .box__description-container .box__description-title {
+  font-size: 24px;
+  letter-spacing: 0.5px;
+}
+.box .box__description .box__description-container .box__description-text {
+  color: #8C8AA7;
+  line-height: 20px;
+  margin-top: 20px;
+}
+.box .box__description .box__button {
+  display: block;
+  position: relative;
+  background: #FF5E65;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  line-height: 50px;
+  font-size: 18px;
+  padding: 0 70px;
+  white-space: nowrap;
+  margin-top: 25px;
+  transition: background 0.5s ease;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+.box .box__description .box__button:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 100px;
+  background: #fff;
+  bottom: -25px;
+  left: 0;
+  border: 2px solid #fff;
+  transform: translateX(-50px) rotate(45deg);
+  transition: transform 0.5s ease;
+}
+.box .box__description .box__button:hover {
+  background: transparent;
+  border-color: #fff;
+}
+.box .box__description .box__button:hover:before {
+  transform: translateX(250px) rotate(45deg);
+}
 
-	</div>
+@keyframes upndown {
+  0% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}
+@keyframes smallnbig {
+  0% {
+    width: 90px;
+  }
+  50% {
+    width: 100px;
+  }
+  100% {
+    width: 90px;
+  }
+}
+@keyframes shine {
+  0% {
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+  </style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="box">
+  <div class="box__ghost">
+    <div class="symbol"></div>
+    <div class="symbol"></div>
+    <div class="symbol"></div>
+    <div class="symbol"></div>
+    <div class="symbol"></div>
+    <div class="symbol"></div>
+    
+    <div class="box__ghost-container">
+      <div class="box__ghost-eyes">
+        <div class="box__eye-left"></div>
+        <div class="box__eye-right"></div>
+      </div>
+      <div class="box__ghost-bottom">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="box__ghost-shadow"></div>
+  </div>
+  
+  <div class="box__description">
+    <div class="box__description-container">
+      <div class="box__description-title">Whoops!</div>
+      <div class="box__description-text">It seems like we couldn't find the page you were looking for</div>
+    </div>
+    
+    <a href="https://codepen.io/diogo_ml_gomes/" target="_blank" class="box__button">Go back</a>
+    
+  </div>
+  
 </div>
-</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
+  <script>
+  	//based on https://dribbble.com/shots/3913847-404-page
 
-    <!-- Optional JavaScript; choose one of the two! -->
+var pageX = $(document).width();
+var pageY = $(document).height();
+var mouseY=0;
+var mouseX=0;
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+$(document).mousemove(function( event ) {
+  //verticalAxis
+  mouseY = event.pageY;
+  yAxis = (pageY/2-mouseY)/pageY*300; 
+  //horizontalAxis
+  mouseX = event.pageX / -pageX;
+  xAxis = -mouseX * 100 - 100;
 
-  </body>
+  $('.box__ghost-eyes').css({ 'transform': 'translate('+ xAxis +'%,-'+ yAxis +'%)' }); 
+
+  //console.log('X: ' + xAxis);
+
+});
+  </script>
+
+</body>
 </html>
