@@ -218,7 +218,7 @@ html, body {
   letter-spacing: 0.5px;
 }
 .box .box__description .box__description-container .box__description-text {
-  color: #8C8AA7;
+  color: #7bc0db;
   line-height: 20px;
   margin-top: 20px;
 }
@@ -332,7 +332,7 @@ html, body {
       <div class="box__description-text">It seems like we couldn't find the page you were looking for</div>
     </div>
     
-    <a href="https://codepen.io/diogo_ml_gomes/" target="_blank" class="box__button">Go back</a>
+    <a href="index.php" class="box__button">Go back</a>
     
   </div>
   
