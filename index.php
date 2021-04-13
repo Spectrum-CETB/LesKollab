@@ -269,8 +269,8 @@ if (isset($_SESSION['email'])) {
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Phone Number</label>
-              <input type="phone" class="form-control" name="number" id="" placeholder="Eneter you phone number"
-                required>
+              <input type="contact" class="form-control" name="contact" id="contact" placeholder="Enter you phone number"
+                required onkeypress="return onlyNumberKey(event)">
             </div>
             <div class="form-group">
               <label for="message">Message</label>
@@ -391,6 +391,21 @@ if (isset($_SESSION['email'])) {
       $('.multi_select.technologies').selectpicker();
     })
   </script>
+
+    <!--Only Number Checking in Contact Us Form-->
+    <script>
+        function onlyNumberKey(evt)
+        {
+            var x=(evt.which) ? evt.which : evt.keyCode
+            if(x > 31 && (x < 48 || x > 57))
+            {
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+
   <script src="assets/js/register.js"></script>
   <script src="assets/js/darkmode.js"></script>
 </body>
