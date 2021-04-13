@@ -33,28 +33,31 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
+    <!--Font Awesome CSS-->
+    <link rel="stylesheet" href="assets/css/all.min.css">
 </head>
 
 <body onload="myFunction()">
     <section>
-        <nav class="navbar navbar-light navbar-expand-md fixed-top " style="font-size: 20px;background: rgba(0,0,0,0.4);">
-            <div class="container-fluid"><a class="navbar-brand " href="#" style="font-family: 'Titillium Web', sans-serif;font-size: 30px;color: rgb(254,254,254);"><!--<img src="../assets/images/logo_footer.png" alt="" height="80px" width="100px">-->LesKollab</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <nav class="navbar navbar-light navbar-expand-md fixed-top py-0" style="font-size: 20px;background: rgba(0,0,0,0.7);">
+            <div class="container-fluid"><a class="navbar-brand py-0" href="#" style="font-family: Aclonica, sans-serif;font-size: 28px;color: rgb(254,254,254);"><img src="../assets/images/logo_footer.png" alt="" height="80px" width="100px">LesKollab</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link active text-danger" href="#" style="margin-right: 1vw;"><?=$name?>&nbsp;<i class="fa fa-user-circle-o"></i></a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg" href="#" style="color: rgb(197,189,0);margin-right: 1vw;">Post an Idea&nbsp;<i class="fa fa-lightbulb-o"></i></a></li>
-                        <li class="nav-item"><a class="nav-link" href="../logout.php" style="color: rgb(255,255,251);margin-right: 1vw;">Logout&nbsp;<i class="fa fa-sign-out-alt"></i></a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#" style="margin-right: 1vw;font-weight:bold;color: rgb(255,0,0);"><?=$name?>&nbsp;<i class="fas fa-user"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg" href="#" style="color: rgb(197,189,0);margin-right: 1vw;font-weight:bold">Post an Idea&nbsp;<i class="fas fa-lightbulb"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" href="../logout.php" style="color: rgb(255,255,251);margin-right: 1vw;font-weight:bold">Logout&nbsp;<i class="fas fa-sign-out-alt"></i></a></li>
                     </ul>
                     <!-- <ul class="nav navbar-nav"></ul><button class="btn openBtn" onclick="openSearch()" style="color: rgb(255,255,255);"><i class="fa fa-search" style="color: rgb(255,255,255);"></i></button>--></div>
             </div>
         </nav>
     </section>
     <div style="width: 100vw;min-height: 100vh;background: url(&quot;https://wallpaperaccess.com/full/983279.jpg&quot;) bottom / cover no-repeat;padding-top: 10vh;">
-        <div class="container" style="width: 100vw;height: auto;margin: 0px;padding: 0px;">
+        <div class="container" style="width: 100vw;height: auto;margin: 0px;padding: 0px;margin-top:10px;">
           <?php
             include("../components/common/messages.php");
           ?>
+
             <div class="row" style="width: 100vw;margin-top: 0px;">
                 <div class="col-4" style="padding: 2vw;height: auto;">
                     <div class="profile-card" style="border-width: 0px;"><img class="rounded-circle profile-pic" src="../uploads/<?=$name?>/<?=$getUserDetailsRow['profile']?>">
@@ -232,7 +235,8 @@
                       if(mysqli_num_rows($getProjectsStatus) > 0) {
                         while($getProjectsRow = mysqli_fetch_assoc($getProjectsStatus)) {
                          $Pid=$getProjectsRow['id'];
-                         $getstacks= "SELECT `StackName` from `project_stack`,`stack` where S_id=Sid and P_id=$Pid";                            $getAllstacks = mysqli_query($conn,$getstacks) or die(mysqli_error($conn));
+                         $getstacks= "SELECT `StackName` from `project_stack`,`stack` where S_id=Sid and P_id=$Pid";                            
+                         $getAllstacks = mysqli_query($conn,$getstacks) or die(mysqli_error($conn));
                       ?>
        
        
@@ -320,6 +324,8 @@
         }
     </script>
     <script src="assets/js/Snackbar.js"></script>
+    <script src="assets/js/all.min.js"></script>
+    <!-- <script src="assets/js/jquery.min.js"></script> -->
 </body>
 
 </html>
