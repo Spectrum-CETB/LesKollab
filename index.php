@@ -513,7 +513,7 @@ if (isset($_SESSION['email'])) {
   </div>
     <!-- faq start -->
 <div class="faqsection container-fluid px-0 ">
-  <h1 class="text-center py-4">Faq's</h1>
+  <h1 class="text-center py-4">FAQ's</h1>
     <div class="container col-lg-6 col-sm-11 px-0 mx-auto">
     <section class="Accordion">
   <ul class="Accordion__tabs">
