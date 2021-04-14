@@ -44,7 +44,7 @@
                 <div
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link active" href="#" style="margin-right: 1vw;color: rgb(255,0,0);"><?=$name?>&nbsp;<i class="fas fa-user"></i></a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#" style="margin-right: 1vw;color: rgb(255,0,0);font-weight:bold;"><?=$name?>&nbsp;<i class="fas fa-user"></i></a></li>
                         <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg" href="#" style="color: rgb(197,189,0);margin-right: 1vw;font-weight:bold;">Post an Idea&nbsp;<i class="fas fa-lightbulb"></i></a></li>
                         <li class="nav-item"><a class="nav-link" href="../logout.php" style="color: rgb(255,255,251);margin-right: 1vw;font-weight:bold;">Logout&nbsp;<i class="fas fa-sign-out-alt"></i></a></li>
                     </ul>
