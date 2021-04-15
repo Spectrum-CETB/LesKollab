@@ -263,11 +263,41 @@ if (isset($_SESSION['email'])) {
         margin-top: 2vh;
       }
     }
+
+    
+.outer{
+    height:100vh;
+    width:100vw;
+    z-index: 100000;
+   background-color:#afe1f4;
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+#mypage
+{
+   position: relative;
+   z-index: 10000;
+   height:55%;
+   width:40%;
+   top:30vh;
+   left:35vw;
+    background: url("assets/images/logo1.png");
+    background-repeat: no-repeat;
+    text-align: center;
+    justify-content: center;
+    background-size: contain;
+    
+}
   </style>
 
 </head>
 <div class="bgblack"></div>
-
+<div class=" text-center outer">
+        <div id="mypage">
+            <!-- <img src="2.png" alt="Loading" /> -->
+       </div>
+    </div>
 <body onLoad="myFunction()">
   <div class="ajheader container-fluid px-0">
     <nav class="navbar navbar-light navbar-expand-md py-0">
@@ -745,6 +775,14 @@ consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
   <script src="assets/js/register.js"></script>
   <script src="assets/js/darkmode.js"></script>
   <script src="assets/js/faq.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            console.log("ready")
+            $('#mypage').fadeOut(6000);
+            $('.outer').fadeOut(6000);
+        });
+    </script>
 </body>
 
 </html>
