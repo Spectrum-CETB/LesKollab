@@ -511,7 +511,64 @@ if (isset($_SESSION['email'])) {
   </div>
   </div>
   </div>
-
+    <!-- faq start -->
+<div class="faqsection container-fluid px-0 ">
+  <h1 class="text-center py-4">FAQ's</h1>
+    <div class="container col-lg-6 col-sm-11 px-0 mx-auto">
+    <section class="Accordion">
+  <ul class="Accordion__tabs">
+    <li class="Accordion__tab" onclick="toggleAccordion(this)">
+      <div class="Accordion__tab__headline">
+        <h4>Lorem ipsum dolor sit amet</h4><span class="icon"></span>
+      </div>
+      <div class="Accordion__tab__content">
+        <div class="wrapper">
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
+          </p>
+        </div>
+      </div>
+    </li>
+    <li class="Accordion__tab" onclick="toggleAccordion(this)">
+      <div class="Accordion__tab__headline">
+        <h4>dolor sit amet</h4><span class="icon"></span>
+      </div>
+      <div class="Accordion__tab__content">
+        <div class="wrapper">
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
+consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          </p>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          </p>
+        </div>
+      </div>
+    </li>
+    <li class="Accordion__tab" onclick="toggleAccordion(this)">
+      <div class="Accordion__tab__headline">
+        <h4>ipsum dolor sit amet</h4><span class="icon"></span>
+      </div>
+      <div class="Accordion__tab__content">
+        <div class="wrapper">
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          </p>
+        </div>
+      </div>
+    </li>
+    <li class="Accordion__tab" onclick="toggleAccordion(this)">
+      <div class="Accordion__tab__headline">
+        <h4>Lorem ipsum</h4><span class="icon"></span>
+      </div>
+      <div class="Accordion__tab__content">
+        <div class="wrapper">
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
+    </div>
+  </div>
+    <!-- faq ends -->
   <!-- wave start -->
   <div class="container-fluid px-0">
     <footer>
@@ -687,6 +744,7 @@ if (isset($_SESSION['email'])) {
 
   <script src="assets/js/register.js"></script>
   <script src="assets/js/darkmode.js"></script>
+  <script src="assets/js/faq.js"></script>
 </body>
 
 </html>
