@@ -69,6 +69,17 @@ You can reach our organization at [SPECTRUM](https://spectrumcet.com/).
 
 LesKollab is licensed under the MIT License. 
 
+## LesKollab is a part of these Open Source programs
+
+<p align="center">
+ <a>
+ <img  width="70%" height="30%" src="https://raw.githubusercontent.com/GirlScriptSummerOfCode/MentorshipProgram/master/GSsoc%20Type%20Logo%20Black.png">
+
+ 
+</p>
+
+</br>
+
 ## Contributors:✨
 
 
