@@ -19,6 +19,7 @@
     header('Location: ../index.php?message=Please login first!');
 
   }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -65,7 +66,8 @@
 </nav>
   <h1 class="text-center">Project Details</h1>
   <?php
-                  $getProject = "SELECT * FROM `projects` WHERE id=48";
+  $id = $_GET['id'];
+                  $getProject = "SELECT * FROM `projects` WHERE id=$id";
                   $getProjectsStatus = mysqli_query($conn,$getProject) or die(mysqli_error($conn));
                   $getAllProjectsRow = mysqli_fetch_assoc($getProjectsStatus);
                   $userEmail = $getAllProjectsRow['email'];
@@ -93,9 +95,11 @@
         </p>
         <h3 class="card-text">Email of the Owner </h3>
         <p>
-          <?php print($email) ?>
+          <?php print($userEmail) ?>
         </p>
-        <a href="<?php $projectLink ?>"  class="mb-2 pb-2"> <h5 class="card-text mb-2">Project Link </h5></a>
+        <a href="<?= $projectLink ?>"  class="mb-2 pb-2"> <h5 class="card-text mb-2">Project Link </h5></a>
+
+
         <a href="/lesscolab/Explore/index.php" class="btn btn-primary">Add More Projects</a>
       </div>
       
