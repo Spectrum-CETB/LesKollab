@@ -150,7 +150,7 @@
                               <?=$getAllstacksRow['StackName']?>
                               <?php } ?>
                               </h6>
-                              <p class="card-text"><?=$getAllProjectsRow['pdes']?>&nbsp;<br><a href="./check-project.php?id=<?=$getAllProjectsRow['id']?>">More...</a></p><a class="card-link" href="<?=$getAllProjectsRow['plink']?>" style="font-size: 20px;">Project Link</a></div>
+                              <p class="card-text"><?=$getAllProjectsRow['pdes']?>&nbsp;<br><a href="./checkProject.php?id=<?=$getAllProjectsRow['id']?>">More...</a></p><a class="card-link" href="<?=$getAllProjectsRow['plink']?>" style="font-size: 20px;">Project Link</a></div>
                       </div>
                   </div>
                 <?php
