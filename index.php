@@ -30,6 +30,7 @@ if (isset($_SESSION['email'])) {
   <!--Font Awesome CSS-->
   <link rel="stylesheet" href="assets/css/all.min.css">
 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- For adding Font style -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -289,16 +290,77 @@ if (isset($_SESSION['email'])) {
     background-size: contain;
     
 }
+
+/* for back to top button */
+html {
+scroll-behavior: smooth;
+}
+a
+{
+text-decoration: none;
+}
+#button {
+display: inline-block;
+background-color:#1681aa;
+width: 45px;
+height: 45px;
+text-align: center;
+border-radius: 25px;
+position: fixed;
+bottom: 10px;
+right: -2vw;
+transition: background-color .3s, 
+opacity .5s, visibility .5s;
+opacity: 0;
+visibility: hidden;
+z-index: 1000;
+}
+#button::after {
+content: "\f077";
+font-family: FontAwesome;
+font-weight: normal;
+font-style: normal;
+font-size: 2em;
+line-height: 40px;
+color: #fff;
+}
+#button:hover {
+cursor: pointer;
+background-color: #61b0cf;
+}
+#button:active {
+background-color: #61b0cf;
+}
+#button.show {
+opacity: 1;
+visibility: visible;
+}
+
+/* Styles for the content section */
+
+
+@media (min-width: 500px) {
+
+#button {
+margin: 30px;
+}
+}
+
+
+
+
   </style>
 
 </head>
-<div class="bgblack"></div>
-<div class=" text-center outer">
+
+<body onLoad="myFunction()">
+   <!-- Back to top button -->
+   <a id="button" style="text-decoration:none"></a>
+   <div class=" text-center outer">
         <div id="mypage">
             <!-- <img src="2.png" alt="Loading" /> -->
        </div>
     </div>
-<body onLoad="myFunction()">
   <div class="ajheader container-fluid px-0">
     <nav class="navbar navbar-light navbar-expand-md py-0">
       <!-- <img src="assets/images/logo1.png" alt="" height="70px" width="100px"> -->
@@ -779,9 +841,24 @@ consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
     <script>
         $(document).ready(function(){
             console.log("ready")
-            $('#mypage').fadeOut(6000);
-            $('.outer').fadeOut(6000);
+            $('#mypage').fadeOut(4000);
+            $('.outer').fadeOut(4000);
         });
+    </script>
+     <script>
+      var btn = $('#button');
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
     </script>
 </body>
 
