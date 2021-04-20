@@ -1,0 +1,31 @@
+a.nav-link
+{
+    font-weight:bold;
+    padding:12px;
+    padding-left:20px;
+    font-size:18px;
+    color:rgb(85, 62, 62)
+}
+a.nav-link:hover
+{
+    background-color: grey;
+    color:white;
+}
+
+.active
+{
+    background-color: MediumSeaGreen;
+    
+}
+div.form-group label
+{
+    font-size:20px;
+    font-weight:bold;
+    font-family:calibri;
+    margin-top:10px;
+}
+div.col-lg-3 div.card div.card-header
+{
+    font-size:22px;
+}
+
