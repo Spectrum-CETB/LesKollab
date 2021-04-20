@@ -32,8 +32,8 @@
     <div class="col-sm-2 bg-light sidebar d-print-none">
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
-          <li class="nav-item "><a href="admin_dashboard.php" class="nav-link"><i class="fas fa-tachometer-alt "></i> Dashboard</a></li>
-          <!-- <li class="nav-item"><a href="../logout.php" class="nav-link "><i class="fas fa-sign-out-alt"></i> Logout</a></li> -->
+          <li class="nav-item "><a href="admin_dashboard.php" class="nav-link <?php if(PAGE=='admin_dashboard'){echo 'active';} ?>"><i class="fas fa-tachometer-alt "></i> Dashboard</a></li>
+          <li class="nav-item"><a href="../logout.php" class="nav-link "><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
       </div>
     </div>
