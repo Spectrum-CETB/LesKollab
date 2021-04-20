@@ -49,7 +49,10 @@
       background-color: #4bafd6;
     }
     /*** Table Styles **/
-
+    a:hover
+    {
+      color: #fff;
+    }
     .table-fill {
       background: white;
       border-radius: 3px;
@@ -88,7 +91,7 @@
 
     tr {
       border-top: 1px solid #C1C3D1;
-      border-bottom-: 1px solid #C1C3D1;
+      border-bottom: 1px solid #C1C3D1;
       color: #666B85;
       font-size: 16px;
       font-weight: normal;
@@ -96,7 +99,7 @@
     }
 
     tr:hover td {
-      background: #4E5066;
+      background: #06678e;
       color: #FFFFFF;
       border-top: 1px solid #22262e;
     }
@@ -114,7 +117,7 @@
     }
 
     tr:nth-child(odd):hover td {
-      background: #4E5066;
+      background: #06678e;
     }
 
     tr:last-child td:first-child {
@@ -130,7 +133,8 @@
       padding: 20px;
       text-align: left;
       vertical-align: middle;
-      font-weight: 300;
+      font-weight: 600;
+      color:black;
       font-size: 18px;
       text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
       border-right: 1px solid #C1C3D1;
@@ -210,13 +214,13 @@
 
         <tbody class="table-hover">
           <tr>
-            <td class="text-left">Project Name</td>
+            <td class="text-left">Project_Name</td>
             <td class="text-left">
               <?php print($projectName) ?>
             </td>
           </tr>
           <tr>
-            <td class="text-left">Project Field</td>
+            <td class="text-left">Project_Field</td>
             <td class="text-left">
               <?php print($projectName) ?>
             </td>
@@ -228,7 +232,7 @@
             </td>
           </tr>
           <tr>
-            <td class="text-left">Email of the Owner</td>
+            <td class="text-left">Owner_Email</td>
             <td class="text-left">
               <?php print($userEmail) ?>
             </td>
