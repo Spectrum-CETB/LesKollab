@@ -35,6 +35,12 @@
     <link rel="stylesheet" href="assets/css/styles.min.css">
     <!--Font Awesome CSS-->
     <link rel="stylesheet" href="assets/css/all.min.css">
+    <style>
+      .swal-button--danger
+      {
+        background-color: #e64942 !important;
+      }
+    </style>
 </head>
 
 <body onload="myFunction()">
@@ -46,7 +52,7 @@
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link active" href="#" style="margin-right: 1vw;color: rgb(255,0,0);font-weight:bold;"><?=$name?>&nbsp;<i class="fas fa-user"></i></a></li>
                         <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg" href="#" style="color: rgb(197,189,0);margin-right: 1vw;font-weight:bold;">Post an Idea&nbsp;<i class="fas fa-lightbulb"></i></a></li>
-                        <li class="nav-item"><a class="nav-link" href="../logout.php" style="color: rgb(255,255,251);margin-right: 1vw;font-weight:bold;">Logout&nbsp;<i class="fas fa-sign-out-alt"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,251);margin-right: 1vw;font-weight:bold;" onclick="confirmation()">Logout&nbsp;<i class="fas fa-sign-out-alt"></i></a></li>
                     </ul>
                     <!-- <ul class="nav navbar-nav"></ul><button class="btn openBtn" onclick="openSearch()" style="color: rgb(255,255,255);"><i class="fa fa-search" style="color: rgb(255,255,255);"></i></button>--></div>
             </div>
@@ -323,6 +329,26 @@
     </script>
     <script src="assets/js/Snackbar.js"></script>
     <script src="assets/js/all.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+      function confirmation(){
+      swal({
+        title: "Are you sure?",
+        text: "You Want to LogOut!!",
+        icon: "warning",
+        buttons: true,
+        buttons: ['cancel','Yes, Log out'],
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          window.location = "../logout.php";
+        } else {
+          
+        }
+      });
+      }
+    </script>
 </body>
 
 </html>
