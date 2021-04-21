@@ -40,6 +40,14 @@
       {
         background-color: #e64942 !important;
       }
+      .swal-button--cancel
+      {
+        background-color: #efefef !important;
+      }
+      .swal-button--cancel:hover
+      {
+        color: black !important;
+      }
     </style>
 </head>
 
