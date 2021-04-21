@@ -1,6 +1,7 @@
 <?php 
 include('../config/db.php');
 session_start(); 
+define('PAGE','admin_dashboard');
 include('header.php');
 if($_SESSION['is_login'])
 {
