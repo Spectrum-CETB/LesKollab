@@ -74,7 +74,7 @@ if (isset($_SESSION['email'])) {
                 style="padding-right:2vw;font-size:20px;">Login</a></li>
             <!-- Different nav bar link for new LOGIN and REGISTER modals -->
             <li class="nav-item"><a class="nav-link active " data-toggle="modal" data-target="#modalregister" href="#"
-                style="padding-right:2vw;font-size:20px;">Register <i class="fas fa-sign-in-alt"></i></a></li>
+                style="padding-right:2vw;font-size:20px;">Register</a></li>
             
           </ul>
         </div>
