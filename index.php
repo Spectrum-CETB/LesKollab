@@ -62,15 +62,20 @@ if (isset($_SESSION['email'])) {
       ?>
         <div class="collapse navbar-collapse" id="navcol-1">
           <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link active" href="index.php"
+                style="padding: 8px;padding-right: 2vw;font-size: 20px;">Home</a></li>
             <li class="nav-item"><a class="nav-link active" href="#about_us"
-                style="padding: 8px;padding-right: 3vw;font-size: 20px;">About Us</a></li>
-            <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target="#modallogin" href="#"
-                style="padding-right: 3vw;font-size: 20px;">Login</a></li>
-            <!-- Different nav bar link for new LOGIN and REGISTER modals -->
-            <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target="#modalregister" href="#"
-                style="padding-right: 3vw;font-size: 20px;">Register</a></li>
+                style="padding: 8px;padding-right: 2vw;font-size: 20px;">About Us</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#faq"
+                style="padding: 8px;padding-right: 2vw;font-size: 20px;">FAQ's</a></li>
             <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target="#modalcontact" href="#"
-                style="padding-right: 3vw;font-size: 20px;">Contact Us</a></li>
+                style="padding-right: 2vw;font-size: 20px;">Contact Us</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target="#modallogin" href="#"
+                style="padding-right:2vw;font-size:20px;">Login</a></li>
+            <!-- Different nav bar link for new LOGIN and REGISTER modals -->
+            <li class="nav-item"><a class="nav-link active " data-toggle="modal" data-target="#modalregister" href="#"
+                style="padding-right:2vw;font-size:20px;">Register</a></li>
+            
           </ul>
         </div>
 
@@ -292,7 +297,7 @@ if (isset($_SESSION['email'])) {
   </div>
   </div>
     <!-- faq start -->
-<div class="faqsection container-fluid px-0 ">
+<div class="faqsection container-fluid px-0 " id="faq">
   <h1 class="text-center py-4">FAQ's</h1>
     <div class="container col-lg-6 col-sm-11 px-0 mx-auto">
     <section class="Accordion">
