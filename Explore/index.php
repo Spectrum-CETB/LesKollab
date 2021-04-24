@@ -152,21 +152,26 @@
                     $getProfileStatus = mysqli_query($conn,$getProfile) or die(mysqli_error($conn));
                     $getProfileRow = mysqli_fetch_assoc($getProfileStatus);
                     $Pid=$getAllProjectsRow['id'];
+                    $projectName = $getAllProjectsRow['pname'];
+                    $projectSS = $getAllProjectsRow['screenshot'];
                     $getstacks= "SELECT `StackName` from `project_stack`,`stack` where S_id=Sid and P_id=$Pid";
                     $getAllstacks = mysqli_query($conn,$getstacks) or die(mysqli_error($conn));
                 ?>
                   <div class="col" style="padding: 0px;height: auto;">
-                      <div class="card" style="margin: 1em;background: rgba(255,255,255,0.92);">
-                          <div class="card-body"><img class="rounded-circle" src="../uploads/<?=$getProfileRow['name']?>/<?=$getProfileRow['profile']?>" style="width: 30px;">
-                              <h4 class="card-title"><?=$getAllProjectsRow['pname']?></h4>
-                              <h6 class="text-muted card-subtitle mb-2">
-                              <?php while($getAllstacksRow = mysqli_fetch_assoc($getAllstacks)) { ?>
-                              <?=$getAllstacksRow['StackName']?>
-                              <?php } ?>
-                              </h6>
-                              <p class="card-text"><?=$getAllProjectsRow['pdes']?>&nbsp;<br><a href="./checkProject.php?id=<?=$getAllProjectsRow['id']?>">More...</a></p><a class="card-link" href="<?=$getAllProjectsRow['plink']?>" style="font-size: 20px;">Project Link</a></div>
+
+                    <div class="card" style="width: 18rem;">
+                      <img src="projects/<?=$projectName?>/<?=$projectSS?>" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title"><?=$getAllProjectsRow['pname']?></h5>
+                        <p class="card-text"><?php while($getAllstacksRow = mysqli_fetch_assoc($getAllstacks)) { ?>
+                          <?=$getAllstacksRow['StackName']?>
+                          <?php } ?></p>
+                        <p><?=$getAllProjectsRow['pdes']?></p>
+                        <a href="./checkProject.php?id=<?=$getAllProjectsRow['id']?>" class="btn btn-primary">Project Link</a>
                       </div>
-                  </div>
+                    </div>
+                    </div>
+                    
                 <?php
                   }
                 ?>
