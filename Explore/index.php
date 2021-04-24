@@ -157,7 +157,7 @@
                     $getstacks= "SELECT `StackName` from `project_stack`,`stack` where S_id=Sid and P_id=$Pid";
                     $getAllstacks = mysqli_query($conn,$getstacks) or die(mysqli_error($conn));
                 ?>
-                  <div class="col" style="padding: 0px;height: auto;">
+                  <div class="col mt-3" style="padding: 0px;height: auto;">
 
                     <div class="card" style="width: 18rem;">
                       <img src="projects/<?=$projectName?>/<?=$projectSS?>" class="card-img-top" alt="...">
