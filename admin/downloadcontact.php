@@ -21,7 +21,7 @@
 
   if ( $fp && $result ) {
     header( 'Content-Type: text/csv' );
-    header( 'Content-Disposition: attachment; filename="export.csv"' );
+    header( 'Content-Disposition: attachment; filename="contact.csv"' );
     header( 'Pragma: no-cache' );
     header( 'Expires: 0' );
     fputcsv( $fp, array_values( $head ) );
