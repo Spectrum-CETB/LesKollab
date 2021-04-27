@@ -46,7 +46,7 @@ else
                             <td width=30%;><?php echo $row['msg'] ?></td>
                             <td>
                                 <form action="" method="GET">
-                                    <a href="https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Reply"><i class="fas fa-reply-all"></i></a>
+                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=<?php echo $row['email']; ?>" target="_blank" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Reply"><i class="fas fa-reply-all"></i></a>
                                     <button type="submit" class="btn btn-danger" name="delete" value="delete" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete Message"><i class="fas fa-trash-alt"></i></button>
                                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                                 </form>
