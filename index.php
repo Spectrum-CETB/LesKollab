@@ -53,8 +53,8 @@ if (isset($_SESSION['email'])) {
     <nav class="navbar navbar-light navbar-expand-md py-0">
       <!-- <img src="assets/images/logo1.png" alt="" height="70px" width="100px"> -->
       <div class="container-fluid"><a class="navbar-brand py-0" href="index.php"
-          style="font-size: 30px;font-family: Aclonica, sans-serif;"><img src="assets/images/logo1.png" alt=""
-            height="80px" width="100px">LesKollab</a>
+          style="font-size: 30px;font-family: Aclonica, sans-serif;"><img class="img-container" 
+                src="assets/images/logo1.png" alt="">LesKollab</a>
         <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle
             navigation</span><span class="navbar-toggler-icon"></span></button>
         <?php

@@ -22,7 +22,7 @@
   #message {
     display: none;
   }
-  
+
   #message p {
     padding: 0px 5px;
     font-size: 11px;
@@ -32,29 +32,29 @@
   #message2 {
     display: none;
   }
-  
+
   #message2 p {
     padding: 0px 5px;
     font-size: 11px;
     margin-bottom: 0px;
   }
-  
+
   /* Add a green text color and a checkmark when the requirements are right */
   .valid {
     color: green;
   }
-  
+
   .valid:before {
     position: relative;
     left: -3px;
     content: "✔";
   }
-  
+
   /* Add a red text color and an "x" when the requirements are wrong */
   .invalid {
     color: red;
   }
-  
+
   .invalid:before {
     position: relative;
     left: -3px;
@@ -83,7 +83,7 @@
   {
     background-color: var(--black) !important;
   }
-  
+
   .dark-mode .modal-content , .dark-mode .modal-content span
   {
     background-color: var(--black);
@@ -95,10 +95,10 @@
     margin: 0;
     padding: 0;
   }
-  
+
 
   /* css for faq section starts */
-  
+
   .faqsection
 {
   background-color: #4bafd6;
@@ -417,7 +417,7 @@
       }
     }
 
-    
+
 .outer{
     height:100vh;
     width:100vw;
@@ -440,7 +440,7 @@
     text-align: center;
     justify-content: center;
     background-size: contain;
-    
+
 }
 
 /* for back to top button */
@@ -461,7 +461,7 @@ border-radius: 25px;
 position: fixed;
 bottom: 10px;
 right: -2vw;
-transition: background-color .3s, 
+transition: background-color .3s,
 opacity .5s, visibility .5s;
 opacity: 0;
 visibility: hidden;
@@ -738,7 +738,7 @@ html {
   position: fixed;
   bottom: 10px;
   right: -2vw;
-  transition: background-color .3s, 
+  transition: background-color .3s,
   opacity .5s, visibility .5s;
   opacity: 0;
   visibility: hidden;
@@ -764,19 +764,19 @@ html {
   opacity: 1;
   visibility: visible;
   }
-  
+
   /* Styles for the content section */
-  
-  
+
+
   @media (min-width: 500px) {
-  
+
   #button {
   margin: 30px;
   }
   }
-  
-  
-  
+
+
+
   .ajheader {
 
     background: url("../img/bg.png");
@@ -791,8 +791,8 @@ html {
     font-family: Lato, sans-serif;
   }
 
-  
-  
+
+
 .outer{
   height:100vh;
   width:100vw;
@@ -815,5 +815,10 @@ html {
   text-align: center;
   justify-content: center;
   background-size: contain;
-  
+
+}
+.img-container{
+  width: 170px;
+  height: 80px;
+  object-fit: cover;
 }

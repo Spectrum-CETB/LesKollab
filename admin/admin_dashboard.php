@@ -57,6 +57,7 @@ else
                     $submitrequest3 = $row3[0];
                 ?>
                     <h3 class="card-title"><?php echo $submitrequest3; ?></h3>
+                    <a href="downloadcontact.php" class="btn btn-warning" style="color:#fff;">Download</a>
                 </div>
             </div>
         </div>
