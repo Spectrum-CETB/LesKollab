@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2021 at 12:12 PM
+-- Generation Time: Apr 28, 2021 at 06:16 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.6
 
@@ -70,7 +70,7 @@ CREATE TABLE `projects` (
   `plink` varchar(255) NOT NULL,
   `screenshot` varchar(255) NOT NULL,
   `field` varchar(255) NOT NULL,
-  `createdAt` varchar(255) NOT NULL
+  `createdAt` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -78,7 +78,7 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`id`, `email`, `pname`, `pdes`, `plink`, `screenshot`, `field`, `createdAt`) VALUES
-(47, 'user@gmail.com', 'sdfs', 'sdfsd', 'dsfs', 'sdfs', 'sdfsd', '23/03/2120');
+(47, 'user@gmail.com', 'sdfs', 'sdfsd', 'dsfs', 'sdfs', 'sdfsd', '0000-00-00');
 
 -- --------------------------------------------------------
 
