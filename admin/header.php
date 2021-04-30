@@ -34,6 +34,7 @@
         <ul class="nav flex-column">
           <li class="nav-item "><a href="admin_dashboard.php" class="nav-link <?php if(PAGE=='admin_dashboard'){echo 'active';} ?>"><i class="fas fa-tachometer-alt "></i> Dashboard</a></li>
           <li class="nav-item "><a href="user_messages.php" class="nav-link <?php if(PAGE=='user_messages'){echo 'active';} ?>"><i class="fas fa-comments"></i> User Messages</a></li>
+          <li class="nav-item "><a href="generate_report.php" class="nav-link <?php if(PAGE=='generate_report'){echo 'active';} ?>"><i class="fas fa-clipboard "></i> Generate Report</a></li>
           <li class="nav-item"><a href="../logout.php" class="nav-link "><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
       </div>
