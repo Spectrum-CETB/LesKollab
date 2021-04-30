@@ -124,6 +124,7 @@ if (isset($_SESSION['email'])) {
                           <?php } ?></p>
                         <p><?=$getAllProjectsRow['pdes']?></p>
                         <a href="./checkProject.php?id=<?=$getAllProjectsRow['id']?>" class="btn btn-primary">Project Link</a>
+                        <a href="../scripts/delete-project.php?id=<?=$getAllProjectsRow['id']?>" class="btn btn-primary">Delete Project</a>
                       </div>
                     </div>
                     </div>
