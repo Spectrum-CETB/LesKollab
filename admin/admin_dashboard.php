@@ -27,6 +27,7 @@ else
                     $submitrequest1 = $row1[0];
                 ?>
                     <h3 class="card-title"><?php echo $submitrequest1; ?></h3>
+                    <a href="downloadproject.php" class="btn btn-warning" style="color:#fff;">Download</a>
                 </div>
             </div>
         </div>
