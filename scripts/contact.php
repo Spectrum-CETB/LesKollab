@@ -15,8 +15,8 @@ if ($conn->connect_error) {
   echo "Connected successfully";
 
 // declare variables
-$email = "111arpit1";
-$name = "arpit";
+$email = "";
+$name = "";
 $number = 0;
 $msg = "";
 
@@ -43,11 +43,11 @@ if(isset($_POST['email'])) {
     $result = mysqli_query($conn,"INSERT INTO contact (name,email,number,msg) VALUES ('$name','$email','$number','$msg')");
     if($result)
     {
-      header('Location: ../index.php?message=Thank You for Contacting us');
+      header('Location: ../index.php?message=Thank You for Contacting us&status=success');
     }
     else
     {
-      header('Location: ../index.php?message=Unable to Contact! Try again some time later!');
+      header('Location: ../index.php?message=Unable to Contact! Try again some time later!&status=danger');
     }
     
 

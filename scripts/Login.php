@@ -36,17 +36,17 @@
         if($newPassword == $dbPassword) { // password matches with db!
 
           $_SESSION['email'] = $email;
-          header('Location: ../Explore/index.php?message=Logged in successfully!');
+          header('Location: ../Explore/index.php?message=Logged in successfully!&status=success');
 
         } else { // if password is incorrect!
 
-          header('Location: ../index.php?message=The password is incorrect!');
+          header('Location: ../index.php?message=The password is incorrect!&status=danger');
 
         }
 
       } else {
 
-        header('Location: ../index.php?message=Sorry user doesnt exist! Please Register!');
+        header('Location: ../index.php?message=Sorry user doesnt exist! Please Register!&status=danger');
 
       }
 

@@ -15,7 +15,7 @@ if (isset($_SESSION['email'])) {
   $name = $getUserDetailsRow['name'];
 } else {
 
-  header('Location: ../index.php?message=Please login first!');
+  header('Location: ../index.php?message=Please login first!&status=danger');
 }
 ?>
 <?php include('../components/common/header.php'); ?>
@@ -23,10 +23,10 @@ if (isset($_SESSION['email'])) {
 
 <div style="width: 100vw;min-height: 100vh;background: url(&quot;https://wallpaperaccess.com/full/983279.jpg&quot;) bottom / cover no-repeat;padding-top: 10vh;">
   <div class="container mt-3" style="width: 100vw;height: auto;margin: 0px;padding: 0px;">
-    <?php
+    <div class="row" style="width: 100vw;margin-top: 0px;">
+<?php
     include("../components/common/messages.php");
     ?>
-    <div class="row" style="width: 100vw;margin-top: 0px;">
       <div class="col-4" style="padding: 2vw;height: auto;">
         <div class="profile-card" style="border-width: 0px;"><img class="rounded-circle profile-pic" src="../uploads/<?= $name ?>/<?= $getUserDetailsRow['profile'] ?>">
           <h3 class="profile-name" style="background: rgb(255,255,255);color: rgb(0,0,0);"><?= $name ?></h3>
