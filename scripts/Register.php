@@ -51,7 +51,7 @@
 
     if(mysqli_num_rows($checkUserStatus) > 0) { // if the user exists!
 
-      header('Location: ../index.php?message=User already exists!');
+      header('Location: ../index.php?message=User already exists!&status=danger');
 
     } else {
 
@@ -104,7 +104,7 @@
 
       // Check if $uploadOk is set to 0 by an error
       if ($uploadOk == 0) {
-        header('Location: ../index.php?message=Some error occured while uploading your pic!');
+        header('Location: ../index.php?message=Some error occured while uploading your pic!&status=danger');
       // if everything is ok, try to upload file
       } else {
         $profile = basename(time() .$_FILES["profile"]["name"]);
@@ -117,11 +117,11 @@
 
           if($insertUserStatus) { // if user is entered successfully!
 
-            header('Location: ../index.php?message=You have registered successfully!');
+            header('Location: ../index.php?message=You have registered successfully!&status=success');
 
           } else {
 
-            header('Location: ../index.php?message=Unable to register! Try again some time later!');
+            header('Location: ../index.php?message=Unable to register! Try again some time later!&status=danger');
 
           }
         } else {

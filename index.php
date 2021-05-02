@@ -57,9 +57,7 @@ if (isset($_SESSION['email'])) {
                 src="assets/images/logo1.png" alt="">LesKollab</a>
         <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle
             navigation</span><span class="navbar-toggler-icon"></span></button>
-        <?php
-      include("components/common/messages.php");
-      ?>
+
         <div class="collapse navbar-collapse" id="navcol-1">
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link active" href="index.php"
@@ -81,7 +79,9 @@ if (isset($_SESSION['email'])) {
 
         <input type="checkbox" id="toggle" name="checkbox" class="switch" onclick="myfun()">
     </nav>
-
+    <?php
+      include("components/common/messages.php");
+      ?>
     <div class="container-fluid mt-4">
       <div class="jumbotron" style="background:none;z-index:-2">
         <div>
