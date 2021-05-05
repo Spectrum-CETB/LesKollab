@@ -34,6 +34,7 @@
 * Clone this git repository here and then open up your xampp control panel and start the modules Apache and MySQL.
 * After that, open up any browser and type 'localhost/phpmyadmin' in the address bar, this will open up a panel where you can upload the dummy database provided in this repository.
 * After successful upload, open another tab and type 'localhost/LesKollab', and then your site is up and running in your local server.
+* Step By Step Project Set Up [Video](https://drive.google.com/file/d/1FchcF-SdGYPPTorS4Wlz3KesXkbGccvV/view?usp=sharing)
 
 
 ## TECH STACK
