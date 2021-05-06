@@ -26,7 +26,7 @@ if (isset($_SESSION['email'])) {
   <link rel="stylesheet" href="assets/css/Button-Ripple-Effect-Animation-Wave-Pulse.css">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/darkmode.css">
-
+  
   <!--Font Awesome CSS-->
   <link rel="stylesheet" href="assets/css/all.min.css">
 
@@ -398,33 +398,67 @@ consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
   </div>
   <!-- wave end -->
 
-  <!-- Start Footer Section-->
-  <div class="container-fluid bg-dark footer px-1 text-center">
-    <div class="row col-12 pr-2 pl-5 py-2">
-      <div class="col-lg-3 pr-5">
-        <a href="index.php"><img src="assets/images/logo_footer.png" class="img-fluid footerlogo" alt=""></a>
-      </div>
-      <div class="col-lg-5 px-0">
-        <div class="rounded-social-buttons">
-          <a class="social-button facebook" href="https://www.facebook.com/" target="_blank"><i
-              class="fab fa-facebook-f"></i></a>
-          <a class="social-button github" href="https://github.com/Spectrum-CETB/LesKollab" target="_blank"><i
-              class="fab fa-github"></i></a>
-          <a class="social-button linkedin" href="https://www.linkedin.com/" target="_blank"><i
-              class="fab fa-linkedin"></i></a>
-          <a class="social-button youtube" href="https://www.youtube.com/" target="_blank"><i
-              class="fab fa-youtube"></i></a>
-          <a class="social-button instagram" href="https://www.instagram.com/" target="_blank"><i
-              class="fab fa-instagram"></i></a>
+ <!-- Start Footer Section-->
+  <div class="footer-distributed pt-5 pb-2 px-0 bg-dark">
+    <div class="container px-2">
+
+      <div class="row">
+        <div class="col-lg-7 col-sm-11">
+          <div class="footer-left">
+
+            <h3>Lesk<span>ollab</span></h3>
+
+            <p class="footer-links">
+              <a href="index.php" class="link-1">Home</a>
+              <a href="#about_us">About</a>
+              <a href="#faq">FAQs</a>
+              <a href="#" data-toggle="modal" data-target="#modallogin">Login</a>
+              <a href="#" data-toggle="modal" data-target="#modalregister">Register</a>
+              <a href="#" data-toggle="modal" data-target="#modalregister">Contact</a>
+            </p>
+
+          
+          </div>
+
+        </div>
+        <div class="col-lg-5 col-sm-11">
+          <div class="footer-right text-center">
+
+            <p class="footer-company-about">
+              <span>About the company</span>
+              Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
+              vehicula sit amet.
+            </p>
+
+            <div class="rounded-social-buttons my-2">
+              <a class="social-button facebook" href="https://www.facebook.com/" target="_blank"><i
+                  class="fab fa-facebook-f"></i></a>
+              <a class="social-button twitter" href="https://www.twitter.com/" target="_blank"><i
+                  class="fab fa-twitter"></i></a>
+              <a class="social-button linkedin" href="https://www.linkedin.com/" target="_blank"><i
+                  class="fab fa-linkedin"></i></a>
+              <a class="social-button github" href="https://www.github.com" target="_blank"><i
+                  class="fab fa-github"></i></a>
+              <a class="social-button instagram" href="https://www.instagram.com/" target="_blank"><i
+                  class="fab fa-instagram"></i></a>
+              <a class="social-button whatsapp" href="https://web.whatsapp.com/" target="_blank"><i
+                  class="fab fa-whatsapp"></i></a>
+            </div>
+
+
+          </div>
+
         </div>
       </div>
-      <div class="col-lg-4 px-0 copyright">
+
+
+    </div>
+    <div class="container-fluid bg-dark px-1 text-center">
         <p class="text-white mt-2">Copyright &copy
           <?php echo date('Y'). " "; ?>LesKollab<span><a href="admin/admin_login.php" class="btn btn-secondary"
               style="margin-left:10px;">Admin Login</a></span>
         </p>
-      </div>
-    </div>
+  </div>
   </div>
   <!--End Footer Section-->
 
