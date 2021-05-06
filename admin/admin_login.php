@@ -376,12 +376,9 @@ else
             <h3>Lesk<span>ollab</span></h3>
 
             <p class="footer-links">
-              <a href="index.php" class="link-1">Home</a>
-              <a href="#about_us">About</a>
-              <a href="#faq">FAQs</a>
-              <a href="#" data-toggle="modal" data-target="#modallogin">Login</a>
-              <a href="#" data-toggle="modal" data-target="#modalregister">Register</a>
-              <a href="#" data-toggle="modal" data-target="#modalregister">Contact</a>
+              <a href="/LesKollab/index.php" class="link-1">Home</a>
+              <a href="/LesKollab/index.php#about_us">About</a>
+              <a href="/LesKollab/index.php#faq">FAQs</a>
             </p>
 
           
