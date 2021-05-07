@@ -16,11 +16,11 @@
 
         if($deletePostStatus) { // if delete successful!
 
-            header('Location: ../Explore/index.php?message=Project deleted Sucessfully !');
+            header('Location: ../Explore/index.php?message=Project deleted Sucessfully !&status=success');
 
         } else {
 
-            header('Location: ../Explore/index.php?message=Unable to delete project!');
+            header('Location: ../Explore/index.php?message=Unable to delete project !&status=danger');
 
         }
 

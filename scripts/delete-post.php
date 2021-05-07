@@ -16,11 +16,11 @@
 
         if($deletePostStatus) { // if delete successful!
 
-            header('Location: ../Explore/index.php?message=Sucessfully deleted post!');
+            header('Location: ../Explore/index.php?message=Sucessfully deleted post!&status=success');
 
         } else {
 
-            header('Location: ../Explore/index.php?message=Unable to delete post!');
+            header('Location: ../Explore/index.php?message=Unable to delete post!&status=danger');
 
         }
 

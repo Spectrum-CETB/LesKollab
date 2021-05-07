@@ -419,7 +419,7 @@ else
     </div>
     <div class="container-fluid bg-dark px-1 text-center">
         <p class="text-white mt-2">Copyright &copy
-          <?php echo date('Y'). " "; ?>LesKollab<span><a href="admin/admin_login.php" class="btn btn-secondary"
+          <?php echo date('Y'). " "; ?>LesKollab<span><a href="/LesKollab/admin/admin_login.php" class="btn btn-secondary"
               style="margin-left:10px;">Admin Login</a></span>
         </p>
   </div>
