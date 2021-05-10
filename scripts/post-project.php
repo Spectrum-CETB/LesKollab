@@ -136,23 +136,23 @@
 
         if($insertProjectStatus &&   $insrtStacks) { // insert into the database!
 
-          header('Location: ../Explore/index.php?message=Project added!');
+          header('Location: ../Explore/index.php?message=Project added !&status=success');
 
         } else {
 
-          header('Location: ../Explore/index.php?message=Unable to add project!');
+          header('Location: ../Explore/index.php?message=Unable to add project !&status=danger');
 
         }
 
       } else {
 
-        header('Location: ../Explore/index.php?message=Unable to upload the screenshots');
+        header('Location: ../Explore/index.php?message=Unable to upload the screenshots&status=danger');
 
       }
   }
 } else { //fields are not empty!
 
-    header('Location: ../Explore/index.php?message=Please fill the details properly!');
+    header('Location: ../Explore/index.php?message=Please fill the details properly!&status=danger');
 
   }
 ?>
