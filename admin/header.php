@@ -35,7 +35,7 @@
           <li class="nav-item "><a href="admin_dashboard.php" class="nav-link <?php if(PAGE=='admin_dashboard'){echo 'active';} ?>"><i class="fas fa-tachometer-alt "></i> Dashboard</a></li>
           <li class="nav-item "><a href="user_messages.php" class="nav-link <?php if(PAGE=='user_messages'){echo 'active';} ?>"><i class="fas fa-comments"></i> User Messages</a></li>
           <li class="nav-item "><a href="generate_report.php" class="nav-link <?php if(PAGE=='generate_report'){echo 'active';} ?>"><i class="fas fa-clipboard "></i> Generate Report</a></li>
-          <li class="nav-item"><a href="../logout.php" class="nav-link "><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+          <li class="nav-item"><a href="#" class="nav-link " onclick="confirmation()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
       </div>
     </div>
@@ -44,5 +44,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
     <script src="../assets/js/all.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    function confirmation(){
+    swal({
+      title: "Are you sure?",
+      text: "You Want to LogOut!!",
+      icon: "warning",
+      buttons: true,
+      buttons: ['cancel','Yes, Log out'],
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        window.location = "../logout.php";
+      } else {
+        
+      }
+    });
+    }
+  </script>
 </body>
 </html>
