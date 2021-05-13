@@ -18,15 +18,16 @@ if (isset($_SESSION['email'])) {
   header('Location: ../index.php?message=Please login first!&status=danger');
 }
 ?>
+<?php
+    include("../components/common/messages.php");
+    ?>
 <?php include('../components/common/header.php'); ?>
 <?php include('../components/common/navbar.php'); ?>
 
 <div style="width: 100vw;min-height: 100vh;background: url(&quot;https://wallpaperaccess.com/full/983279.jpg&quot;) bottom / cover no-repeat;padding-top: 10vh;">
   <div class="container mt-3" style="width: 100vw;height: auto;margin: 0px;padding: 0px;">
     <div class="row" style="width: 100vw;margin-top: 0px;">
-<?php
-    include("../components/common/messages.php");
-    ?>
+
       <div class="col-4" style="padding: 2vw;height: auto;">
         <div class="profile-card" style="border-width: 0px;"><img class="rounded-circle profile-pic" src="../uploads/<?= $name ?>/<?= $getUserDetailsRow['profile'] ?>">
           <h3 class="profile-name" style="background: rgb(255,255,255);color: rgb(0,0,0);"><?= $name ?></h3>
@@ -235,7 +236,6 @@ if (mysqli_num_rows($getProjectsStatus) > 0) {
 
   }
 </script>
-<script src="assets/js/Snackbar.js"></script>
 <script src="assets/js/all.min.js"></script>
 
 <?php include('../components/common/footer.php'); ?>
