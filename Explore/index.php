@@ -61,7 +61,11 @@ if (isset($_SESSION['email'])) {
           }
           ?>
         </div>
-
+          <div>
+          <p class=" row w-100" style="margin-left:0px">
+                <a class="btn m-1 col btn-primary" data-toggle="modal" data-target="#P<?= $getUserDetailsRow['id'] ?>" href="#">Edit  </a>
+              </p>
+          </div>
         <?php
         $getProjects = "SELECT * FROM `projects` WHERE `email` = '$email'";
         $getProjectsStatus = mysqli_query($conn, $getProjects) or die(mysqli_error($conn));
@@ -150,7 +154,6 @@ if (mysqli_num_rows($getProjectsStatus) > 0) {
     $getAllstacks = mysqli_query($conn, $getstacks) or die(mysqli_error($conn));
 ?>
 
-
     <div class="modal fade bd-example-modal-lg" id="P<?= $getProjectsRow['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -225,6 +228,85 @@ if (mysqli_num_rows($getProjectsStatus) > 0) {
 }
 ?>
 
+<!-- edit Profile -->
+
+<?php
+$getProjects = "SELECT * FROM `users` WHERE `email` = '$email'";
+$getProjectsStatus = mysqli_query($conn, $getProjects) or die(mysqli_error($conn));
+if (mysqli_num_rows($getProjectsStatus) > 0) {
+  while ($getProjectsRow = mysqli_fetch_assoc($getProjectsStatus)) {
+    $Pid = $getUserDetailsRow['id'];
+?>
+
+
+    <div class="modal fade bd-example-modal-lg" id="P<?= $getUserDetailsRow['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h1 style="font-family: sans-serif;padding: 1vw;">Edit Profile</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="../scripts/edit-profile.php" method="post" enctype="multipart/form-data">
+              <label>
+                <p class="label-txt">User Name</p>
+                <input type="text" class="input" value="<?= $getUserDetailsRow['name'] ?>" name="name" />
+                <input type="hidden" class="input" name="id" value="<?= $getUserDetailsRow['id'] ?>" />
+                <div class="line-box">
+                  <div class="line"></div>
+                </div>
+              </label>
+              <label>
+                <p class="label-txt">Email</p>
+                <input type="text" class="input" value="<?= $getUserDetailsRow['email'] ?>" name="userEmail" />
+                <div class="line-box">
+                  <div class="line"></div>
+                </div>
+              </label>
+              <label>
+                <p class="label-txt">Github</p>
+                <input type="text" class="input" value="<?= $getUserDetailsRow['github'] ?>" name="githublink" />
+                <div class="line-box">
+                  <div class="line"></div>
+                </div>
+              </label>
+              <label>
+                <p class="label-txt">LinkedIn</p>
+                <input type="text" class="input" value="<?= $getUserDetailsRow['linkedin'] ?>" name="linkedinLink" />
+                <div class="line-box">
+                  <div class="line"></div>
+                </div>
+              </label>
+              <label>
+                <p class="label-txt">Bio</p>
+                <input type="text" value="<?= $getUserDetailsRow['bio'] ?>" class="input" name="bio" />
+                <div class="line-box">
+                  <div class="line"></div>
+                </div>
+               
+              </label>
+              <!-- <label>
+                <p class="label-txt">Profile Pic(if you want to change the Profile Pic)</p>
+                <input type="file" class="form-control" name="ProfilePic" id="inputGroupFile02" />
+                <div class="line-box">
+                  <div class="line"></div>
+                </div>
+                <span id="dstack" style="padding: 0;margin: 0;"></span>
+              </label> -->
+              <br>
+              <button type="submit">Save Changes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <?php
+  }
+}
+?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/script.min.js"></script>
