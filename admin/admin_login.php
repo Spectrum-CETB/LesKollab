@@ -65,7 +65,7 @@ else
 <body>
 
 
-<nav class="navbar navbar-light navbar-expand-md py-0">
+<nav class="navbar navbar-dark navbar-expand-md py-0 bg-dark">
       <!-- <img src="assets/images/logo1.png" alt="" height="70px" width="100px"> -->
       <div class="container-fluid">
         <a class="navbar-brand py-0" href="index.php" style="font-size: 30px;font-family: Aclonica, sans-serif;">
@@ -93,10 +93,8 @@ else
             
           </ul>
         </div>
-
-        <input type="checkbox" id="toggle" name="checkbox" class="switch" onclick="myfun()">
     </nav>
-<div class="container mb-5">
+<div class="container mt-3 mb-5 pt-2 pb-5">
     <div class="row">
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
