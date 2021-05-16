@@ -68,7 +68,7 @@ else
 <nav class="navbar navbar-dark navbar-expand-md py-0 bg-dark">
       <!-- <img src="assets/images/logo1.png" alt="" height="70px" width="100px"> -->
       <div class="container-fluid">
-        <a class="navbar-brand py-0" href="index.php" style="font-size: 30px;font-family: Aclonica, sans-serif;">
+        <a class="navbar-brand py-0" href="/LesKollab/index.php" style="font-size: 30px;font-family: Aclonica, sans-serif;">
             <img src="../assets/images/logo1.png" alt="" height="80px" width="100px">LesKollab
         </a>
         
@@ -77,19 +77,16 @@ else
 
         <div class="collapse navbar-collapse" id="navcol-1">
           <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link active" href="index.php"
+            <li class="nav-item"><a class="nav-link active" href="/LesKollab/index.php"
                 style="padding: 8px;padding-right: 2vw;font-size: 20px;">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" href="#about_us"
+            <li class="nav-item"><a class="nav-link active" href="/LesKollab/index.php#about_us"
                 style="padding: 8px;padding-right: 2vw;font-size: 20px;">About Us</a></li>
-            <li class="nav-item"><a class="nav-link active" href="#faq"
+            <li class="nav-item"><a class="nav-link active" href="/LesKollab/index.php#faq"
                 style="padding: 8px;padding-right: 2vw;font-size: 20px;">FAQ's</a></li>
-            <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target="#modalcontact" href="#"
-                style="padding-right: 2vw;font-size: 20px;">Contact Us</a></li>
+            
             <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target="#modallogin" href="#"
                 style="padding-right:2vw;font-size:20px;">Login</a></li>
             <!-- Different nav bar link for new LOGIN and REGISTER modals -->
-            <li class="nav-item"><a class="nav-link active " data-toggle="modal" data-target="#modalregister" href="#"
-                style="padding-right:2vw;font-size:20px;">Register</a></li>
             
           </ul>
         </div>
@@ -116,6 +113,46 @@ else
         </div>
     </div>
 </div>
+
+<!-- The previous Modal has been separated and thus the courosel has been removed -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true" id="modallogin">
+
+
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title" style="font-family: 'Permanent Marker', cursive;">LOGIN</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <form action="../scripts/Login.php" method="post">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter email">
+
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" name="password" id="pswlogin" placeholder="Password">
+            </div>
+            <div>
+              <input type="checkbox" id="boxlogin" onclick="box2()">
+              <span id="notice2">show password</span>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
     
     <!-- Start Footer Section-->
   <div class="footer-distributed pt-5 pb-2 px-0 bg-dark">
