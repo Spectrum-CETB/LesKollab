@@ -30,13 +30,192 @@ if (isset($_SESSION['email'])) {
   <!--Font Awesome CSS-->
   <link rel="stylesheet" href="assets/css/all.min.css">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <!-- For adding Font style -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
   <style>
-    
+  
+.our-team{
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.our-team .pic:before{
+    content: "";
+    background: #716a9e;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0.78;
+    transform: scale(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.our-team:hover .pic:before{
+    transform: scale(1);
+}
+
+.our-team .pic img{
+    width: 100%;
+    height: auto;
+}
+
+.our-team .social{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    opacity: 0;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.our-team:hover .social{
+    opacity: 1;
+}
+
+.our-team .social li{
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.our-team .social li:nth-child(1){
+    transform: translate3d(22px, -19px, 0px);
+}
+
+.our-team:hover .social li:nth-child(1){
+    transform: translate3d(62px, -19px, 0px);
+}
+
+.our-team .social li:nth-child(2){
+    transform: translate3d(36px, 38px, 0px);
+}
+
+.our-team:hover .social li:nth-child(2){
+    transform: translate3d(36px, 8px, 0px);
+}
+
+.our-team .social li:nth-child(3){
+    transform: translate3d(-18px, -75px, 0px);
+}
+
+.our-team:hover .social li:nth-child(3){
+    transform: translate3d(-18px, -46px, 0px);
+}
+
+.our-team .social li:nth-child(4){
+    transform: translate3d(-5px, -19px, 0px);
+}
+
+.our-team:hover .social li:nth-child(4){
+    transform: translate3d(-43px, -19px, 0px);
+}
+
+.our-team .social li a{
+    display: block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background: #333;
+    font-size: 16px;
+    color: #fff;
+    margin: 0 15px 0 0;
+    transform: rotate(45deg);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.our-team .social li a:hover{
+    line-height: 35px;
+    background: #fff;
+    color: #333;
+    transform: rotate(-45deg);
+}
+
+.our-team .social li a i{
+    transform: rotate(-45deg);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.our-team .social li a:hover i{
+    transform: rotate(45deg);
+}
+
+.our-team .team-content{
+    padding: 15px 10px;
+    background: #fff;
+    position: relative;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.our-team .title{
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    margin: 0 0 12px 0;
+}
+
+.our-team small{
+    display: block;
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 8px;
+}
+
+.our-team .team-layer{
+    width: 100%;
+    padding: 34px 10px;
+    background: #f7f7f7;
+    border-bottom: 2px solid #716a9e;
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.our-team:hover .team-layer{
+    bottom: 0;
+    opacity: 1;
+}
+
+.our-team .team-layer a{
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    margin: 0 0 12px 0;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.our-team .team-layer a:hover{
+    color: #716a9e;
+}
+
+.our-team .post{
+    display: block;
+    font-size: 14px;
+    color: #999;
+    text-transform: capitalize;
+}
+
+@media only screen and (max-width: 990px){
+    .our-team{ margin-bottom: 35px; }
+}@charset "utf-8";
+/* CSS Document */
+
+
   </style>
 
 </head>
@@ -296,6 +475,112 @@ if (isset($_SESSION['email'])) {
   </div>
   </div>
   </div>
+
+  <!-- our teams start -->
+  <div class="demo mb-5 pb-5">
+        <div class="container">
+            <div class="row text-center">
+                <h1 class="heading-title mb-3 py-3"> Meet Our Team </h1>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-11">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="images/person-2.jpg" alt=""/>
+                            <ul class="social">
+                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Williamson</h3>
+                            <small class="post">web developer</small>
+                            <small>Email: <b>mail@example.com</b></small>
+                        </div>
+                        <div class="team-layer">
+                            <a href="#">Williamson</a>
+                            <span class="post">web developer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-11">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="images/Sam-Revilter.jpg" alt=""/>
+                            <ul class="social">
+                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">kristina</h3>
+                            <small class="post">Web Designer</small>
+                            <small>Email: <b>mail@example.com</b></small>
+                        </div>
+                        <div class="team-layer">
+                            <a href="#">kristina</a>
+                            <span class="post">Web Designer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="images/team4-large.jpg" alt=""/>
+                            <ul class="social">
+                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Steve Thomas</h3>
+                            <small class="post">web developer</small>
+                            <small>Email: <b>mail@example.com</b></small>
+                        </div>
+                        <div class="team-layer">
+                            <a href="#">Steve Thomas</a>
+                            <span class="post">web developer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="images/Affluent-Women-Mailing-Lists.jpg" alt=""/>
+                            <ul class="social">
+                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Miranda joy</h3>
+                            <small class="post">Web Designer</small>
+                            <small>Email: <b>mail@example.com</b></small>
+                        </div>
+                        <div class="team-layer">
+                            <a href="#">Miranda joy</a>
+                            <span class="post">Web Designer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- our teams end -->
+
     <!-- faq start -->
 <div class="faqsection container-fluid px-0 " id="faq">
   <h1 class="text-center py-4">FAQ's</h1>
@@ -526,12 +811,13 @@ consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
       </div>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
-  <script src="assets/js/Button-Ripple-Effect-Animation-Wave-Pulse.js"></script>
-  <script src="assets/js/Snackbar.js"></script>
+  <!-- <script src="assets/js/Button-Ripple-Effect-Animation-Wave-Pulse.js"></script> -->
+  <!-- <script src="assets/js/Snackbar.js"></script> -->
   <script src="assets/js/all.min.js"></script>
   <script>
     $('#myModal').on('shown.bs.modal', function () {
@@ -564,7 +850,6 @@ consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
   <script src="assets/js/register.js"></script>
   <script src="assets/js/darkmode.js"></script>
   <script src="assets/js/faq.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function(){
             console.log("ready")
