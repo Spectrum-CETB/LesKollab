@@ -6,7 +6,7 @@ session_start();
 include('./config/db.php');
 
 if (isset($_SESSION['email'])) {
-  header('Location: ./Explore/index.php?message=You have logged in successfully!');
+  header('Location: ./Explore/index.php?message=You have logged in successfully!&status=success');
 }
 ?>
 <!DOCTYPE html>
