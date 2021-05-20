@@ -32,7 +32,11 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <title>Project Description</title>
   <style>
     .navbar .navbar-brand img {
@@ -252,6 +256,65 @@
     </div>
   </div>
 
+ <!-- Start Footer Section-->
+ <div class="footer-distributed mt-5 pt-5 pb-2 px-0 bg-dark">
+    <div class="container px-2">
+
+      <div class="row">
+        <div class="col-lg-7 col-sm-11">
+          <div class="footer-left">
+
+            <h3>Lesk<span>ollab</span></h3>
+
+            <p class="footer-links">
+              <a href="/LesKollab/index.php" class="link-1">Home</a>
+              <a href="/LesKollab/index.php#about_us">About</a>
+              <a href="/LesKollab/index.php#faq">FAQs</a>
+            </p>
+
+          
+          </div>
+
+        </div>
+        <div class="col-lg-5 col-sm-11">
+          <div class="footer-right text-center">
+
+            <p class="footer-company-about">
+              <span>About the company</span>
+              Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
+              vehicula sit amet.
+            </p>
+
+            <div class="rounded-social-buttons my-2">
+              <a class="social-button facebook" href="https://www.facebook.com/" target="_blank"><i
+                  class="fab fa-facebook-f"></i></a>
+              <a class="social-button twitter" href="https://www.twitter.com/" target="_blank"><i
+                  class="fab fa-twitter"></i></a>
+              <a class="social-button linkedin" href="https://www.linkedin.com/" target="_blank"><i
+                  class="fab fa-linkedin"></i></a>
+              <a class="social-button github" href="https://www.github.com" target="_blank"><i
+                  class="fab fa-github"></i></a>
+              <a class="social-button instagram" href="https://www.instagram.com/" target="_blank"><i
+                  class="fab fa-instagram"></i></a>
+              <a class="social-button whatsapp" href="https://web.whatsapp.com/" target="_blank"><i
+                  class="fab fa-whatsapp"></i></a>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+    <div class="container-fluid bg-dark px-1 text-center">
+        <p class="text-white mt-2">Copyright &copy
+          <?php echo date('Y'). " "; ?>LesKollab<span><a href="/LesKollab/admin/admin_login.php" class="btn btn-secondary"
+              style="margin-left:10px;">Admin Login</a></span>
+        </p>
+  </div>
+  </div>
 
 
   <!-- Optional JavaScript; choose one of the two! -->
