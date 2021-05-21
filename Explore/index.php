@@ -91,7 +91,7 @@ if (isset($_SESSION['email'])) {
                 </p><small class="text-muted"></small>
               </a>
               <p class=" row w-100" style="margin-left:0px">
-                <a class="btn m-1 col btn-primary" href="../scripts/delete-post.php?id=<?= $getProjectsRow['id'] ?>">Delete</a>
+                <a class="btn m-1 col btn-primary" href="#../scripts/delete-post.php?id=<?= $getProjectsRow['id'] ?>">Delete</a>
 
                 <a class="btn m-1 col btn-primary" data-toggle="modal" data-target="#P<?= $getProjectsRow['id'] ?>" href="#">Edit</a>
               </p>
@@ -129,7 +129,7 @@ if (isset($_SESSION['email'])) {
                           <?php } ?></p>
                         <p><?=$getAllProjectsRow['pdes']?></p>
                         <a href="./checkProject.php?id=<?=$getAllProjectsRow['id']?>" class="btn btn-primary">Project Link</a>
-                        <a href="../scripts/delete-project.php?id=<?=$getAllProjectsRow['id']?>" class="btn btn-primary">Delete Project</a>
+                        <a href="#../scripts/delete-project.php?id=<?=$getAllProjectsRow['id']?>"  class="btn btn-primary confirmDelete">Delete Project</a>
                       </div>
                     </div>
                     </div>
@@ -319,5 +319,27 @@ if (mysqli_num_rows($getProjectsStatus) > 0) {
   }
 </script>
 <script src="assets/js/all.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    $('.confirmDelete').on('click', function () {
+      var href = $(this).attr('href');
+      href = href.substring(1);
+      console.log(href,typeof(href))
+      swal({
+      title: "Are you sure?",
+      text: "You Want Delete!!",
+      icon: "warning",
+      buttons: true,
+      buttons: ['cancel','Yes'],
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        window.location = href;
+      } else {
 
+      }
+    });
+    });
+  </script>
 <?php include('../components/common/footer.php'); ?>
