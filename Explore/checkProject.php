@@ -38,16 +38,11 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <title>Project Description</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/darkmode.css">
+
   <style>
-    .navbar .navbar-brand img {
-      width: 10vw;
-      height: 10vh;
-    }
-
-    .navbar .navbar-brand span {
-      font-size: 2rem;
-    }
-
+    
     body
     {
       background-color: #4bafd6;
@@ -175,24 +170,34 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/lesscolab/index.php"><img src="assets/img/logo1.png" alt="not found">
-        <span>LesKollab</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/"></a>
-          </li>
+<nav class="navbar navbar-dark navbar-expand-md py-0 bg-dark">
+      <!-- <img src="assets/images/logo1.png" alt="" height="70px" width="100px"> -->
+      <div class="container-fluid">
+        <a class="navbar-brand py-0" href="/LesKollab/index.php" style="font-size: 30px;font-family: Aclonica, sans-serif;">
+            <img src="../assets/images/logo1.png" alt="" height="80px" width="100px">LesKollab
+        </a>
+        
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle
+            navigation</span><span class="navbar-toggler-icon"></span></button>
 
-        </ul>
-      </div>
-    </div>
-  </nav>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul class="nav navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="/LesKollab/index.php"
+                style="padding: 8px;padding-right: 2vw;font-size: 20px;">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/LesKollab/index.php"
+                style="padding: 8px;padding-right: 2vw;font-size: 20px;">Dashboard</a></li>
+            
+            <li class="nav-item"><a class="nav-link active"  href="../logout.php"
+                style="padding-right:4vw;font-size:20px;">LogOut</a></li>
+            <!-- Different nav bar link for new LOGIN and REGISTER modals -->
+            <li class="nav-item">
+        <input type="checkbox" id="toggle" name="checkbox" class="switch" onclick="myfun()"></li>
+            <!-- Different nav bar link for new LOGIN and REGISTER modals -->
+            
+          </ul>
+        </div>
+        
+    </nav>
   <h1 class="text-center my-2 py-2">Project Details</h1>
   <?php
   $id = $_GET['id'];
@@ -315,7 +320,7 @@
         </p>
   </div>
   </div>
-
+  <script src="../assets/js/darkmode.js"></script>
 
   <!-- Optional JavaScript; choose one of the two! -->
 
