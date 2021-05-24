@@ -108,8 +108,12 @@ else
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
+                    <input type="password" class="form-control" id="pswlogin" name="password" required>
                 </div>
+                <div>
+              <input type="checkbox" id="boxlogin" onclick="box2()">
+              <span id="notice2">show password</span>
+            </div>
                 <button type="submit" class="btn btn-primary" name="login">Login</button>
             </form>
         </div>
@@ -140,10 +144,10 @@ else
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" name="password" id="pswlogin" placeholder="Password">
+              <input type="password" class="form-control" name="password" id="pswlogin1" placeholder="Password">
             </div>
             <div>
-              <input type="checkbox" id="boxlogin" onclick="box2()">
+              <input type="checkbox" id="boxlogin1" onclick="box1()">
               <span id="notice2">show password</span>
             </div>
             <br>
@@ -219,7 +223,40 @@ else
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
- 
+ <script>
+ function box2()
+{
+
+  var password=document.getElementById("pswlogin");
+  var x=document.getElementById("boxlogin").checked;
+  if(x==true)
+  {
+    password.type="text";
+   
+  }
+  else
+  {
+    password.type="password";
+    
+  }
+}
+function box1()
+{
+
+  var password=document.getElementById("pswlogin1");
+  var x=document.getElementById("boxlogin1").checked;
+  if(x==true)
+  {
+    password.type="text";
+   
+  }
+  else
+  {
+    password.type="password";
+    
+  }
+}
+</script>
 </body>
 </html>
 
