@@ -253,10 +253,10 @@ if (isset($_SESSION['email'])) {
             <li class="nav-item"><a class="nav-link active " data-toggle="modal" data-target="#modalregister" href="#"
                 style="padding-right:2vw;font-size:20px;">Register</a></li>
             
+            <li class="nav-item">  <input type="checkbox" id="toggle" name="checkbox" class="switch" onclick="myfun()"></li>
+            
           </ul>
         </div>
-
-        <input type="checkbox" id="toggle" name="checkbox" class="switch" onclick="myfun()">
     </nav>
     <?php
       include("components/common/messages.php");

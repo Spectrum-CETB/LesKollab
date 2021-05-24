@@ -61,6 +61,14 @@ else
       font-weight:bold;
       font-size:19x;
   }
+  .loginForm
+  {
+    padding:20px;
+  }
+  .dark-mode .form-label
+  {
+    color: #fff;
+  }
   
   </style>
 </head>
@@ -89,14 +97,18 @@ else
             <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target="#modallogin" href="#"
                 style="padding-right:2vw;font-size:20px;">Login</a></li>
             <!-- Different nav bar link for new LOGIN and REGISTER modals -->
+            <li class="nav-item">
+        <input type="checkbox" id="toggle" name="checkbox" class="switch" onclick="myfun()"></li>
+            <!-- Different nav bar link for new LOGIN and REGISTER modals -->
             
           </ul>
         </div>
+        
     </nav>
 <div class="container mt-3 mb-5 pt-2 pb-5">
     <div class="row">
         <div class="col-lg-3"></div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 loginForm">
             <div class="text-center">
                 <img src="../assets/images/logo1.png"  alt="" height="150px" width="150px;">
             </div> 
@@ -219,7 +231,7 @@ else
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
- 
+  <script src="../assets/js/darkmode.js"></script>
 </body>
 </html>
 
