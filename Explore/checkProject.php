@@ -67,7 +67,6 @@
 
     th {
       color: #D5DDE5;
-      ;
       background: #1b1e24;
       border-bottom: 4px solid #9ea7af;
       border-right: 1px solid #343a45;
@@ -166,6 +165,13 @@
     td.text-right {
       text-align: right;
     }
+    @media screen and (max-width: 992px) {
+      td
+      {
+        font-size:1rem;
+      }
+}
+
   </style>
 </head>
 
