@@ -27,12 +27,11 @@ if (isset($_SESSION['email'])) {
 
 <head>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 body {
 	margin-bottom: 67px;
 	overflow-x: hidden;
 	background: #111111;
-	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
 }
 
 nav {
@@ -160,7 +159,8 @@ button.butn:hover {
                 </label>
                 <label>
                     <p>Bio</small></p>
-                    <textarea class="input" name="user_bio" rows="2" value="<?= $getUserDetailsRow['bio'] ?>"  required></textarea>
+		    <input type="text" class="input" spellcheck="false" name="user_bio" value="<?= $getUserDetailsRow['bio'] ?>" required />
+<!--                     <textarea class="input" name="user_bio" rows="2" value="<?= $getUserDetailsRow['bio'] ?>"  required></textarea> -->
                 </label>
 
                 <br>
