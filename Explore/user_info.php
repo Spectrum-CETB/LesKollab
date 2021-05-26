@@ -22,67 +22,149 @@ if (isset($_SESSION['email'])) {
 <?php include("../components/common/header.php") ?>
 <?php include("../components/common/navbar.php") ?>
 <?php include("../components/common/modals.php") ?>
+<!doctype html>
+<html lang="en">
+
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+body {
+	margin-bottom: 67px;
+	overflow-x: hidden;
+	background: #111111;
+	font-family: 'Roboto Slab', serif;
+}
+
+nav {
+	width: 100vw;
+}
+
+form {
+	background: #111111;
+}
+
+.custom_class {
+	border-radius: 4%;
+}
+
+input {
+	color: white;
+}
+
+.hello_class {
+	display: grid;
+	place-items: center
+}
 
 
-<div style="width: 100vw;min-height: 100vh;background: url(&quot;https://wallpaperaccess.com/full/983279.jpg&quot;) bottom / cover no-repeat;padding-top: 10vh;">
+.input {
+	background: #ac3e3e;
+	border-radius: 10px;
+}
+
+textarea {
+	color: white;
+}
+
+.input:focus {
+	border: 1px solid #ac3e3e;
+	background-color: #4E4E4E;
+}
+
+p {
+	color: white;
+	float: left;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+a i {
+	color: black;
+	height: 40px;
+	width: 40px;
+	background: #d9a507;
+	line-height: 40px;
+	padding-top: 3px;
+	cursor: pointer;
+	transition: .5s
+}
+
+a i:hover {
+	animation: Social-Icons-Flipping .70s;
+	color: #d9a507;
+	background: black;
+	box-shadow: 0 0 15px #d9a507;
+	transform: scale(.9);
+}
+
+@keyframes Social-Icons-Flipping {
+	0% {
+		transform: rotate(0)
+	}
+	100% {
+		transform: rotate(360deg)
+	}
+}
+
+button.butn {
+	width: 100px;
+	border: 1px solid white;
+	color: black;
+	background: white !important;
+}
+
+button.butn:hover {
+	border: 1px solid #ac3e3e;
+	color: white;
+	background: black !important;
+}
+
+</style></head><body>
+<div style="width: 100vw;min-height: 100vh;background:#111111;padding-top: 10vh;">
     <?php
     include("../components/common/messages.php");
     ?>
     <div class="container mt-2">
-        <div class="border p-4 rounded">
-            <div class="form-inline my-4">
-                <a href="../uploads/<?= $name ?>/<?= $getUserDetailsRow['profile'] ?>" target="_blank">
-                    <img src="../uploads/<?= $name ?>/<?= $getUserDetailsRow['profile'] ?>" alt="profile_pic" class="rounded" width="100px">
+        <div class="border p-4 custom_class">
+            <div class="form-inline my-2 hello_class">
+                <a href="../uploads/<?= $name ?>/<?= $getUserDetailsRow['profile'] ?>" target="_blank" class="rounded-circle border p-2 image" >
+                    <img src="../uploads/<?= $name ?>/<?= $getUserDetailsRow['profile'] ?>" alt="profile_pic" class="rounded-circle" height="145px" width="150px">
                 </a>
-                <h2 class="ml-4 text-center text-light">Hi, <?= $name ?></h2>
-                <a href="<?= $getUserDetailsRow['github'] ?>" target="_blank"><i class="fa fa-github ml-4" style="font-size:30px; color: rgb(0,0,0);background: rgb(255,255,255);"></i></a>
-                <a href="<?= $getUserDetailsRow['linkedin'] ?>" target="_blank"><i class="fa fa-linkedin-square ml-4" style="font-size:30px;  color: rgb(0,0,0);background: rgb(255,255,255);"></i></a>
-            </div>
+                <h2 class="mt-4 text-center text-light">Hi, <?= $name ?></h2>
+                </div>    
+                <div class="text-center  my-4 text-light">Follow me on
+                <a class="rounded-circle" href="<?= $getUserDetailsRow['github'] ?>" target="_blank"><i class="fa fa-github ml-3 rounded-circle" style="font-size:30px; "></i></a>
+                <a href="<?= $getUserDetailsRow['linkedin'] ?>" target="_blank"><i class="fa fa-linkedin ml-3 rounded-circle" style="font-size:30px;"></i></a>
+                </div>
 
 
-            <h5 class="text-danger mb-3">*After making changes on your data, Press <span class="badge badge-primary">Update</span> button to update.</h5>
+            <h5 class="text-danger mb-3 text-center">*After making changes on your data, Press <span class="badge badge-primary">Update</span> button to update.</h5>
 
             <form action="../scripts/update_user.php" method="post">
                 <input type="hidden" name="user_id" value="<?= $getUserDetailsRow['id'] ?>">
                 <label>
-                    <p class="label-txt">Name <small class="text-danger">(You can't change name.)</small></p>
+                    <p>Name <small class="text-danger">(You can't change name.)</small></p>
                     <input type="text" class="input" name="username" value="<?= $getUserDetailsRow['name'] ?>" readonly required />
-                    <div class="line-box">
-                        <div class="line"></div>
-                    </div>
                 </label>
                 <label>
-                    <p class="label-txt">Email <small class="text-danger">(You can't change email address.)</small></p>
+                    <p>Email <small class="text-danger">(You can't change email address.)</small></p>
                     <input type="email" class="input" name="useremail" value="<?= $getUserDetailsRow['email'] ?>" readonly required />
-                    <div class="line-box">
-                        <div class="line"></div>
-                    </div>
                 </label>
                 <label>
-                    <p class="label-txt">Github Link</p>
+                    <p>Github Link</p>
                     <input type="text" class="input" name="glink" value="<?= $getUserDetailsRow['github'] ?>" required />
-                    <div class="line-box">
-                        <div class="line"></div>
-                    </div>
                 </label>
                 <label>
-                    <p class="label-txt">LinkedIn Link</p>
+                    <p>LinkedIn Link</p>
                     <input type="text" class="input" name="llink" value="<?= $getUserDetailsRow['linkedin'] ?>" required />
-                    <div class="line-box">
-                        <div class="line"></div>
-                    </div>
                 </label>
                 <label>
-                    <p class="label-txt">Bio</small></p>
-                    <input type="text" class="input" name="user_bio" value="<?= $getUserDetailsRow['bio'] ?>" required />
-                    <!-- <textarea class="input" name="user_bio" rows="2" value="<?= $getUserDetailsRow['bio'] ?>"  required></textarea> -->
-                    <div class="line-box">
-                        <div class="line"></div>
-                    </div>
+                    <p>Bio</small></p>
+                    <textarea class="input" name="user_bio" rows="2" value="<?= $getUserDetailsRow['bio'] ?>"  required></textarea>
                 </label>
 
                 <br>
-                <button type="submit" class="btn-block" name="update_user">Update</button>
+                <button type="submit" class="butn" name="update_user">Update</button>
             </form>
         </div>
     </div>
@@ -104,3 +186,7 @@ if (isset($_SESSION['email'])) {
 <script src="assets/js/Snackbar.js"></script>
 
 <?php include("../components/common/footer.php") ?>
+
+    
+</body>
+</html>
