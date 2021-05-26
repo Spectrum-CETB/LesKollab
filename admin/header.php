@@ -12,12 +12,19 @@
     <link rel="stylesheet" href="../assets/css/Button-Ripple-Effect-Animation-Wave-Pulse.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/darkmode.css">
     <!--Font Awesome CSS-->
     <link rel="stylesheet" href="../assets/css/all.min.css">
     <!-- For adding Font style -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <title> Admin Dashboard</title>
+    <style>
+    .dark-mode .bg-light
+    {
+      background-color: #c6bcbc!important;
+    }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-dark navbar-expand-md py-0 bg-dark">
@@ -37,6 +44,9 @@
              
             <li class="nav-item"><a class="nav-link text-white" data-toggle="modal" data-target="#modallogin" href="#"
                 style="padding-right:2vw;font-size:20px;">Login as User</a></li>
+            <!-- Different nav bar link for new LOGIN and REGISTER modals -->
+            <li class="nav-item">
+        <input type="checkbox" id="toggle" name="checkbox" class="switch" onclick="myfun()"></li>
             <!-- Different nav bar link for new LOGIN and REGISTER modals -->
             
           </ul>
@@ -121,5 +131,6 @@
     });
     }
   </script>
+  <script src="../assets/js/darkmode.js"></script>
 </body>
 </html>
