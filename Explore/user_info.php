@@ -82,7 +82,6 @@ p {
 	width: 40px;
 	background: #d9a507;
 	line-height: 40px;
-	padding-top: 3px;
 	cursor: pointer;
 	transition: .5s
 }
