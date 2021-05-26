@@ -76,8 +76,7 @@ p {
 	font-size: 18px;
 	margin-bottom: 10px;
 }
-
-a i {
+.follow_class a i {
 	color: black;
 	height: 40px;
 	width: 40px;
@@ -88,7 +87,7 @@ a i {
 	transition: .5s
 }
 
-a i:hover {
+.follow_class a i:hover {
 	animation: Social-Icons-Flipping .70s;
 	color: #d9a507;
 	background: black;
@@ -131,7 +130,7 @@ button.butn:hover {
                 </a>
                 <h2 class="mt-4 text-center text-light">Hi, <?= $name ?></h2>
                 </div>    
-                <div class="text-center  my-4 text-light">Follow me on
+                <div class="text-center my-4 text-light follow_class">Follow me on
                 <a class="rounded-circle" href="<?= $getUserDetailsRow['github'] ?>" target="_blank"><i class="fa fa-github ml-3 rounded-circle" style="font-size:30px; "></i></a>
                 <a href="<?= $getUserDetailsRow['linkedin'] ?>" target="_blank"><i class="fa fa-linkedin ml-3 rounded-circle" style="font-size:30px;"></i></a>
                 </div>
