@@ -209,6 +209,19 @@ if (isset($_SESSION['email'])) {
     color: #999;
     text-transform: capitalize;
 }
+@media screen and (max-width: 600px) {
+      
+      .switch{
+          position: relative;
+        top:1.5rem;}
+      }
+      
+      @media screen and (max-width: 460px) {
+      
+     
+     .img-container {
+    width: 90px;}
+    }
 
 @media only screen and (max-width: 990px){
     .our-team{ margin-bottom: 35px; }
@@ -229,7 +242,7 @@ if (isset($_SESSION['email'])) {
        </div>
     </div>
   <div class="ajheader container-fluid px-0">
-    <nav class="navbar navbar-light navbar-expand-md py-0">
+    <nav class="navbar navbar-light navbar-expand-xl py-0">
       <!-- <img src="assets/images/logo1.png" alt="" height="70px" width="100px"> -->
       <div class="container-fluid"><a class="navbar-brand py-0" href="index.php"
           style="font-size: 30px;font-family: Aclonica, sans-serif;"><img class="img-container" 
@@ -246,14 +259,14 @@ if (isset($_SESSION['email'])) {
             <li class="nav-item"><a class="nav-link active" href="#faq"
                 style="padding: 8px;padding-right: 2vw;font-size: 20px;">FAQ's</a></li>
             <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target="#modalcontact" href="#"
-                style="padding-right: 2vw;font-size: 20px;">Contact Us</a></li>
+                style="padding: 8px;padding-right: 2vw;font-size: 20px;">Contact Us</a></li>
             <li class="nav-item"><a class="nav-link active" data-toggle="modal" data-target="#modallogin" href="#"
-                style="padding-right:2vw;font-size:20px;">Login</a></li>
+                style="padding: 8px;padding-right:2vw;font-size:20px;">Login</a></li>
             <!-- Different nav bar link for new LOGIN and REGISTER modals -->
             <li class="nav-item"><a class="nav-link active " data-toggle="modal" data-target="#modalregister" href="#"
-                style="padding-right:2vw;font-size:20px;">Register</a></li>
+                style="padding: 8px;padding-right:2vw;font-size:20px;">Register</a></li>
             
-            <li class="nav-item">  <input type="checkbox" id="toggle" name="checkbox" class="switch" onclick="myfun()"></li>
+            <li class="nav-item" style="padding-left: 8px;">  <input type="checkbox" id="toggle" name="checkbox" class="switch" onclick="myfun()"></li>
             
           </ul>
         </div>
