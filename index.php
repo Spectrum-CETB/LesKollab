@@ -228,7 +228,24 @@ if (isset($_SESSION['email'])) {
 }@charset "utf-8";
 /* CSS Document */
 
-
+  /* css for hover effect */
+  .nav .nav-item:hover
+  {
+    background-color: #00719d;
+    color: #fff !important;
+    border-radius:30px;
+    transition:1s;
+  }
+  .navbar-light .navbar-nav .nav-link.active:hover, .navbar-light .navbar-nav .show>.nav-link:hover
+  {
+    color: #fff !important;
+  }
+  a:hover , #projectbutton:hover
+  {
+    border-radius:30px;
+    transition:1s;
+  }
+  
   </style>
 
 </head>
@@ -266,7 +283,7 @@ if (isset($_SESSION['email'])) {
             <li class="nav-item"><a class="nav-link active " data-toggle="modal" data-target="#modalregister" href="#"
                 style="padding: 8px;padding-right:2vw;font-size:20px;">Register</a></li>
             
-            <li class="nav-item" style="padding-left: 8px;">  <input type="checkbox" id="toggle" name="checkbox" class="switch" onclick="myfun()"></li>
+            <li class="nav-item2" style="padding-left: 8px;">  <input type="checkbox" id="toggle" name="checkbox" class="switch" onclick="myfun()"></li>
             
           </ul>
         </div>
