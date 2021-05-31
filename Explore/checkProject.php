@@ -29,145 +29,81 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
-     <!-- Bootstrap CSS -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
   <title>Project Description</title>
   <link rel="stylesheet" href="../assets/css/styles.css">
   <link rel="stylesheet" href="../assets/css/darkmode.css">
-
   <style>
-    
+    .navbar .navbar-brand img {
+      width: 90px;
+      height: 70px;
+      color:white;
+    }
+    .navbar{
+      background-color: #0000003b;
+    }
+
+    .navbar .navbar-brand span ,.nav-item,h1 {
+      font-size: 2rem;
+      font-family: 'Aclonica', sans-serif;
+    }
+
     body
     {
-      background-color: #4bafd6;
+      background-color: #052035;
+      color:white;
     }
     /*** Table Styles **/
     a:hover
     {
+      
       color: #fff;
     }
-    .table-fill {
-      background: white;
-      border-radius: 3px;
-      border-collapse: collapse;
-      height: 320px;
-      margin: auto;
-      width: 100%;
-      padding: 5px;
-      width: 100%;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-      animation: float 5s infinite;
-    }
+   
 
-    th {
-      color: #D5DDE5;
-      background: #1b1e24;
-      border-bottom: 4px solid #9ea7af;
-      border-right: 1px solid #343a45;
-      font-size: 23px;
-      font-weight: 100;
-      padding: 24px;
-      text-align: left;
-      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-      vertical-align: middle;
+    h2 {
+      color: white;
+      margin-right: 14%;
     }
-
-    th:first-child {
-      border-top-left-radius: 3px;
+    .OE{
+      display: inline;
+      font-weight: bold;
     }
-
-    th:last-child {
-      border-top-right-radius: 3px;
-      border-right: none;
+    .card{
+      width:80%;
+      margin:auto;
+    
+      
     }
-
-    tr {
-      border-top: 1px solid #C1C3D1;
-      border-bottom: 1px solid #C1C3D1;
-      color: #666B85;
-      font-size: 16px;
-      font-weight: normal;
-      text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+    .filed{
+    background-color: #a10606;
+    width: fit-content;
+    padding: 6px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin: 15px;
     }
-
-    tr:hover td {
-      background: #06678e;
-      color: #FFFFFF;
-      border-top: 1px solid #22262e;
+    .stacks{
+      display:flex;
+      justify-content:space-around;
+      margin-bottom:30px;
     }
-
-    tr:first-child {
-      border-top: none;
+    .stack{
+    background-color: gray;
+    width: fit-content;
+    padding: 6px;
+    border-radius: 10px;
     }
-
-    tr:last-child {
-      border-bottom: none;
+    .color{
+      color:gray;
+      margin:20px;
     }
-
-    tr:nth-child(odd) td {
-      background: #EBEBEB;
-    }
-
-    tr:nth-child(odd):hover td {
-      background: #06678e;
-    }
-
-    tr:last-child td:first-child {
-      border-bottom-left-radius: 3px;
-    }
-
-    tr:last-child td:last-child {
-      border-bottom-right-radius: 3px;
-    }
-
-    td {
-      background: #FFFFFF;
-      padding: 20px;
-      text-align: left;
-      vertical-align: middle;
-      font-weight: 600;
-      color:black;
-      font-size: 18px;
-      text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-      border-right: 1px solid #C1C3D1;
-    }
-
-    td:last-child {
-      border-right: 0px;
-    }
-
-    th.text-left {
-      text-align: left;
-    }
-
-    th.text-center {
-      text-align: center;
-    }
-
-    th.text-right {
-      text-align: right;
-    }
-
-    td.text-left {
-      text-align: left;
-    }
-
-    td.text-center {
-      text-align: center;
-    }
-
-    td.text-right {
-      text-align: right;
-    }
-    @media screen and (max-width: 992px) {
-      td
-      {
-        font-size:1rem;
-      }
-}
 
   </style>
 </head>
@@ -202,7 +138,7 @@
         </div>
         
     </nav>
-  <h1 class="text-center my-2 py-2">Project Details</h1>
+    <h1 class="text-center my-2 py-2">Project Details</h1>
   <?php
   $id = $_GET['id'];
                   $getProject = "SELECT * FROM `projects` WHERE id=$id";
@@ -214,59 +150,51 @@
                   $projectLink = $getAllProjectsRow['plink'];
                   $projectField = $getAllProjectsRow['field'];
                   $projectSS = $getAllProjectsRow['screenshot'];
+                  $getstacks = "SELECT `StackName` from `project_stack`,`stack` where S_id=Sid and P_id=$id";
+                  $getAllstacks = mysqli_query($conn, $getstacks) or die(mysqli_error($conn));
                  
                   // echo($userEmail.$projectName.$projectDesc.$projectLink.$projectField.$projectSS);
                 ?>
+       <div class="container" style="margin-bottom:50px; margin-top:50px">
+         <div class="row">
+         <div class="col-lg-6">
+         <h2 class="display-4">  <?php print($projectName) ?> </h2>
+         <a  href="<?= $projectLink ?>" >  <?= $projectLink ?>  </a>
+      </br>
+      </br>
+      </br>
+         <p> <?= $projectDesc?> </p>
 
-  <div class="container col-lg-7 px-0">
-    <div class="card ">
-      <img src="projects/<?=$projectName?>/<?=$projectSS?>" class="card-img-top" alt="...">
-    </div>
-    <div>
-      <table class="table-fill">
+<div> <div class="OE"> <img src="https://img.icons8.com/nolan/40/email.png"/> Owner Email :</div> <?=$userEmail ?></div>
 
-        <tbody class="table-hover">
-          <tr>
-            <td class="text-left">Project_Name</td>
-            <td class="text-left">
-              <?php print($projectName) ?>
-            </td>
-          </tr>
-          <tr>
-            <td class="text-left">Project_Field</td>
-            <td class="text-left">
-              <?php print($projectName) ?>
-            </td>
-          </tr>
-          <tr>
-            <td class="text-left">Description</td>
-            <td class="text-left">
-              <?php print($projectDesc) ?>
-            </td>
-          </tr>
-          <tr>
-            <td class="text-left">Owner_Email</td>
-            <td class="text-left">
-              <?php print($userEmail) ?>
-            </td>
-          </tr>
-          <tr>
-            <td class="text-left">Project_Link</td>
-            <td class="text-left"><a href="<?= $projectLink ?>" class="mb-2 pb-2">
-                <h5 class="card-text mb-2">Click Here </h5>
-              </a></td>
-          </tr>
-          <tr>
-            <td class="text-center" colspan="2"> <a href="/lesscolab/Explore/index.php" class="btn btn-primary">Add More Projects</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+         </div>
+
+       <div class="col-lg-6">
+    <div class="card">
+      <img style="height:200px" src=".\projects\<?=$projectName?>\<?=$projectSS?>"/>
+  </br>
+  <div class="filed"> <?=$projectField?> </div>
+  <hr style="color:black; width:90%;  margin:auto;">
+  <h5 class="color"> Technologies: </h5>
+  <div class="stacks">
+  <?php while ($getAllstacksRow = mysqli_fetch_assoc($getAllstacks)) { ?>
+    <div class="stack"> <?= $getAllstacksRow['StackName'] ?> </div>
+                    
+     <?php } ?>
+    
   </div>
+    </div>
+       </div>  
+       
+       
+  </div> 
+       </div>         
 
- <!-- Start Footer Section-->
- <div class="footer-distributed mt-5 pt-5 pb-2 px-0 bg-dark">
+ 
+
+
+
+       <div class="footer-distributed mt-5 pt-5 pb-2 px-0 bg-dark">
     <div class="container px-2">
 
       <div class="row">
@@ -331,6 +259,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
+
 
 </body>
 
